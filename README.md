@@ -1,3 +1,48 @@
+# uO Hackathon 2026
+
+Hackathon project repository for uOttawa Hackathon 2026.
+
+This repo is set up for **fast team collaboration**, clean Git workflows, and quick demos.
+
+---
+
+## 🚀 Tech Stack
+- **Frontend:** React + Vite
+- **Version Control:** Git + GitHub
+- **Backend / DB:** TBD (Firebase / API if needed)
+
+---
+
+## 🧑‍🤝‍🧑 Team Git Workflow (IMPORTANT)
+
+### Branches
+- **`main`** → Stable demo branch (must always run)
+- **`dev`** → Main working / integration branch
+- **`feature/*`** → Individual feature branches
+
+**Rules**
+- ❌ Do NOT commit directly to `main`
+- ✅ All work happens on `feature/*`
+- ✅ Merge features into `dev`
+- ✅ Only merge `dev` → `main` when demo-ready
+
+---
+
+## 🛠️ First-Time Setup
+
+### Clone the repo
+```bash
+git clone git@github.com:Ajay757/uO-hackathon2026.git
+cd uO-hackathon2026
+
+---
+
+### Install Dependecies
+npm install
+npm run dev
+App runs at localhost
+
+
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
