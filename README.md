@@ -34,6 +34,12 @@ This repo is set up for **fast team collaboration**, clean Git workflows, and qu
 git clone git@github.com:Ajay757/uO-hackathon2026.git
 cd uO-hackathon2026
 
+### Setup local firebase with api keys
+cp .env.example .env.local
+# then fill in values
+npm install
+npm run dev
+
 1. **Install dependencies**
    npm install
 
