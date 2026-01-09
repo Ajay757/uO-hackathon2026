@@ -36,7 +36,7 @@ cd uO-hackathon2026
 
 ### Setup local firebase with api keys
 cp .env.example .env.local
-# then fill in values
+then fill in values
 npm install
 npm run dev
 
