@@ -41,6 +41,47 @@ cd uO-hackathon2026
 npm install
 npm run dev
 App runs at localhost
+git clone git@github.com:Ajay757/uO-hackathon2026.git
+cd uO-hackathon2026
+
+### Setup local firebase with api keys
+cp .env.example .env.local
+then fill in values
+npm install
+npm run dev
+
+1. **Install dependencies**
+   npm install
+
+2. **Run app**
+- npm run dev
+
+ ##Daily Dev Workflow
+ Start from dev
+ - git checkout dev
+ - git pull
+Create branch
+- git checkout -b feature/<yourname>-<feature>
+- # example:
+- # git checkout -b feature/ajay-firebase-setup
+Commit
+- git status
+- git add .
+- git commit -m "Short description of change"
+Push
+- git push -u origin feature/<yourname>-<feature>
+Merge
+- git checkout dev
+- git pull
+- git merge feature/<yourname>-<feature>
+- git push
+
+Common Git Commands
+- Check Status: git status
+- See Branches: git branch -vv
+- Switch Branches: git checkout dev
+- Discard local changes: git restore .
+- Abort bad merge: git merge --abort
 
 
 # React + Vite
