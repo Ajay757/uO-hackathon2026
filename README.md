@@ -31,6 +31,16 @@ This repo is set up for **fast team collaboration**, clean Git workflows, and qu
 ## 🛠️ First-Time Setup
 
 ### Clone the repo
+```bash
+git clone git@github.com:Ajay757/uO-hackathon2026.git
+cd uO-hackathon2026
+
+---
+
+### Install Dependecies
+npm install
+npm run dev
+App runs at localhost
 git clone git@github.com:Ajay757/uO-hackathon2026.git
 cd uO-hackathon2026
 
