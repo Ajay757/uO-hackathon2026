@@ -11,6 +11,13 @@
   padding-bottom: 0.5rem;
 }
 
+.hotspot-threshold {
+  font-size: 0.85rem;
+  color: #888;
+  margin: 0 0 0.5rem 0;
+  font-style: italic;
+}
+
 .empty-message {
   color: #888;
   font-style: italic;
