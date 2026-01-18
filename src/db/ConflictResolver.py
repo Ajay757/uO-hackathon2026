@@ -60,7 +60,7 @@ def conflict_resolver(conflicts):
 
     for i in range(len(conflicts)):
         conflict=conflicts[i]
-        conflict=conflict.pop()
+        conflict.pop()
 
         # Sort planes by minimal previous changes
         sorted_planes = sorted(conflict, key=lambda x: state[x]["changes"])
@@ -68,7 +68,7 @@ def conflict_resolver(conflicts):
 
         # Gather current altitudes and speeds
         altitudes = {acid: state[acid]["altitude"] for acid in sorted_planes}
-        speeds = {acid: state[acid]["speed"] for acid in sorted_planes}
+        speeds = {acid: state[acid]["aircraft speed"] for acid in sorted_planes}
 
         # Find highest and lowest planes in this conflict
         altitudes_list = [(acid, altitudes[acid]) for acid in sorted_planes]
