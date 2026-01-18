@@ -60,6 +60,8 @@ def conflict_resolver(conflicts):
 
     for i in range(len(conflicts)):
         conflict=conflicts[i]
+        conflict=conflict.pop()
+
         # Sort planes by minimal previous changes
         sorted_planes = sorted(conflict, key=lambda x: state[x]["changes"])
         conflict_resolved = False
