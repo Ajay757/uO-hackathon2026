@@ -1,7 +1,7 @@
 import { useParams, useNavigate } from "react-router-dom";
 import { useMemo, useState, useEffect } from "react";
-import flightsData from "../uOttawaHack2026/canadian_flights_250.json";
 import { analyzeFlights } from "../utils/simpleAnalysis";
+import { useFlightsData } from "../context/FlightsDataContext";
 import ConflictRouteMap from "../components/ConflictRouteMap";
 import "./ConflictResolver.css";
 
@@ -35,11 +35,12 @@ function clearResolution(conflictId) {
 export default function ConflictResolver() {
   const { conflictId } = useParams();
   const navigate = useNavigate();
+  const { flights } = useFlightsData();
   const [resolution, setResolution] = useState(null);
 
   // Load conflicts and find the matching one
   const { conflict, flightsInConflict, conflictPoint } = useMemo(() => {
-    const results = analyzeFlights(flightsData);
+    const results = analyzeFlights(flights);
     const conflict = results.conflicts.find((c) => c.id === conflictId);
     
     if (!conflict) {
@@ -64,8 +65,8 @@ export default function ConflictResolver() {
     }
 
     // Create flightsById map for quick lookup
-    const flightsById = new Map();
-    flightsData.forEach((flight) => {
+          const flightsById = new Map();
+          flights.forEach((flight) => {
       if (flight.ACID) {
         flightsById.set(flight.ACID, flight);
       }
@@ -85,7 +86,7 @@ export default function ConflictResolver() {
     }
 
     return { conflict, flightsInConflict, conflictPoint };
-  }, [conflictId]);
+  }, [conflictId, flights]);
 
   // Load resolution from localStorage
   useEffect(() => {

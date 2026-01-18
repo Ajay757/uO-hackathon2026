@@ -1,5 +1,5 @@
 from datetime import datetime, timedelta, timezone
-from ConflictFinder.py import detect_conflicts_by_waypoints
+from ConflictFinder import detect_conflicts_by_waypoints
 import json
 import math
 
@@ -202,9 +202,11 @@ if __name__ == "__main__":
 
     snapshots = simulate_all_flights(path, 240)
 
-    print(snapshots[-1])
+    print((snapshots[-1])["planes"])
+    print((snapshots[-1])["timestamp"])
 
-    conflicts = detect_conflicts_by_waypoints(planes, timestamp)
+    conflicts = detect_conflicts_by_waypoints((snapshots[-1])["planes"], (snapshots[-1])["timestamp"])
+    print(conflicts)
 
 
     # simulate_all_flights(path, 15)

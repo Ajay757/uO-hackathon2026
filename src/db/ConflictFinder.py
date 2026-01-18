@@ -1,4 +1,14 @@
 import math
+import json
+import os
+
+# Path to your JSON file
+db_path = os.path.join(os.path.dirname(__file__), "waypointToAcids.json")
+
+# Load the JSON into waypoint_dict
+with open(db_path, "r") as f:
+    waypoint_dict = json.load(f)
+
 
 # -------------------- Basic geometry -------------------- #
 
@@ -56,7 +66,7 @@ def find_conflict_clusters(planes):
 
 # -------------------- Waypoint-based optimized detection -------------------- #
 
-def detect_conflicts_by_waypoints(planes_list, waypoint_dict, timestamp):
+def detect_conflicts_by_waypoints(planes_list, timestamp):
     """
     Detect conflicts using waypoint filtering and merge overlapping clusters.
 

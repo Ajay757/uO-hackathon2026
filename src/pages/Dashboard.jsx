@@ -1,7 +1,6 @@
-import { useMemo, useState } from "react";
-import flights250 from "../db/flights.json";
+import { useMemo, useState, useEffect, useRef } from "react";
 import { analyzeFlights } from "../utils/simpleAnalysis";
-import { buildWaypointToAcidsMap } from "../utils/routeUtils";
+import { useFlightsData } from "../context/FlightsDataContext";
 import ConflictsTable from "../components/ConflictsTable";
 import HotspotsList from "../components/HotSpotsList";
 import "./Dashboard.css";
@@ -32,6 +31,56 @@ function timeBucketColabStyle(hour) {
   // Evening: 17:00–20:59
   if (hour >= 17 && hour < 21) return "Evening";
   return "Unknown";
+}
+
+const HOTSPOT_FACTOR = 1.5;
+
+function parseWaypointToken(token) {
+  const [latRaw, lonRaw] = token.split("/");
+  if (!latRaw || !lonRaw) return { lat: null, lon: null };
+
+  const latDir = latRaw.slice(-1); // N/S
+  const lonDir = lonRaw.slice(-1); // E/W
+  const latVal = Number(latRaw.slice(0, -1));
+  const lonVal = Number(lonRaw.slice(0, -1));
+
+  const lat = (latDir === "S" ? -latVal : latVal);
+  const lon = (lonDir === "W" ? -lonVal : lonVal);
+
+  return {
+    lat: Number.isFinite(lat) ? lat : null,
+    lon: Number.isFinite(lon) ? lon : null,
+  };
+}
+
+function buildHotspotRows(waypointToAcids, flights) {
+  const entries = Object.entries(waypointToAcids || {});
+  const F = (flights || []).length;
+  const W = entries.length || 1;
+
+  const avg = F / W;
+  const threshold = Math.ceil(HOTSPOT_FACTOR * avg);
+
+  const ranked = entries
+    .map(([waypoint, acids]) => {
+      const { lat, lon } = parseWaypointToken(waypoint);
+      return {
+        waypoint,
+        lat,
+        lon,
+        airplanes: acids.length,
+      };
+    })
+    .sort((a, b) => b.airplanes - a.airplanes);
+
+  const hotspots = ranked
+    .filter((r) => r.airplanes >= threshold)
+    .map((r, idx) => ({
+      hotspotId: idx + 1,
+      ...r,
+    }));
+
+  return { hotspots, threshold, avg };
 }
 
 
@@ -143,12 +192,16 @@ function formatTimestamp(timestamp) {
 }
 
 export default function Dashboard() {
-  const stats = useMemo(() => computeDashboardStats(flightsData), []);
+  const { flights, waypointToAcids } = useFlightsData();
+  const stats = useMemo(() => computeDashboardStats(flights), [flights]);
   const [analysisResults, setAnalysisResults] = useState(null);
   const [analyzing, setAnalyzing] = useState(false);
 
-  // Build waypoint→ACIDs map
-  const waypointToAcids = buildWaypointToAcidsMap(flights250);
+  // Compute waypoint-based hotspots
+  const { hotspots: waypointHotspots, threshold, avg } = useMemo(
+    () => buildHotspotRows(waypointToAcids, flights),
+    [waypointToAcids, flights]
+  );
 
   // Waypoints to check explicitly
   const mustCheck = [
@@ -183,7 +236,7 @@ export default function Dashboard() {
 
     const entries = Object.entries(waypointToAcids);
 
-    console.log("[WaypointMap] Flights loaded:", flights250.length);
+    console.log("[WaypointMap] Flights loaded:", flights.length);
     console.log("[WaypointMap] Unique waypoints:", entries.length);
 
     const top10 = entries
@@ -214,7 +267,7 @@ export default function Dashboard() {
     // Run analysis in a timeout to avoid blocking UI
     setTimeout(() => {
       try {
-        const results = analyzeFlights(flightsData);
+        const results = analyzeFlights(flights);
         setAnalysisResults(results);
       } catch (error) {
         console.error("Analysis error:", error);
@@ -364,11 +417,14 @@ export default function Dashboard() {
             {analysisResults && (
               <div className="analysis-results">
                 <ConflictsTable conflicts={analysisResults.conflicts || []} />
-                <HotspotsList hotspots={analysisResults.hotspots || []} />
+                <HotspotsList hotspots={waypointHotspots || []} threshold={threshold} avg={avg} />
               </div>
             )}
             {!analysisResults && !analyzing && (
-              <p className="analysis-hint">Click "Run Analysis" to detect conflicts and hotspots</p>
+              <div>
+                <p className="analysis-hint">Click "Run Analysis" to detect conflicts</p>
+                <HotspotsList hotspots={waypointHotspots || []} threshold={threshold} avg={avg} />
+              </div>
             )}
           </div>
         </div>
