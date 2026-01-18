@@ -1,5 +1,4 @@
 import { useMemo, useState, useEffect, useRef } from "react";
-import { analyzeFlights } from "../utils/simpleAnalysis";
 import { useFlightsData } from "../context/FlightsDataContext";
 import ConflictsTable from "../components/ConflictsTable";
 import HotspotsList from "../components/HotSpotsList";
@@ -191,6 +190,25 @@ function formatTimestamp(timestamp) {
   return new Date(timestamp * 1000).toLocaleString();
 }
 
+function normalizePythonConflicts(conflictsRaw) {
+  // conflictsRaw: array of arrays, where last element is seconds offset
+  if (!Array.isArray(conflictsRaw)) return [];
+
+  return conflictsRaw.map((row, idx) => {
+    if (!Array.isArray(row) || row.length < 3) return null;
+
+    const t = row[row.length - 1];
+    const acids = row.slice(0, row.length - 1);
+
+    return {
+      conflictId: idx + 1,
+      id: `python-conflict-${idx + 1}`, // For routing compatibility
+      acids,                 // array of 2+ ACIDs
+      tAfterDeparture: t,    // number (seconds after departure)
+    };
+  }).filter(Boolean);
+}
+
 export default function Dashboard() {
   const { flights, waypointToAcids } = useFlightsData();
   const stats = useMemo(() => computeDashboardStats(flights), [flights]);
@@ -262,20 +280,27 @@ export default function Dashboard() {
     });
   }, [waypointToAcids]);
 
-  function handleRunAnalysis() {
+  async function handleRunAnalysis() {
     setAnalyzing(true);
-    // Run analysis in a timeout to avoid blocking UI
-    setTimeout(() => {
-      try {
-        const results = analyzeFlights(flights);
-        setAnalysisResults(results);
-      } catch (error) {
-        console.error("Analysis error:", error);
+    try {
+      const resp = await fetch("/api/run-conflict-analysis", { method: "POST" });
+      const data = await resp.json();
+
+      if (!data.ok) {
+        console.error("Conflict analysis error:", data);
         setAnalysisResults({ conflicts: [], hotspots: [] });
-      } finally {
-        setAnalyzing(false);
+        return;
       }
-    }, 0);
+
+      const conflicts = normalizePythonConflicts(data.conflicts);
+      // IMPORTANT: conflicts table must use ONLY these conflicts
+      setAnalysisResults({ conflicts, hotspots: [] });
+    } catch (e) {
+      console.error("Run analysis failed:", e);
+      setAnalysisResults({ conflicts: [], hotspots: [] });
+    } finally {
+      setAnalyzing(false);
+    }
   }
 
   return (
