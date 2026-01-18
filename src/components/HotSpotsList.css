@@ -1,0 +1,78 @@
+.hotspots-list-container {
+  width: 100%;
+  min-width: 0;
+}
+
+.hotspots-list-container h2 {
+  font-size: 1.1rem;
+  color: #ffffff;
+  margin: 0 0 0.75rem 0;
+  border-bottom: 1px solid #333;
+  padding-bottom: 0.5rem;
+}
+
+.empty-message {
+  color: #888;
+  font-style: italic;
+  text-align: center;
+  padding: 1rem;
+}
+
+.table-wrapper {
+  max-height: 400px;
+  overflow-y: auto;
+  overflow-x: auto;
+  border: 1px solid #333;
+  border-radius: 4px;
+  width: 100%;
+  min-width: 0;
+}
+
+.hotspots-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+  background: #1a1a1a;
+}
+
+.hotspots-table thead {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: #252525;
+}
+
+.hotspots-table th {
+  text-align: left;
+  padding: 0.75rem 0.5rem;
+  color: #ffffff;
+  font-weight: 600;
+  border-bottom: 2px solid #333;
+  white-space: nowrap;
+}
+
+.hotspots-table th.numeric {
+  text-align: right;
+}
+
+.hotspots-table td {
+  padding: 0.6rem 0.5rem;
+  color: #cccccc;
+  border-bottom: 1px solid #333;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.hotspots-table td.numeric {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.hotspots-table tbody tr:hover {
+  background: #252525;
+}
+
+.hotspots-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
