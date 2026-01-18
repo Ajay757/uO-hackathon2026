@@ -2,6 +2,12 @@ from datetime import datetime, timedelta, timezone
 from ConflictFinder import detect_conflicts_by_waypoints
 import json
 import math
+import os
+
+# Resolve paths relative to this script's directory
+HERE = os.path.dirname(os.path.abspath(__file__))  # src/db
+FLIGHTS_PATH = os.path.join(HERE, "flights.json")
+CONFLICTS_PATH = os.path.join(HERE, "conflicts.json")
 
 # Airport coordinates (deg)
 airports = {
@@ -200,7 +206,8 @@ def simulate_all_flights(filename: str, ping_int: int = 60):
 if __name__ == "__main__":
     path = 'flights.json'
 
-    snapshots = simulate_all_flights(path, 1)
+    # snapshots = simulate_all_flights(path, 1)
+    snapshots = simulate_all_flights(FLIGHTS_PATH, 1)
 
     conflicts = []
 
@@ -223,9 +230,10 @@ if __name__ == "__main__":
 
     conflicts = unique_conflicts  # Replace with deduplicated list
 
-    with open('conflicts.json', 'w') as f:
+    #with open('conflicts.json', 'w') as f:
+    with open(CONFLICTS_PATH, 'w') as f:
         json.dump(conflicts, f, indent=2)
     
     print(conflicts)
-
+    print(f"Conflicts found: {len(conflicts)}")
 

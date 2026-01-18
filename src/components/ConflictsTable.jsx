@@ -30,33 +30,34 @@ export default function ConflictsTable({ conflicts }) {
           <thead>
             <tr>
               <th>Conflict ID</th>
-              <th>Time (UTC)</th>
-              <th>Flight A</th>
-              <th>Flight B</th>
-              <th className="numeric">Horizontal Distance (NM)</th>
-              <th className="numeric">Vertical Distance (ft)</th>
-              <th className="numeric">Latitude</th>
-              <th className="numeric">Longitude</th>
+              <th>Planes Involved</th>
+              <th className="numeric">Time After Departure (seconds)</th>
               <th>Status</th>
             </tr>
           </thead>
           <tbody>
             {conflicts.map((conflict, index) => {
+              // Support both old format (flight1, flight2) and new format (acids array)
+              const acids = conflict.acids || (conflict.flight1 && conflict.flight2 ? [conflict.flight1, conflict.flight2] : []);
+              const planesText = acids.length > 0 ? acids.join(", ") : "N/A";
+              const timeAfterDeparture = conflict.tAfterDeparture != null ? conflict.tAfterDeparture : (conflict.time ? "N/A" : null);
+              const conflictId = conflict.conflictId || conflict.id || index + 1;
               const status = conflict.id ? getResolutionStatus(conflict.id) : null;
+              
+              // Create a stable ID for routing
+              const routeId = conflict.id || `conflict-${conflictId}-${acids.join("-")}`;
+              
               return (
                 <tr
-                  key={conflict.id || `${conflict.flight1}-${conflict.flight2}-${conflict.time}-${index}`}
-                  onClick={() => conflict.id && navigate(`/conflicts/${encodeURIComponent(conflict.id)}`)}
-                  className={conflict.id ? "conflict-row-clickable" : ""}
+                  key={routeId}
+                  onClick={() => navigate(`/conflicts/${encodeURIComponent(routeId)}`, { 
+                    state: { conflict, acids, tAfterDeparture: conflict.tAfterDeparture } 
+                  })}
+                  className="conflict-row-clickable"
                 >
-                  <td>{index + 1}</td>
-                  <td>{new Date(conflict.time * 1000).toLocaleTimeString()}</td>
-                  <td>{conflict.flight1}</td>
-                  <td>{conflict.flight2}</td>
-                  <td className="numeric">{conflict.horizontalDistance.toFixed(2)}</td>
-                  <td className="numeric">{conflict.verticalDistance.toFixed(0)}</td>
-                  <td className="numeric">{conflict.lat.toFixed(4)}</td>
-                  <td className="numeric">{conflict.lon.toFixed(4)}</td>
+                  <td>{conflictId}</td>
+                  <td>{planesText}</td>
+                  <td className="numeric">{timeAfterDeparture != null ? timeAfterDeparture : "N/A"}</td>
                   <td>{status && <span className="resolved-badge">{status}</span>}</td>
                 </tr>
               );
