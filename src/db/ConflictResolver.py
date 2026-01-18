@@ -59,27 +59,27 @@ def update_plane(acid, new_altitude=None, new_speed=None):
 # CONFLICT RESOLVER
 # -----------------------------
 def conflict_resolver(conflicts):
-    state = load_state()   # list of dicts
+    state = load_state()  # list of dicts
     planes_info = load_planes_info()
     aircraft_types = load_aircraft_types()
+
+    # Build ACID lookup for quick access
+    state_by_acid = {plane["ACID"]: plane for plane in state}
 
     for conflict in conflicts:
         if not conflict:
             continue
 
         # Sort planes by minimal changes
-        sorted_planes = sorted(conflict, key=lambda acid: next(
-            plane["changes"] for plane in state if plane["ACID"] == acid))
+        sorted_planes = sorted(conflict, key=lambda acid: state_by_acid[acid]["changes"])
 
         conflict_resolved = False
 
         # Altitudes and speeds lookup
-        altitudes = {acid: next(plane["altitude"] for plane in state if plane["ACID"] == acid)
-                     for acid in sorted_planes}
-        speeds = {acid: next(plane["aircraft speed"] for plane in state if plane["ACID"] == acid)
-                  for acid in sorted_planes}
+        altitudes = {acid: state_by_acid[acid]["altitude"] for acid in sorted_planes}
+        speeds = {acid: state_by_acid[acid]["aircraft speed"] for acid in sorted_planes}
 
-        # Find highest and lowest
+        # Find highest and lowest planes
         altitudes_list = [(acid, altitudes[acid]) for acid in sorted_planes]
         highest = max(altitudes_list, key=lambda x: x[1])[0]
         lowest = min(altitudes_list, key=lambda x: x[1])[0]
