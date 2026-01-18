@@ -1,6 +1,5 @@
-import { useMemo, useState, useEffect, useRef } from "react";
-import flightsData from "../uOttawaHack2026/canadian_flights_250.json";
-import flights250 from "../uOttawaHack2026/canadian_flights_250.json";
+import { useMemo, useState } from "react";
+import flights250 from "../db/flights.json";
 import { analyzeFlights } from "../utils/simpleAnalysis";
 import { buildWaypointToAcidsMap } from "../utils/routeUtils";
 import ConflictsTable from "../components/ConflictsTable";
