@@ -1,19 +1,7 @@
 from datetime import datetime, timedelta, timezone
+from ConflictFinder.py import detect_conflicts_by_waypoints
 import json
 import math
-
-flight = {
-    "ACID": "ACA101",
-    "Plane type": "Boeing 787-9",
-    "route": "49.97N/110.935W 49.64N/92.114W",
-    "altitude": 37000,
-    "departure airport": "CYYZ",
-    "arrival airport": "CYVR",
-    "departure time": 1736244000,
-    "aircraft speed": 485.0,  # knots
-    "passengers": 280,
-    "is_cargo": False
-}
 
 # Airport coordinates (deg)
 airports = {
@@ -81,7 +69,6 @@ def get_flight_path(flight: dict):
     
     return path, leg_distances, total_distance_nm
 
-# NOW simplified - use shared path computation:
 def estimate_arrival(flight: dict):
     dep_est = unix_to_est_24h(flight["departure time"])
     path, leg_distances, total_distance_nm = get_flight_path(flight)
@@ -101,16 +88,17 @@ def estimate_arrival(flight: dict):
         "arrival_est": arr_est
     }
 
-def get_position_at_time(flight: dict, target_minutes: float):
+def get_position_at_time(flight: dict, minutes_since_dep: float):
+    """Position minutes after departure (assumes already airborne)."""
     path, leg_distances, total_distance_nm = get_flight_path(flight)
     
     speed = flight["aircraft speed"]
     total_minutes = (total_distance_nm / speed) * 60
     
-    if target_minutes > total_minutes:
-        return airports[flight["arrival airport"]]
+    if minutes_since_dep >= total_minutes:
+        return None  # Arrived - no position to track
     
-    distance_traveled_nm = (target_minutes / 60) * speed
+    distance_traveled_nm = (minutes_since_dep / 60) * speed
     
     cum_dist = 0.0
     for leg_idx, leg_dist in enumerate(leg_distances):
@@ -121,53 +109,103 @@ def get_position_at_time(flight: dict, target_minutes: float):
             return great_circle_interpolate(*start_pt, *end_pt, fraction)
         cum_dist += leg_dist
     
-    return airports[flight["arrival airport"]]
+    return None  # Shouldn't reach here
+
+def load_flights(filename: str):
+    """Load flights from JSON file."""
+    with open(filename, 'r') as f:
+        return json.load(f)
+
+def simulate_all_flights(filename: str, ping_int: int = 60):
+    """Simulate ONLY airborne flights until last arrival."""
+    flights = load_flights(filename)
+
+    snapshots = []
+    
+    if not flights:
+        print("No flights found in JSON.")
+        return
+    
+    # NEW: Compute max arrival time for sim_end
+    max_arrival_unix = 0
+    for flight in flights:
+        path, _, total_nm = get_flight_path(flight)
+        speed = flight["aircraft speed"]
+        total_hours = total_nm / speed
+        total_minutes = total_hours * 60
+        dep_unix = flight["departure time"]
+        arrival_unix = dep_unix + int(total_minutes * 60)  # seconds
+        if arrival_unix > max_arrival_unix:
+            max_arrival_unix = arrival_unix
+    
+    first_dep_unix = flights[0]["departure time"]
+    sim_start = unix_to_est_24h(first_dep_unix)
+    sim_end = unix_to_est_24h(max_arrival_unix)
+    
+    print(" ")
+    print(f"=== AIRBORNE Flight Simulation ({len(flights)} flights) ===")
+    print(f"Period: {sim_start.strftime('%Y-%m-%d %H:%M')} to {sim_end.strftime('%Y-%m-%d %H:%M')} EST")
+    print(f"Ping: {ping_int}min | Ends when last flight lands")
+    print("-" * 80)
+    
+    current_time = sim_start
+    while current_time <= sim_end:
+        minutes_since_start = int((current_time - sim_start).total_seconds() / 60)
+        print(f"\n{current_time.strftime('%H:%M')} ({minutes_since_start}m):")
+        
+        planes = []
+        airborne_count = 0
+        for flight in flights:
+            dep_time = unix_to_est_24h(flight["departure time"])
+            minutes_since_dep = int((current_time - dep_time).total_seconds() / 60)
+            
+            if minutes_since_dep <= 0:
+                continue
+            
+            path, _, total_nm = get_flight_path(flight)
+            speed = flight["aircraft speed"]
+            total_flight_min = (total_nm / speed) * 60
+            
+            if minutes_since_dep < total_flight_min:
+                pos = get_position_at_time(flight, minutes_since_dep)
+                if pos:
+                    alt = flight.get("altitude", 35000)
+                    planes.append({
+                        "ACID": flight['ACID'],
+                        "lat": pos[0],
+                        "lon": pos[1],
+                        "alt": alt
+                    })
+                    print(f"  {flight['ACID']:>6} {pos[0]:6.2f}N/{abs(pos[1]):7.3f}W "
+                        f"{alt:>6}ft (dep+{minutes_since_dep}m)")
+                    airborne_count += 1
+
+        # NEW: Save snapshot and call your function
+        timestamp = minutes_since_start
+        snapshots.append({
+            "timestamp": timestamp,
+            "planes": planes
+        })
+        
+        if airborne_count == 0:
+            print("  No airborne flights")
+        else:
+            print(f"  ({airborne_count} airborne)")
+        
+        current_time += timedelta(minutes=ping_int)
+
+    return snapshots  # NEW: Return for external use
 
 
+if __name__ == "__main__":
+    path = 'flights.json'
 
-# def simulate_flight(flight: dict, ping_int=60):
-#     path, leg_distances, total_distance_nm = get_flight_path(flight)
-#     speed = flight["aircraft speed"]
-#     total_minutes = (total_distance_nm / speed) * 60
-#     print(f"\n=== {flight['ACID']} Flight Simulation ===")
-#     print(f"Route: {flight['departure airport']} → {flight['arrival airport']}")
-#     print(f"Total distance: {total_distance_nm:.0f} NM, time: {int(total_minutes//60)}h {int(total_minutes%60)}m")
-#     print("-" * 50)
-#     dep_est = unix_to_est_24h(flight["departure time"])
-#     total_int = int(total_minutes)
-#     for minutes_elapsed in range(0, total_int + 1, ping_int):
-#         if minutes_elapsed > total_int:
-#             arr_est = dep_est + timedelta(minutes=total_int)
-#             arr_pos = airports[flight['arrival airport']]
-#             print(f"Arrival at {arr_est.strftime('%H:%M')} ({total_int}m): "
-#                   f"{arr_pos[0]:.2f}N/{abs(arr_pos[1]):.3f}W")
-#             break
-#         pos = get_position_at_time(flight, minutes_elapsed)
-#         est_time = dep_est + timedelta(minutes=minutes_elapsed)
-#         print(f"{est_time.strftime('%H:%M')} ({minutes_elapsed}m): "
-#               f"{pos[0]:.2f}N/{abs(pos[1]):.3f}W")
+    snapshots = simulate_all_flights(path, 240)
 
-def simulate_flight(flight: dict, ping_int: int):
-    path, leg_distances, total_distance_nm = get_flight_path(flight)
-    speed = flight["aircraft speed"]
-    total_minutes = (total_distance_nm / speed) * 60
-    print(f"\n=== {flight['ACID']} Flight Simulation ===")
-    print(f"Route: {flight['departure airport']} → {flight['arrival airport']}")
-    print(f"Total distance: {total_distance_nm:.0f} NM, time: {int(total_minutes//60)}h {int(total_minutes%60)}m")
-    print("-" * 50)
-    dep_est = unix_to_est_24h(flight["departure time"])
-    total_int = int(total_minutes)
-    for minutes_elapsed in range(0, total_int + 1, ping_int):
-        if minutes_elapsed > total_int:
-            arr_est = dep_est + timedelta(minutes=total_int)
-            arr_pos = airports[flight['arrival airport']]
-            print(f"Arrival at {arr_est.strftime('%H:%M')} ({total_int}m): "
-                  f"{arr_pos[0]:.2f}N/{abs(arr_pos[1]):.3f}W")
-            break
-        pos = get_position_at_time(flight, minutes_elapsed)
-        est_time = dep_est + timedelta(minutes=minutes_elapsed)
-        print(f"{est_time.strftime('%H:%M')} ({minutes_elapsed}m): "
-              f"{pos[0]:.2f}N/{abs(pos[1]):.3f}W")
+    print(snapshots[-1])
 
-# Run for uOttawa Hack 2026 NAV Canada challenge
-simulate_flight(flight, 60)
+    conflicts = detect_conflicts_by_waypoints(planes, timestamp)
+
+
+    # simulate_all_flights(path, 15)
+
