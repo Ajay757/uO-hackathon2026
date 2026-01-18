@@ -73,6 +73,24 @@
   background: #252525;
 }
 
+.conflict-row-clickable {
+  cursor: pointer;
+}
+
+.conflict-row-clickable:hover {
+  background: #2a2a2a !important;
+}
+
+.resolved-badge {
+  display: inline-block;
+  padding: 0.25rem 0.5rem;
+  background: #646cff;
+  color: white;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
 .conflicts-table tbody tr:last-child td {
   border-bottom: none;
 }

@@ -161,9 +161,20 @@ export function analyzeFlights(flights) {
           
           if (!conflictSet.has(conflictKey)) {
             conflictSet.add(conflictKey);
+            
+            // Generate stable deterministic ID
+            const minId = Math.min(p1.flightId, p2.flightId);
+            const maxId = Math.max(p1.flightId, p2.flightId);
+            const type = "conflict";
+            const id = `${type}_${minId}_${maxId}__${time}`;
+            
             conflicts.push({
+              id,
               flight1: p1.flightId,
               flight2: p2.flightId,
+              flightAId: p1.flightId,
+              flightBId: p2.flightId,
+              type: "conflict",
               time: time,
               lat: (p1.lat + p2.lat) / 2,
               lon: (p1.lon + p2.lon) / 2,
