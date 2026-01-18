@@ -222,6 +222,9 @@ if __name__ == "__main__":
             unique_conflicts.append(conflict)
 
     conflicts = unique_conflicts  # Replace with deduplicated list
+
+    with open('conflicts.json', 'w') as f:
+        json.dump(conflicts, f, indent=2)
     
     print(conflicts)
 
