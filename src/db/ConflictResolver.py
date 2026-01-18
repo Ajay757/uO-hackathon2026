@@ -40,12 +40,17 @@ def horizontal_separation_ok(pos1, pos2):
 # -----------------------------
 def update_plane(acid, new_altitude=None, new_speed=None):
     state = load_state()
+    state_by_acid = {plane["ACID"]: plane for plane in state}
+
     if new_altitude is not None:
-        state[acid]["altitude"] = new_altitude
+        state_by_acid[acid]["altitude"] = new_altitude
+
     if new_speed is not None:
-        state[acid]["speed"] = new_speed
-    state[acid]["changes"] += 1
+        state_by_acid[acid]["aircraft speed"] = new_speed
+
+    state_by_acid[acid]["changes"] += 1
     save_state(state)
+
 
 # -----------------------------
 # CONFLICT RESOLVER
