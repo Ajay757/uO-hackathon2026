@@ -1,0 +1,432 @@
+.dashboard {
+  padding: 2rem;
+  width: 100%;
+  max-width: 1900px;
+  margin: 0 auto;
+  min-height: 100vh;
+  color: white;
+  box-sizing: border-box;
+}
+
+.dashboard-title {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #ffffff;
+  text-align: center;
+}
+
+.dashboard-main-grid {
+  display: grid;
+  width: 100%;
+  gap: 1.5rem;
+  align-items: start;
+  grid-template-columns: 360px minmax(0, 1fr) 760px;
+  grid-template-areas:
+    "summary charts analysis"
+    "fleet   charts analysis"
+    "routes  charts analysis";
+}
+
+@media (max-width: 1400px) {
+  .dashboard-main-grid {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "summary"
+      "analysis"
+      "charts"
+      "fleet"
+      "routes";
+  }
+}
+
+.dashboard-summary {
+  grid-area: summary;
+  display: flex;
+  flex-direction: column;
+}
+
+.dashboard-fleet {
+  grid-area: fleet;
+  display: flex;
+  flex-direction: column;
+}
+
+.dashboard-routes {
+  grid-area: routes;
+  display: flex;
+  flex-direction: column;
+}
+
+.dashboard-charts {
+  grid-area: charts;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  min-width: 0;
+}
+
+.dashboard-analysis {
+  grid-area: analysis;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  width: 100%;
+}
+
+.dashboard-analysis .dashboard-card {
+  width: 100%;
+  min-width: 0;
+}
+
+.summary-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.dashboard-card {
+  background: #1a1a1a;
+  border: 1px solid #333;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+
+.dashboard-card h3 {
+  margin: 0 0 1rem 0;
+  font-size: 1.25rem;
+  color: #ffffff;
+  border-bottom: 1px solid #333;
+  padding-bottom: 0.5rem;
+}
+
+.stat-value {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #646cff;
+  margin: 0.5rem 0;
+}
+
+.stat-value-small {
+  font-size: 1rem;
+  color: #cccccc;
+  margin: 0.25rem 0;
+}
+
+/* Time of Day Chart */
+.time-of-day-chart {
+  display: flex;
+  align-items: flex-end;
+  gap: 1rem;
+  height: 280px;
+  padding: 3rem 1rem 1rem 1rem;
+  border-bottom: 1px solid #333;
+}
+
+.time-of-day-bar-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  justify-content: flex-end;
+}
+
+.time-of-day-bar-wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  position: relative;
+}
+
+.time-of-day-bar {
+  width: 100%;
+  background: linear-gradient(to top, #646cff, #535bf2);
+  border-radius: 4px 4px 0 0;
+  min-height: 2px;
+  transition: opacity 0.2s;
+}
+
+.time-of-day-bar:hover {
+  opacity: 0.8;
+}
+
+.time-of-day-label-top {
+  position: absolute;
+  top: -2.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.8rem;
+  color: #cccccc;
+  text-align: center;
+  white-space: nowrap;
+  font-weight: 500;
+  width: 100%;
+}
+
+.time-of-day-label {
+  font-size: 0.9rem;
+  color: #ffffff;
+  margin-top: 0.75rem;
+  font-weight: 500;
+  text-align: center;
+}
+
+/* Time of Day Grid Cards */
+.tod-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+@media (max-width: 768px) {
+  .tod-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.tod-card {
+  background: #252525;
+  border: 1px solid #333;
+  border-radius: 6px;
+  padding: 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.tod-label {
+  font-size: 0.9rem;
+  color: #ffffff;
+  font-weight: 500;
+}
+
+.tod-range {
+  color: #888;
+  font-weight: 400;
+  font-size: 0.85rem;
+}
+
+.tod-count {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #646cff;
+}
+
+.tod-percentage {
+  font-size: 0.85rem;
+  color: #cccccc;
+}
+
+.tod-bar {
+  width: 100%;
+  height: 6px;
+  background: #333;
+  border-radius: 3px;
+  overflow: hidden;
+  margin-top: 0.25rem;
+}
+
+.tod-barFill {
+  height: 100%;
+  background: linear-gradient(to right, #646cff, #535bf2);
+  border-radius: 3px;
+  transition: width 0.3s ease;
+}
+
+/* Distribution Chart */
+.distribution-chart {
+  padding: 1rem 0;
+}
+
+.distribution-bar {
+  display: flex;
+  height: 60px;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.distribution-segment {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 500;
+  padding: 0 1rem;
+  min-width: 120px;
+}
+
+.distribution-segment.passenger {
+  background: #646cff;
+}
+
+.distribution-segment.cargo {
+  background: #535bf2;
+}
+
+/* Aircraft Types List */
+.aircraft-types-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 1rem 0;
+  max-height: 500px;
+  overflow-y: auto;
+}
+
+.aircraft-type-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem;
+  background: #252525;
+  border-radius: 4px;
+  border-left: 3px solid #646cff;
+}
+
+.aircraft-type-name {
+  color: #ffffff;
+  flex: 1;
+}
+
+.aircraft-type-count {
+  color: #646cff;
+  font-weight: bold;
+  margin-left: 1rem;
+}
+
+/* Altitude Histogram */
+.altitude-histogram {
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+  height: 250px;
+  padding: 1rem 0;
+  border-bottom: 1px solid #333;
+}
+
+.altitude-bar-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+}
+
+.altitude-bar {
+  width: 100%;
+  background: linear-gradient(to top, #646cff, #535bf2);
+  border-radius: 4px 4px 0 0;
+  min-height: 2px;
+  transition: opacity 0.2s;
+}
+
+.altitude-bar:hover {
+  opacity: 0.8;
+}
+
+.altitude-label {
+  font-size: 0.75rem;
+  color: #888;
+  margin-top: 4px;
+}
+
+/* Routes Table */
+.routes-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+.routes-table thead {
+  background: #252525;
+}
+
+.routes-table th {
+  text-align: left;
+  padding: 1rem;
+  color: #ffffff;
+  font-weight: 600;
+  border-bottom: 2px solid #333;
+}
+
+.routes-table td {
+  padding: 0.75rem 1rem;
+  color: #cccccc;
+  border-bottom: 1px solid #333;
+}
+
+.routes-table tbody tr:hover {
+  background: #252525;
+}
+
+.routes-count {
+  color: #646cff;
+  font-weight: bold;
+  text-align: right;
+}
+
+/* Analysis Panel */
+.analysis-button {
+  width: 100%;
+  padding: 0.75rem 1.5rem;
+  background: #646cff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+  margin-bottom: 1.5rem;
+}
+
+.analysis-button:hover:not(:disabled) {
+  background: #535bf2;
+}
+
+.analysis-button:disabled {
+  background: #444;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.analysis-results {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%;
+  min-width: 0;
+}
+
+.analysis-results h2 {
+  font-size: 1.1rem;
+  color: #ffffff;
+  margin: 0 0 0.75rem 0;
+  border-bottom: 1px solid #333;
+  padding-bottom: 0.5rem;
+}
+
+/* Ensure all pre/code blocks in dashboard wrap properly */
+.dashboard pre,
+.dashboard code {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  max-width: 100%;
+  min-width: 0;
+}
+
+.analysis-hint {
+  color: #888;
+  font-style: italic;
+  text-align: center;
+  padding: 1rem;
+}
+

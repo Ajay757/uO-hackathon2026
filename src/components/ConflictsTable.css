@@ -1,0 +1,97 @@
+.conflicts-table-container {
+  width: 100%;
+  min-width: 0;
+}
+
+.conflicts-table-container h2 {
+  font-size: 1.1rem;
+  color: #ffffff;
+  margin: 0 0 0.75rem 0;
+  border-bottom: 1px solid #333;
+  padding-bottom: 0.5rem;
+}
+
+.empty-message {
+  color: #888;
+  font-style: italic;
+  text-align: center;
+  padding: 1rem;
+}
+
+.table-wrapper {
+  max-height: 400px;
+  overflow-y: auto;
+  overflow-x: auto;
+  border: 1px solid #333;
+  border-radius: 4px;
+  width: 100%;
+  min-width: 0;
+}
+
+.conflicts-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+  background: #1a1a1a;
+}
+
+.conflicts-table thead {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: #252525;
+}
+
+.conflicts-table th {
+  text-align: left;
+  padding: 0.75rem 0.5rem;
+  color: #ffffff;
+  font-weight: 600;
+  border-bottom: 2px solid #333;
+  white-space: nowrap;
+}
+
+.conflicts-table th.numeric {
+  text-align: right;
+}
+
+.conflicts-table td {
+  padding: 0.6rem 0.5rem;
+  color: #cccccc;
+  border-bottom: 1px solid #333;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  max-width: 150px;
+}
+
+.conflicts-table td.numeric {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.conflicts-table tbody tr:hover {
+  background: #252525;
+}
+
+.conflict-row-clickable {
+  cursor: pointer;
+}
+
+.conflict-row-clickable:hover {
+  background: #2a2a2a !important;
+}
+
+.resolved-badge {
+  display: inline-block;
+  padding: 0.25rem 0.5rem;
+  background: #646cff;
+  color: white;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.conflicts-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
