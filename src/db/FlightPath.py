@@ -200,9 +200,6 @@ def simulate_all_flights(filename: str, ping_int: int):
 
 
 if __name__ == "__main__":
-<<<<<<< Updated upstream
-    path = 'simulation_state.json'
-
     import sys
     
     # Check if user wants to skip reset (for iterative resolution)
@@ -223,31 +220,6 @@ if __name__ == "__main__":
     # simulate_all_flights needs flights.json to simulate flight paths
     # It uses simulation_state.json internally for current plane states
     flights_path = 'simulation_state.json'
-
-
-=======
-    import sys
-    
-    # Check if user wants to skip reset (for iterative resolution)
-    # Usage: python FlightPath.py --no-reset
-    skip_reset = '--no-reset' in sys.argv or '--iterative' in sys.argv
-    
-    if not skip_reset:
-        # Generate fresh simulation state from flights.json BEFORE conflict detection
-        # This ensures we're working with consistent initial state
-        print("Resetting simulation state to fresh from flights.json...")
-        generate_simulation_state(
-            planes_file="flights.json",
-            output_file="simulation_state.json"
-        )
-    else:
-        print("Using existing simulation_state.json (iterative mode)...")
-    
-    # simulate_all_flights needs flights.json to simulate flight paths
-    # It uses simulation_state.json internally for current plane states
-    flights_path = 'flights.json'
-
->>>>>>> Stashed changes
     snapshots = simulate_all_flights(flights_path, 1)
 
     conflicts = []

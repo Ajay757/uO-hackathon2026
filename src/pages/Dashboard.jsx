@@ -420,24 +420,8 @@ export default function Dashboard() {
       return;
     }
 
-<<<<<<< Updated upstream
-    // Count only unresolved conflicts
-    const unresolvedCount = analysisResults.conflicts.filter(conflict => {
-      try {
-        const resolutions = JSON.parse(localStorage.getItem("conflict_resolutions") || "{}");
-        const localStorageStatus = conflict.id ? resolutions[conflict.id] : null;
-        return !(conflict.resolved === true || localStorageStatus);
-      } catch {
-        return !conflict.resolved;
-      }
-    }).length;
-
-    setResolving(true);
-    setResolveProgress({ iteration: 0, conflicts: unresolvedCount, status: "Starting..." });
-=======
     setResolving(true);
     setResolveProgress({ iteration: 0, conflicts: analysisResults.conflicts.length, status: "Starting..." });
->>>>>>> Stashed changes
 
     try {
       const response = await fetch("/api/resolve-conflicts", {
