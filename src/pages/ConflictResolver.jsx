@@ -1,5 +1,6 @@
-import { useParams, useNavigate, useLocation } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { useMemo, useState, useEffect } from "react";
+import { analyzeFlights } from "../utils/simpleAnalysis";
 import { useFlightsData } from "../context/FlightsDataContext";
 import ConflictRouteMap from "../components/ConflictRouteMap";
 import "./ConflictResolver.css";
@@ -34,48 +35,58 @@ function clearResolution(conflictId) {
 export default function ConflictResolver() {
   const { conflictId } = useParams();
   const navigate = useNavigate();
-  const location = useLocation();
   const { flights } = useFlightsData();
   const [resolution, setResolution] = useState(null);
 
-  // Get conflict data from router state (passed from ConflictsTable)
-  const conflictFromState = location.state?.conflict;
-  const acidsFromState = location.state?.acids;
-
   // Load conflicts and find the matching one
   const { conflict, flightsInConflict, conflictPoint } = useMemo(() => {
-    // If we have conflict data from router state, use it
-    if (conflictFromState) {
-      const conflict = conflictFromState;
-      const flightIds = acidsFromState || conflict.acids || [];
-      
-      // Create flightsById map for quick lookup
-      const flightsById = new Map();
-      flights.forEach((flight) => {
-        if (flight.ACID) {
-          flightsById.set(flight.ACID, flight);
-        }
-      });
-
-      // Get flight objects
-      const flightsInConflict = flightIds
-        .map((id) => flightsById.get(id))
-        .filter(Boolean);
-
-      // For Python conflicts, we don't have lat/lon, so conflictPoint is null
-      let conflictPoint = null;
-      if (conflict.lat != null && conflict.lon != null) {
-        conflictPoint = [conflict.lat, conflict.lon];
-      } else if (conflict.latitude != null && conflict.longitude != null) {
-        conflictPoint = [conflict.latitude, conflict.longitude];
-      }
-
-      return { conflict, flightsInConflict, conflictPoint };
+    const results = analyzeFlights(flights);
+    const conflict = results.conflicts.find((c) => c.id === conflictId);
+    
+    if (!conflict) {
+      return { conflict: null, flightsInConflict: [], conflictPoint: null };
     }
 
-    // No conflict data from state - return empty
-    return { conflict: null, flightsInConflict: [], conflictPoint: null };
-  }, [conflictId, flights, conflictFromState, acidsFromState]);
+    // Build flights list robustly - support multiple schemas
+    let flightIds = [];
+    if (conflict.flightIds && Array.isArray(conflict.flightIds)) {
+      flightIds = conflict.flightIds;
+    } else if (conflict.flights && Array.isArray(conflict.flights)) {
+      flightIds = conflict.flights.map(f => f.ACID || f.id || f);
+    } else {
+      // Fallback to flightAId/flightBId or flight1/flight2
+      const ids = [
+        conflict.flightAId,
+        conflict.flightBId,
+        conflict.flight1,
+        conflict.flight2,
+      ].filter(Boolean);
+      flightIds = [...new Set(ids)]; // Remove duplicates
+    }
+
+    // Create flightsById map for quick lookup
+          const flightsById = new Map();
+          flights.forEach((flight) => {
+      if (flight.ACID) {
+        flightsById.set(flight.ACID, flight);
+      }
+    });
+
+    // Get flight objects
+    const flightsInConflict = flightIds
+      .map((id) => flightsById.get(id))
+      .filter(Boolean);
+
+    // Compute conflict point
+    let conflictPoint = null;
+    if (conflict.lat != null && conflict.lon != null) {
+      conflictPoint = [conflict.lat, conflict.lon];
+    } else if (conflict.latitude != null && conflict.longitude != null) {
+      conflictPoint = [conflict.latitude, conflict.longitude];
+    }
+
+    return { conflict, flightsInConflict, conflictPoint };
+  }, [conflictId, flights]);
 
   // Load resolution from localStorage
   useEffect(() => {
@@ -115,10 +126,7 @@ export default function ConflictResolver() {
     setResolution(null);
   }
 
-  // Calculate severity if distance data is available, otherwise default to Medium
-  const severity = (conflict.horizontalDistance != null && conflict.verticalDistance != null) 
-    ? (conflict.horizontalDistance < 2 && conflict.verticalDistance < 1000 ? "High" : "Medium")
-    : "Medium";
+  const severity = conflict.horizontalDistance < 2 && conflict.verticalDistance < 1000 ? "High" : "Medium";
 
   const flightA = flightsInConflict[0] || null;
   const flightB = flightsInConflict[1] || null;
@@ -146,53 +154,56 @@ export default function ConflictResolver() {
               <span className={`detail-value severity-${severity.toLowerCase()}`}>{severity}</span>
             </div>
             <div>
-              <span className="detail-label">Time After Departure:</span>
+              <span className="detail-label">Time:</span>
+              <span className="detail-value">{new Date(conflict.time * 1000).toLocaleString()}</span>
+            </div>
+            <div>
+              <span className="detail-label">Horizontal Distance:</span>
+              <span className="detail-value">{conflict.horizontalDistance.toFixed(2)} NM</span>
+            </div>
+            <div>
+              <span className="detail-label">Vertical Distance:</span>
+              <span className="detail-value">{conflict.verticalDistance.toFixed(0)} ft</span>
+            </div>
+            <div>
+              <span className="detail-label">Location:</span>
               <span className="detail-value">
-                {conflict.tAfterDeparture != null 
-                  ? `${conflict.tAfterDeparture} seconds` 
-                  : (conflict.time ? new Date(conflict.time * 1000).toLocaleString() : "N/A")}
+                {conflict.lat.toFixed(4)}, {conflict.lon.toFixed(4)}
               </span>
             </div>
-            {conflict.horizontalDistance != null && (
-              <div>
-                <span className="detail-label">Horizontal Distance:</span>
-                <span className="detail-value">{conflict.horizontalDistance.toFixed(2)} NM</span>
-              </div>
-            )}
-            {conflict.verticalDistance != null && (
-              <div>
-                <span className="detail-label">Vertical Distance:</span>
-                <span className="detail-value">{conflict.verticalDistance.toFixed(0)} ft</span>
-              </div>
-            )}
-            {conflict.lat != null && conflict.lon != null && (
-              <div>
-                <span className="detail-label">Location:</span>
-                <span className="detail-value">
-                  {conflict.lat.toFixed(4)}, {conflict.lon.toFixed(4)}
-                </span>
-              </div>
-            )}
           </div>
         </div>
 
         <div className="flight-cards">
-          {flightsInConflict.map((flight, idx) => (
-            <div key={flight.ACID || idx} className="flight-card">
-              <h3>Flight {idx + 1}: {flight.ACID || `Flight ${idx + 1}`}</h3>
-              {flight ? (
-                <div className="flight-info">
-                  <p><strong>Type:</strong> {flight["Plane type"] || "N/A"}</p>
-                  <p><strong>Route:</strong> {flight.route || "N/A"}</p>
-                  <p><strong>Departure:</strong> {flight["departure airport"] || "N/A"}</p>
-                  <p><strong>Arrival:</strong> {flight["arrival airport"] || "N/A"}</p>
-                  <p><strong>Altitude:</strong> {flight.altitude ? `${flight.altitude.toLocaleString()} ft` : "N/A"}</p>
-                </div>
-              ) : (
-                <p className="flight-not-found">Flight data not found</p>
-              )}
-            </div>
-          ))}
+          <div className="flight-card">
+            <h3>Flight A: {conflict.flightAId || conflict.flight1}</h3>
+            {flightA ? (
+              <div className="flight-info">
+                <p><strong>Type:</strong> {flightA["Plane type"] || "N/A"}</p>
+                <p><strong>Route:</strong> {flightA.route || "N/A"}</p>
+                <p><strong>Departure:</strong> {flightA["departure airport"] || "N/A"}</p>
+                <p><strong>Arrival:</strong> {flightA["arrival airport"] || "N/A"}</p>
+                <p><strong>Altitude:</strong> {flightA.altitude ? `${flightA.altitude.toLocaleString()} ft` : "N/A"}</p>
+              </div>
+            ) : (
+              <p className="flight-not-found">Flight data not found</p>
+            )}
+          </div>
+
+          <div className="flight-card">
+            <h3>Flight B: {conflict.flightBId || conflict.flight2}</h3>
+            {flightB ? (
+              <div className="flight-info">
+                <p><strong>Type:</strong> {flightB["Plane type"] || "N/A"}</p>
+                <p><strong>Route:</strong> {flightB.route || "N/A"}</p>
+                <p><strong>Departure:</strong> {flightB["departure airport"] || "N/A"}</p>
+                <p><strong>Arrival:</strong> {flightB["arrival airport"] || "N/A"}</p>
+                <p><strong>Altitude:</strong> {flightB.altitude ? `${flightB.altitude.toLocaleString()} ft` : "N/A"}</p>
+              </div>
+            ) : (
+              <p className="flight-not-found">Flight data not found</p>
+            )}
+          </div>
         </div>
 
         <div className="resolution-card">
