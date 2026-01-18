@@ -1,8 +1,8 @@
 import { useMemo, useState, useEffect, useRef } from "react";
-import { analyzeFlights } from "../utils/simpleAnalysis";
 import { useFlightsData } from "../context/FlightsDataContext";
 import ConflictsTable from "../components/ConflictsTable";
 import HotspotsList from "../components/HotSpotsList";
+import conflictsData from "../db/conflicts.json";
 import "./Dashboard.css";
 
 const TZ_NAME = "America/Montreal";
@@ -267,8 +267,41 @@ export default function Dashboard() {
     // Run analysis in a timeout to avoid blocking UI
     setTimeout(() => {
       try {
-        const results = analyzeFlights(flights);
-        setAnalysisResults(results);
+        // Load conflicts from conflicts.json (Python-generated)
+        // Format: [["ACA248", "PAL169", 72], ["PAL789", "PAL169", 81], ...]
+        // Last element is time offset in seconds, rest are ACIDs
+        const conflicts = conflictsData.map((conflictArray, idx) => {
+          if (!Array.isArray(conflictArray) || conflictArray.length < 2) {
+            return null;
+          }
+          
+          // Last element is time offset, rest are ACIDs
+          const tAfterDeparture = typeof conflictArray[conflictArray.length - 1] === 'number' 
+            ? conflictArray[conflictArray.length - 1] 
+            : null;
+          const acids = typeof conflictArray[conflictArray.length - 1] === 'number'
+            ? conflictArray.slice(0, -1)
+            : conflictArray;
+          
+          return {
+            id: `conflict-${idx + 1}`,
+            conflictId: idx + 1,
+            flight1: acids[0] || "N/A",
+            flight2: acids[1] || "N/A",
+            flightAId: acids[0],
+            flightBId: acids[1],
+            acids: acids,
+            tAfterDeparture: tAfterDeparture,
+            // Python conflicts don't have distance/location data
+            time: null,
+            horizontalDistance: null,
+            verticalDistance: null,
+            lat: null,
+            lon: null,
+          };
+        }).filter(Boolean);
+        
+        setAnalysisResults({ conflicts, hotspots: [] });
       } catch (error) {
         console.error("Analysis error:", error);
         setAnalysisResults({ conflicts: [], hotspots: [] });

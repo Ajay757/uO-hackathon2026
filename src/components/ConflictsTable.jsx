@@ -30,33 +30,39 @@ export default function ConflictsTable({ conflicts }) {
           <thead>
             <tr>
               <th>Conflict ID</th>
-              <th>Time (UTC)</th>
-              <th>Flight A</th>
-              <th>Flight B</th>
-              <th className="numeric">Horizontal Distance (NM)</th>
-              <th className="numeric">Vertical Distance (ft)</th>
-              <th className="numeric">Latitude</th>
-              <th className="numeric">Longitude</th>
+              <th>Flights in Conflict</th>
+              <th className="numeric">Time since first departure (minutes)</th>
               <th>Status</th>
             </tr>
           </thead>
           <tbody>
             {conflicts.map((conflict, index) => {
+              // Generate a stable ID for routing if not present
+              const conflictId = conflict.id || conflict.conflictId || `conflict-${index + 1}`;
               const status = conflict.id ? getResolutionStatus(conflict.id) : null;
+              
+              // Get all ACIDs involved in the conflict
+              const acids = conflict.acids || 
+                (conflict.flight1 && conflict.flight2 ? [conflict.flight1, conflict.flight2] : 
+                (conflict.flightAId && conflict.flightBId ? [conflict.flightAId, conflict.flightBId] : []));
+              const flightsText = acids.length > 0 ? acids.join(", ") : "N/A";
+              
+              // Convert time from seconds to minutes
+              const timeMinutes = conflict.tAfterDeparture != null 
+                ? (conflict.tAfterDeparture) 
+                : (conflict.time ? "N/A" : "N/A");
+              
               return (
                 <tr
-                  key={conflict.id || `${conflict.flight1}-${conflict.flight2}-${conflict.time}-${index}`}
-                  onClick={() => conflict.id && navigate(`/conflicts/${encodeURIComponent(conflict.id)}`)}
-                  className={conflict.id ? "conflict-row-clickable" : ""}
+                  key={conflictId}
+                  onClick={() => navigate(`/conflicts/${encodeURIComponent(conflictId)}`, {
+                    state: { conflict, acids }
+                  })}
+                  className="conflict-row-clickable"
                 >
-                  <td>{index + 1}</td>
-                  <td>{new Date(conflict.time * 1000).toLocaleTimeString()}</td>
-                  <td>{conflict.flight1}</td>
-                  <td>{conflict.flight2}</td>
-                  <td className="numeric">{conflict.horizontalDistance.toFixed(2)}</td>
-                  <td className="numeric">{conflict.verticalDistance.toFixed(0)}</td>
-                  <td className="numeric">{conflict.lat.toFixed(4)}</td>
-                  <td className="numeric">{conflict.lon.toFixed(4)}</td>
+                  <td>{conflict.conflictId || conflict.id || index + 1}</td>
+                  <td>{flightsText}</td>
+                  <td className="numeric">{timeMinutes}</td>
                   <td>{status && <span className="resolved-badge">{status}</span>}</td>
                 </tr>
               );
