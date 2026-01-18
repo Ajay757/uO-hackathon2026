@@ -10,6 +10,7 @@ import os
 HERE = os.path.dirname(os.path.abspath(__file__))  # src/db
 FLIGHTS_PATH = os.path.join(HERE, "flights.json")
 CONFLICTS_PATH = os.path.join(HERE, "conflicts.json")
+SIMULATION_STATE_PATH = os.path.join(HERE, "simulation_state.json")
 
 # Airport coordinates (deg)
 airports = {
@@ -237,11 +238,13 @@ if __name__ == "__main__":
         json.dump(conflicts, f, indent=2)
 
     generate_simulation_state(
-        planes_file="flights.json",
-        output_file="simulation_state.json"
+        planes_file=FLIGHTS_PATH,
+        output_file=SIMULATION_STATE_PATH
     )
 
-    conflict_resolver(conflicts)
+    # Extract just ACIDs (without timestamps) for conflict_resolver
+    conflicts_for_resolver = [conflict[:-1] for conflict in conflicts if len(conflict) > 1]
+    conflict_resolver(conflicts_for_resolver)
 
     print(conflicts)
     print(f"Conflicts found: {len(conflicts)}")

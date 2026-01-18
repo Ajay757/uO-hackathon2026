@@ -1,8 +1,11 @@
 import json
+import os
 
-STATE_FILE = "simulation_state.json"
-PLANES_FILE = "flights.json"
-AIRCRAFT_TYPES_FILE = "plane_info.json"
+# Resolve paths relative to this script's directory
+HERE = os.path.dirname(os.path.abspath(__file__))  # src/db
+STATE_FILE = os.path.join(HERE, "simulation_state.json")
+PLANES_FILE = os.path.join(HERE, "flights.json")
+AIRCRAFT_TYPES_FILE = os.path.join(HERE, "plane_info.json")
 
 # -----------------------------
 # JSON LOAD / SAVE HELPERS

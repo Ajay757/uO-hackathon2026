@@ -286,6 +286,8 @@ export default function Dashboard() {
       const resp = await fetch("/api/run-conflict-analysis", { method: "POST" });
       const data = await resp.json();
 
+      console.log("[Dashboard] API response:", { ok: data.ok, conflictsCount: data.conflicts?.length });
+
       if (!data.ok) {
         console.error("Conflict analysis error:", data);
         setAnalysisResults({ conflicts: [], hotspots: [] });
@@ -293,6 +295,7 @@ export default function Dashboard() {
       }
 
       const conflicts = normalizePythonConflicts(data.conflicts);
+      console.log("[Dashboard] Normalized conflicts:", conflicts.length);
       // IMPORTANT: conflicts table must use ONLY these conflicts
       setAnalysisResults({ conflicts, hotspots: [] });
     } catch (e) {
