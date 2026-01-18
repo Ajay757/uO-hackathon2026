@@ -233,8 +233,9 @@ if __name__ == "__main__":
         output_file="simulation_state.json"
     )
 
-    conflict_resolver(conflicts)
+    # conflict_resolver(conflicts)
 
     print(conflicts)
+    print(len(conflicts))
 
 

@@ -102,6 +102,7 @@ def detect_conflicts_by_waypoints(planes_list, timestamp):
     conflicts_output = []
     for cluster in clusters:
         conflict_ids = [plane['ACID'] for plane in cluster]
+        conflict_ids.append(timestamp)
         conflicts_output.append(conflict_ids)
 
     return conflicts_output
