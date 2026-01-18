@@ -1,4 +1,5 @@
 from datetime import datetime, timedelta, timezone
+import json
 import math
 
 flight = {
@@ -32,32 +33,19 @@ airports = {
 
 def unix_to_est_24h(ts: int) -> datetime:
     utc_dt = datetime.fromtimestamp(ts, tz=timezone.utc)
-    est = timezone(timedelta(hours=-5))  # fixed EST (no DST)
+    est = timezone(timedelta(hours=-5))
     return utc_dt.astimezone(est)
-
 
 def parse_point(point_str: str):
     lat_str, lon_str = point_str.split('/')
-
-    if lat_str[-1].isalpha():
-        lat_str = lat_str[:-1]
-    if lon_str[-1].isalpha():
-        lon_str = lon_str[:-1]
-
-    lat_val = float(lat_str)   # North
-    lon_val = float(lon_str)   # West
-
-    lat = lat_val
-    lon = -abs(lon_val)
+    if lat_str[-1].isalpha(): lat_str = lat_str[:-1]
+    if lon_str[-1].isalpha(): lon_str = lon_str[:-1]
+    lat = float(lat_str)
+    lon = -abs(float(lon_str))
     return lat, lon
 
-# def parse_route(route_str: str):
-#     parts = route_str.split()          # split on spaces
-#     return [parse_point(p) for p in parts]
-
-# Shortest path over the earths surface, between 2 points
 def haversine_nm(lat1, lon1, lat2, lon2):
-    R_nm = 3440.065  # Earth radius in nautical miles
+    R_nm = 3440.065
     phi1, phi2 = math.radians(lat1), math.radians(lat2)
     dphi = math.radians(lat2 - lat1)
     dlambda = math.radians(lon2 - lon1)
@@ -65,56 +53,121 @@ def haversine_nm(lat1, lon1, lat2, lon2):
     c = 2 * math.atan2(math.sqrt(a), math.sqrt(1 - a))
     return R_nm * c
 
+def great_circle_interpolate(lat1, lon1, lat2, lon2, fraction):
+    """Precise great-circle interpolation between two points."""
+    lat1, lon1, lat2, lon2 = map(math.radians, [lat1, lon1, lat2, lon2])
+    d = 2 * math.asin(math.sqrt(math.sin((lat2 - lat1)/2)**2 + 
+                                math.cos(lat1) * math.cos(lat2) * math.sin((lon2 - lon1)/2)**2))
+    a = math.sin((1 - fraction) * d) / math.sin(d)
+    b = math.sin(fraction * d) / math.sin(d)
+    x = a * math.cos(lat1) * math.cos(lon1) + b * math.cos(lat2) * math.cos(lon2)
+    y = a * math.cos(lat1) * math.sin(lon1) + b * math.cos(lat2) * math.sin(lon2)
+    z = a * math.sin(lat1) + b * math.sin(lat2)
+    lat = math.atan2(z, math.sqrt(x*x + y*y))
+    lon = math.atan2(y, x)
+    return math.degrees(lat), math.degrees(lon)
 
-
-
-
-def estimate_arrival(flight: dict):
-    dep_est = unix_to_est_24h(flight["departure time"])
-
-    # Parse all waypoints
+def get_flight_path(flight: dict):
+    """SHARED: Returns path points + leg distances for any flight."""
     route_points = [parse_point(p) for p in flight["route"].split()]
-
-    # Full path: dep_airport → wp1 → wp2 → ... → wpN → arr_airport
     path = [airports[flight["departure airport"]]] + route_points + [airports[flight["arrival airport"]]]
-
-    # Sum distances for each consecutive leg
+    
+    leg_distances = []
     total_distance_nm = 0.0
-    legs = []
-
     for i in range(len(path) - 1):
         leg_dist = haversine_nm(*path[i], *path[i+1])
+        leg_distances.append(leg_dist)
         total_distance_nm += leg_dist
-        legs.append(leg_dist)
-
-    # Constant speed from takeoff to landing
-    speed = flight["aircraft speed"]  # knots
-    total_hours = total_distance_nm / speed
     
-    # Convert decimal hours → hours + minutes
+    return path, leg_distances, total_distance_nm
+
+# NOW simplified - use shared path computation:
+def estimate_arrival(flight: dict):
+    dep_est = unix_to_est_24h(flight["departure time"])
+    path, leg_distances, total_distance_nm = get_flight_path(flight)
+    
+    speed = flight["aircraft speed"]
+    total_hours = total_distance_nm / speed
     hours_enroute = int(total_hours)
     minutes_enroute = int((total_hours - hours_enroute) * 60)
     
-    # Add enroute time to departure (stays in EST)
     arr_est = dep_est + timedelta(hours=hours_enroute, minutes=minutes_enroute)
-
-    # Add enroute time to departure (stays in EST)
-    arr_est = dep_est + timedelta(hours=hours_enroute)
-
+    
     return {
         "departure_est": dep_est,
-        "legs_nm": legs,
+        "legs_nm": leg_distances,
         "total_distance_nm": total_distance_nm,
-        "enroute_hm": (hours_enroute, minutes_enroute),  # tuple: (hours, minutes)
+        "enroute_hm": (hours_enroute, minutes_enroute),
         "arrival_est": arr_est
     }
 
-result = estimate_arrival(flight)
+def get_position_at_time(flight: dict, target_minutes: float):
+    path, leg_distances, total_distance_nm = get_flight_path(flight)
+    
+    speed = flight["aircraft speed"]
+    total_minutes = (total_distance_nm / speed) * 60
+    
+    if target_minutes > total_minutes:
+        return airports[flight["arrival airport"]]
+    
+    distance_traveled_nm = (target_minutes / 60) * speed
+    
+    cum_dist = 0.0
+    for leg_idx, leg_dist in enumerate(leg_distances):
+        if distance_traveled_nm <= (cum_dist + leg_dist):
+            fraction = (distance_traveled_nm - cum_dist) / leg_dist
+            start_pt = path[leg_idx]
+            end_pt = path[leg_idx + 1]
+            return great_circle_interpolate(*start_pt, *end_pt, fraction)
+        cum_dist += leg_dist
+    
+    return airports[flight["arrival airport"]]
 
-result = estimate_arrival(flight)
-print("Departure (EST):", result["departure_est"].strftime("%Y-%m-%d %H:%M:%S"))
-print("Legs (nm):", [round(x, 1) for x in result["legs_nm"]])
-print("Total distance (nm):", round(result["total_distance_nm"], 1))
-hours, minutes = result["enroute_hm"]
-print(f"Time enroute: {hours}h {minutes}m")
-print("Arrival (EST):", result["arrival_est"].strftime("%Y-%m-%d %H:%M:%S"))
+
+
+# def simulate_flight(flight: dict, ping_int=60):
+#     path, leg_distances, total_distance_nm = get_flight_path(flight)
+#     speed = flight["aircraft speed"]
+#     total_minutes = (total_distance_nm / speed) * 60
+#     print(f"\n=== {flight['ACID']} Flight Simulation ===")
+#     print(f"Route: {flight['departure airport']} → {flight['arrival airport']}")
+#     print(f"Total distance: {total_distance_nm:.0f} NM, time: {int(total_minutes//60)}h {int(total_minutes%60)}m")
+#     print("-" * 50)
+#     dep_est = unix_to_est_24h(flight["departure time"])
+#     total_int = int(total_minutes)
+#     for minutes_elapsed in range(0, total_int + 1, ping_int):
+#         if minutes_elapsed > total_int:
+#             arr_est = dep_est + timedelta(minutes=total_int)
+#             arr_pos = airports[flight['arrival airport']]
+#             print(f"Arrival at {arr_est.strftime('%H:%M')} ({total_int}m): "
+#                   f"{arr_pos[0]:.2f}N/{abs(arr_pos[1]):.3f}W")
+#             break
+#         pos = get_position_at_time(flight, minutes_elapsed)
+#         est_time = dep_est + timedelta(minutes=minutes_elapsed)
+#         print(f"{est_time.strftime('%H:%M')} ({minutes_elapsed}m): "
+#               f"{pos[0]:.2f}N/{abs(pos[1]):.3f}W")
+
+def simulate_flight(flight: dict, ping_int: int):
+    path, leg_distances, total_distance_nm = get_flight_path(flight)
+    speed = flight["aircraft speed"]
+    total_minutes = (total_distance_nm / speed) * 60
+    print(f"\n=== {flight['ACID']} Flight Simulation ===")
+    print(f"Route: {flight['departure airport']} → {flight['arrival airport']}")
+    print(f"Total distance: {total_distance_nm:.0f} NM, time: {int(total_minutes//60)}h {int(total_minutes%60)}m")
+    print("-" * 50)
+    dep_est = unix_to_est_24h(flight["departure time"])
+    total_int = int(total_minutes)
+    for minutes_elapsed in range(0, total_int + 1, ping_int):
+        if minutes_elapsed > total_int:
+            arr_est = dep_est + timedelta(minutes=total_int)
+            arr_pos = airports[flight['arrival airport']]
+            print(f"Arrival at {arr_est.strftime('%H:%M')} ({total_int}m): "
+                  f"{arr_pos[0]:.2f}N/{abs(arr_pos[1]):.3f}W")
+            break
+        pos = get_position_at_time(flight, minutes_elapsed)
+        est_time = dep_est + timedelta(minutes=minutes_elapsed)
+        print(f"{est_time.strftime('%H:%M')} ({minutes_elapsed}m): "
+              f"{pos[0]:.2f}N/{abs(pos[1]):.3f}W")
+
+# Run for uOttawa Hack 2026 NAV Canada challenge
+simulate_flight(flight, 60)
