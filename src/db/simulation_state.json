@@ -1,0 +1,1252 @@
+{
+  "FDX227": {
+    "changes": 0,
+    "altitude": 37000,
+    "speed": 472.0
+  },
+  "FLE474": {
+    "changes": 0,
+    "altitude": 28000,
+    "speed": 479.0
+  },
+  "PAL779": {
+    "changes": 0,
+    "altitude": 22000,
+    "speed": 440.0
+  },
+  "PAL422": {
+    "changes": 0,
+    "altitude": 28000,
+    "speed": 360.0
+  },
+  "ACA660": {
+    "changes": 0,
+    "altitude": 33000,
+    "speed": 485.0
+  },
+  "PAL683": {
+    "changes": 0,
+    "altitude": 22000,
+    "speed": 440.0
+  },
+  "ACA496": {
+    "changes": 0,
+    "altitude": 36000,
+    "speed": 471.0
+  },
+  "PAL562": {
+    "changes": 0,
+    "altitude": 22000,
+    "speed": 360.0
+  },
+  "ACA876": {
+    "changes": 0,
+    "altitude": 31000,
+    "speed": 467.0
+  },
+  "ACA738": {
+    "changes": 0,
+    "altitude": 38000,
+    "speed": 490.0
+  },
+  "ACA831": {
+    "changes": 0,
+    "altitude": 28000,
+    "speed": 500.0
+  },
+  "PAL766": {
+    "changes": 0,
+    "altitude": 28000,
+    "speed": 440.0
+  },
+  "CCA107": {
+    "changes": 0,
+    "altitude": 31000,
+    "speed": 465.0
+  },
+  "WJA695": {
+    "changes": 0,
+    "altitude": 40000,
+    "speed": 494.0
+  },
+  "PAL629": {
+    "changes": 0,
+    "altitude": 25000,
+    "speed": 440.0
+  },
+  "WJA958": {
+    "changes": 0,
+    "altitude": 33000,
+    "speed": 497.0
+  },
+  "PAL120": {
+    "changes": 0,
+    "altitude": 22000,
+    "speed": 440.0
+  },
+  "CCA567": {
+    "changes": 0,
+    "altitude": 31000,
+    "speed": 477.0
+  },
+  "FLE162": {
+    "changes": 0,
+    "altitude": 37000,
+    "speed": 478.0
+  },
+  "ACA853": {
+    "changes": 0,
+    "altitude": 36000,
+    "speed": 461.0
+  },
+  "FLE564": {
+    "changes": 0,
+    "altitude": 33000,
+    "speed": 472.0
+  },
+  "ACA909": {
+    "changes": 0,
+    "altitude": 33000,
+    "speed": 472.0
+  },
+  "WJA143": {
+    "changes": 0,
+    "altitude": 35000,
+    "speed": 479.0
+  },
+  "PAL670": {
+    "changes": 0,
+    "altitude": 22000,
+    "speed": 360.0
+  },
+  "WJA702": {
+    "changes": 0,
+    "altitude": 31000,
+    "speed": 484.0
+  },
+  "ACA158": {
+    "changes": 0,
+    "altitude": 36000,
+    "speed": 493.0
+  },
+  "FLE127": {
+    "changes": 0,
+    "altitude": 28000,
+    "speed": 465.0
+  },
+  "ACA138": {
+    "changes": 0,
+    "altitude": 31000,
+    "speed": 474.0
+  },
+  "ACA287": {
+    "changes": 0,
+    "altitude": 28000,
+    "speed": 451.0
+  },
+  "FLE594": {
+    "changes": 0,
+    "altitude": 35000,
+    "speed": 478.0
+  },
+  "UPS154": {
+    "changes": 0,
+    "altitude": 36000,
+    "speed": 464.0
+  },
+  "WJA308": {
+    "changes": 0,
+    "altitude": 37000,
+    "speed": 466.0
+  },
+  "WJA408": {
+    "changes": 0,
+    "altitude": 40000,
+    "speed": 494.0
+  },
+  "FLE190": {
+    "changes": 0,
+    "altitude": 33000,
+    "speed": 468.0
+  },
+  "WJA396": {
+    "changes": 0,
+    "altitude": 28000,
+    "speed": 467.0
+  },
+  "ACA140": {
+    "changes": 0,
+    "altitude": 31000,
+    "speed": 477.0
+  },
+  "FDX862": {
+    "changes": 0,
+    "altitude": 41000,
+    "speed": 469.0
+  },
+  "PAL937": {
+    "changes": 0,
+    "altitude": 22000,
+    "speed": 440.0
+  },
+  "WJA327": {
+    "changes": 0,
+    "altitude": 37000,
+    "speed": 503.0
+  },
+  "WJA389": {
+    "changes": 0,
+    "altitude": 35000,
+    "speed": 482.0
+  },
+  "PAL653": {
+    "changes": 0,
+    "altitude": 25000,
+    "speed": 440.0
+  },
+  "ACA350": {
+    "changes": 0,
+    "altitude": 36000,
+    "speed": 429.0
+  },
+  "FLE146": {
+    "changes": 0,
+    "altitude": 38000,
+    "speed": 469.0
+  },
+  "ACA606": {
+    "changes": 0,
+    "altitude": 41000,
+    "speed": 435.0
+  },
+  "FLE556": {
+    "changes": 0,
+    "altitude": 28000,
+    "speed": 472.0
+  },
+  "PAL462": {
+    "changes": 0,
+    "altitude": 28000,
+    "speed": 440.0
+  },
+  "ACA145": {
+    "changes": 0,
+    "altitude": 31000,
+    "speed": 426.0
+  },
+  "PAL255": {
+    "changes": 0,
+    "altitude": 22000,
+    "speed": 360.0
+  },
+  "ACA248": {
+    "changes": 0,
+    "altitude": 28000,
+    "speed": 475.0
+  },
+  "FLE483": {
+    "changes": 0,
+    "altitude": 28000,
+    "speed": 471.0
+  },
+  "WJA608": {
+    "changes": 0,
+    "altitude": 31000,
+    "speed": 479.0
+  },
+  "PAL659": {
+    "changes": 0,
+    "altitude": 28000,
+    "speed": 360.0
+  },
+  "FDX104": {
+    "changes": 0,
+    "altitude": 38000,
+    "speed": 478.0
+  },
+  "UPS263": {
+    "changes": 0,
+    "altitude": 33000,
+    "speed": 472.0
+  },
+  "ACA893": {
+    "changes": 0,
+    "altitude": 31000,
+    "speed": 465.0
+  },
+  "ACA219": {
+    "changes": 0,
+    "altitude": 41000,
+    "speed": 465.0
+  },
+  "CCA665": {
+    "changes": 0,
+    "altitude": 33000,
+    "speed": 472.0
+  },
+  "FLE739": {
+    "changes": 0,
+    "altitude": 33000,
+    "speed": 465.0
+  },
+  "WJA522": {
+    "changes": 0,
+    "altitude": 33000,
+    "speed": 470.0
+  },
+  "PAL789": {
+    "changes": 0,
+    "altitude": 28000,
+    "speed": 360.0
+  },
+  "PAL169": {
+    "changes": 0,
+    "altitude": 28000,
+    "speed": 360.0
+  },
+  "WJA130": {
+    "changes": 0,
+    "altitude": 39000,
+    "speed": 477.0
+  },
+  "ACA102": {
+    "changes": 0,
+    "altitude": 36000,
+    "speed": 462.0
+  },
+  "ACA356": {
+    "changes": 0,
+    "altitude": 33000,
+    "speed": 494.0
+  },
+  "ACA574": {
+    "changes": 0,
+    "altitude": 31000,
+    "speed": 451.0
+  },
+  "PAL532": {
+    "changes": 0,
+    "altitude": 25000,
+    "speed": 440.0
+  },
+  "WJA920": {
+    "changes": 0,
+    "altitude": 37000,
+    "speed": 478.0
+  },
+  "PAL449": {
+    "changes": 0,
+    "altitude": 22000,
+    "speed": 440.0
+  },
+  "PAL950": {
+    "changes": 0,
+    "altitude": 22000,
+    "speed": 440.0
+  },
+  "ACA625": {
+    "changes": 0,
+    "altitude": 28000,
+    "speed": 460.0
+  },
+  "WJA163": {
+    "changes": 0,
+    "altitude": 31000,
+    "speed": 484.0
+  },
+  "ACA105": {
+    "changes": 0,
+    "altitude": 33000,
+    "speed": 473.0
+  },
+  "ACA693": {
+    "changes": 0,
+    "altitude": 33000,
+    "speed": 499.0
+  },
+  "ACA348": {
+    "changes": 0,
+    "altitude": 31000,
+    "speed": 451.0
+  },
+  "ACA269": {
+    "changes": 0,
+    "altitude": 33000,
+    "speed": 463.0
+  },
+  "PAL363": {
+    "changes": 0,
+    "altitude": 25000,
+    "speed": 360.0
+  },
+  "CCA736": {
+    "changes": 0,
+    "altitude": 41000,
+    "speed": 477.0
+  },
+  "PAL544": {
+    "changes": 0,
+    "altitude": 28000,
+    "speed": 360.0
+  },
+  "WJA611": {
+    "changes": 0,
+    "altitude": 33000,
+    "speed": 478.0
+  },
+  "ACA774": {
+    "changes": 0,
+    "altitude": 36000,
+    "speed": 499.0
+  },
+  "PAL311": {
+    "changes": 0,
+    "altitude": 28000,
+    "speed": 440.0
+  },
+  "ACA457": {
+    "changes": 0,
+    "altitude": 37000,
+    "speed": 470.0
+  },
+  "WJA602": {
+    "changes": 0,
+    "altitude": 28000,
+    "speed": 482.0
+  },
+  "WJA239": {
+    "changes": 0,
+    "altitude": 36000,
+    "speed": 486.0
+  },
+  "ACA300": {
+    "changes": 0,
+    "altitude": 41000,
+    "speed": 480.0
+  },
+  "WJA388": {
+    "changes": 0,
+    "altitude": 41000,
+    "speed": 491.0
+  },
+  "ACA420": {
+    "changes": 0,
+    "altitude": 28000,
+    "speed": 466.0
+  },
+  "CCA338": {
+    "changes": 0,
+    "altitude": 35000,
+    "speed": 477.0
+  },
+  "FLE467": {
+    "changes": 0,
+    "altitude": 31000,
+    "speed": 465.0
+  },
+  "FLE358": {
+    "changes": 0,
+    "altitude": 28000,
+    "speed": 472.0
+  },
+  "PAL880": {
+    "changes": 0,
+    "altitude": 22000,
+    "speed": 440.0
+  },
+  "WJA730": {
+    "changes": 0,
+    "altitude": 38000,
+    "speed": 484.0
+  },
+  "ACA526": {
+    "changes": 0,
+    "altitude": 28000,
+    "speed": 469.0
+  },
+  "WJA153": {
+    "changes": 0,
+    "altitude": 33000,
+    "speed": 493.0
+  },
+  "FLE369": {
+    "changes": 0,
+    "altitude": 37000,
+    "speed": 470.0
+  },
+  "PAL800": {
+    "changes": 0,
+    "altitude": 25000,
+    "speed": 440.0
+  },
+  "ACA198": {
+    "changes": 0,
+    "altitude": 31000,
+    "speed": 485.0
+  },
+  "PAL911": {
+    "changes": 0,
+    "altitude": 22000,
+    "speed": 440.0
+  },
+  "FLE386": {
+    "changes": 0,
+    "altitude": 33000,
+    "speed": 480.0
+  },
+  "PAL715": {
+    "changes": 0,
+    "altitude": 25000,
+    "speed": 360.0
+  },
+  "WJA416": {
+    "changes": 0,
+    "altitude": 31000,
+    "speed": 485.0
+  },
+  "WJA661": {
+    "changes": 0,
+    "altitude": 39000,
+    "speed": 485.0
+  },
+  "FLE170": {
+    "changes": 0,
+    "altitude": 28000,
+    "speed": 479.0
+  },
+  "ACA212": {
+    "changes": 0,
+    "altitude": 33000,
+    "speed": 423.0
+  },
+  "PAL130": {
+    "changes": 0,
+    "altitude": 25000,
+    "speed": 440.0
+  },
+  "FLE158": {
+    "changes": 0,
+    "altitude": 39000,
+    "speed": 475.0
+  },
+  "WJA456": {
+    "changes": 0,
+    "altitude": 39000,
+    "speed": 473.0
+  },
+  "WJA111": {
+    "changes": 0,
+    "altitude": 28000,
+    "speed": 478.0
+  },
+  "PAL898": {
+    "changes": 0,
+    "altitude": 28000,
+    "speed": 360.0
+  },
+  "PAL209": {
+    "changes": 0,
+    "altitude": 28000,
+    "speed": 440.0
+  },
+  "WJA214": {
+    "changes": 0,
+    "altitude": 28000,
+    "speed": 483.0
+  },
+  "ACA601": {
+    "changes": 0,
+    "altitude": 35000,
+    "speed": 460.0
+  },
+  "ACA706": {
+    "changes": 0,
+    "altitude": 40000,
+    "speed": 475.0
+  },
+  "WJA347": {
+    "changes": 0,
+    "altitude": 31000,
+    "speed": 476.0
+  },
+  "FLE214": {
+    "changes": 0,
+    "altitude": 33000,
+    "speed": 484.0
+  },
+  "ACA260": {
+    "changes": 0,
+    "altitude": 28000,
+    "speed": 504.0
+  },
+  "PAL298": {
+    "changes": 0,
+    "altitude": 25000,
+    "speed": 440.0
+  },
+  "FLE884": {
+    "changes": 0,
+    "altitude": 28000,
+    "speed": 469.0
+  },
+  "FLE637": {
+    "changes": 0,
+    "altitude": 40000,
+    "speed": 471.0
+  },
+  "WJA417": {
+    "changes": 0,
+    "altitude": 35000,
+    "speed": 474.0
+  },
+  "WJA359": {
+    "changes": 0,
+    "altitude": 28000,
+    "speed": 465.0
+  },
+  "ACA229": {
+    "changes": 0,
+    "altitude": 37000,
+    "speed": 499.0
+  },
+  "WJA192": {
+    "changes": 0,
+    "altitude": 37000,
+    "speed": 477.0
+  },
+  "UPS881": {
+    "changes": 0,
+    "altitude": 37000,
+    "speed": 458.0
+  },
+  "WJA792": {
+    "changes": 0,
+    "altitude": 40000,
+    "speed": 493.0
+  },
+  "CCA993": {
+    "changes": 0,
+    "altitude": 39000,
+    "speed": 464.0
+  },
+  "PAL519": {
+    "changes": 0,
+    "altitude": 25000,
+    "speed": 360.0
+  },
+  "FLE781": {
+    "changes": 0,
+    "altitude": 36000,
+    "speed": 473.0
+  },
+  "ACA368": {
+    "changes": 0,
+    "altitude": 37000,
+    "speed": 480.0
+  },
+  "FLE213": {
+    "changes": 0,
+    "altitude": 28000,
+    "speed": 479.0
+  },
+  "FLE178": {
+    "changes": 0,
+    "altitude": 28000,
+    "speed": 476.0
+  },
+  "ACA805": {
+    "changes": 0,
+    "altitude": 35000,
+    "speed": 498.0
+  },
+  "PAL964": {
+    "changes": 0,
+    "altitude": 28000,
+    "speed": 360.0
+  },
+  "ACA545": {
+    "changes": 0,
+    "altitude": 31000,
+    "speed": 470.0
+  },
+  "ACA771": {
+    "changes": 0,
+    "altitude": 37000,
+    "speed": 425.0
+  },
+  "WJA270": {
+    "changes": 0,
+    "altitude": 35000,
+    "speed": 478.0
+  },
+  "ACA965": {
+    "changes": 0,
+    "altitude": 35000,
+    "speed": 455.0
+  },
+  "FLE803": {
+    "changes": 0,
+    "altitude": 38000,
+    "speed": 477.0
+  },
+  "FDX500": {
+    "changes": 0,
+    "altitude": 33000,
+    "speed": 469.0
+  },
+  "PAL744": {
+    "changes": 0,
+    "altitude": 25000,
+    "speed": 440.0
+  },
+  "WJA177": {
+    "changes": 0,
+    "altitude": 33000,
+    "speed": 471.0
+  },
+  "FLE674": {
+    "changes": 0,
+    "altitude": 35000,
+    "speed": 478.0
+  },
+  "ACA202": {
+    "changes": 0,
+    "altitude": 28000,
+    "speed": 460.0
+  },
+  "FLE323": {
+    "changes": 0,
+    "altitude": 28000,
+    "speed": 472.0
+  },
+  "WJA762": {
+    "changes": 0,
+    "altitude": 39000,
+    "speed": 476.0
+  },
+  "FLE839": {
+    "changes": 0,
+    "altitude": 33000,
+    "speed": 467.0
+  },
+  "WJA852": {
+    "changes": 0,
+    "altitude": 40000,
+    "speed": 493.0
+  },
+  "FDX910": {
+    "changes": 0,
+    "altitude": 38000,
+    "speed": 463.0
+  },
+  "ACA479": {
+    "changes": 0,
+    "altitude": 36000,
+    "speed": 479.0
+  },
+  "PAL337": {
+    "changes": 0,
+    "altitude": 25000,
+    "speed": 440.0
+  },
+  "PAL174": {
+    "changes": 0,
+    "altitude": 25000,
+    "speed": 360.0
+  },
+  "WJA826": {
+    "changes": 0,
+    "altitude": 28000,
+    "speed": 481.0
+  },
+  "ACA235": {
+    "changes": 0,
+    "altitude": 28000,
+    "speed": 480.0
+  },
+  "PAL772": {
+    "changes": 0,
+    "altitude": 28000,
+    "speed": 440.0
+  },
+  "FDX998": {
+    "changes": 0,
+    "altitude": 37000,
+    "speed": 466.0
+  },
+  "WJA295": {
+    "changes": 0,
+    "altitude": 33000,
+    "speed": 481.0
+  },
+  "FLE810": {
+    "changes": 0,
+    "altitude": 31000,
+    "speed": 481.0
+  },
+  "ACA703": {
+    "changes": 0,
+    "altitude": 28000,
+    "speed": 491.0
+  },
+  "FLE764": {
+    "changes": 0,
+    "altitude": 28000,
+    "speed": 481.0
+  },
+  "FLE903": {
+    "changes": 0,
+    "altitude": 33000,
+    "speed": 477.0
+  },
+  "FLE106": {
+    "changes": 0,
+    "altitude": 33000,
+    "speed": 473.0
+  },
+  "PAL196": {
+    "changes": 0,
+    "altitude": 22000,
+    "speed": 440.0
+  },
+  "WJA634": {
+    "changes": 0,
+    "altitude": 28000,
+    "speed": 470.0
+  },
+  "FLE680": {
+    "changes": 0,
+    "altitude": 33000,
+    "speed": 477.0
+  },
+  "ACA947": {
+    "changes": 0,
+    "altitude": 28000,
+    "speed": 460.0
+  },
+  "FDX986": {
+    "changes": 0,
+    "altitude": 41000,
+    "speed": 477.0
+  },
+  "FLE686": {
+    "changes": 0,
+    "altitude": 37000,
+    "speed": 478.0
+  },
+  "PAL210": {
+    "changes": 0,
+    "altitude": 28000,
+    "speed": 440.0
+  },
+  "WJA955": {
+    "changes": 0,
+    "altitude": 36000,
+    "speed": 479.0
+  },
+  "PAL897": {
+    "changes": 0,
+    "altitude": 22000,
+    "speed": 440.0
+  },
+  "FLE725": {
+    "changes": 0,
+    "altitude": 33000,
+    "speed": 483.0
+  },
+  "WJA551": {
+    "changes": 0,
+    "altitude": 40000,
+    "speed": 487.0
+  },
+  "CCA592": {
+    "changes": 0,
+    "altitude": 38000,
+    "speed": 467.0
+  },
+  "FLE225": {
+    "changes": 0,
+    "altitude": 33000,
+    "speed": 481.0
+  },
+  "WJA615": {
+    "changes": 0,
+    "altitude": 40000,
+    "speed": 504.0
+  },
+  "FLE172": {
+    "changes": 0,
+    "altitude": 41000,
+    "speed": 466.0
+  },
+  "WJA266": {
+    "changes": 0,
+    "altitude": 31000,
+    "speed": 483.0
+  },
+  "PAL194": {
+    "changes": 0,
+    "altitude": 28000,
+    "speed": 360.0
+  },
+  "FLE164": {
+    "changes": 0,
+    "altitude": 33000,
+    "speed": 471.0
+  },
+  "WJA848": {
+    "changes": 0,
+    "altitude": 31000,
+    "speed": 467.0
+  },
+  "FDX430": {
+    "changes": 0,
+    "altitude": 40000,
+    "speed": 474.0
+  },
+  "FLE157": {
+    "changes": 0,
+    "altitude": 41000,
+    "speed": 484.0
+  },
+  "FLE879": {
+    "changes": 0,
+    "altitude": 28000,
+    "speed": 471.0
+  },
+  "PAL149": {
+    "changes": 0,
+    "altitude": 25000,
+    "speed": 360.0
+  },
+  "ACA742": {
+    "changes": 0,
+    "altitude": 37000,
+    "speed": 469.0
+  },
+  "ACA936": {
+    "changes": 0,
+    "altitude": 39000,
+    "speed": 469.0
+  },
+  "ACA971": {
+    "changes": 0,
+    "altitude": 28000,
+    "speed": 499.0
+  },
+  "CCA990": {
+    "changes": 0,
+    "altitude": 37000,
+    "speed": 478.0
+  },
+  "PAL902": {
+    "changes": 0,
+    "altitude": 25000,
+    "speed": 440.0
+  },
+  "CCA137": {
+    "changes": 0,
+    "altitude": 35000,
+    "speed": 480.0
+  },
+  "FLE485": {
+    "changes": 0,
+    "altitude": 37000,
+    "speed": 480.0
+  },
+  "ACA169": {
+    "changes": 0,
+    "altitude": 40000,
+    "speed": 431.0
+  },
+  "ACA949": {
+    "changes": 0,
+    "altitude": 37000,
+    "speed": 486.0
+  },
+  "ACA565": {
+    "changes": 0,
+    "altitude": 28000,
+    "speed": 478.0
+  },
+  "ACA429": {
+    "changes": 0,
+    "altitude": 37000,
+    "speed": 481.0
+  },
+  "FLE262": {
+    "changes": 0,
+    "altitude": 33000,
+    "speed": 470.0
+  },
+  "ACA999": {
+    "changes": 0,
+    "altitude": 33000,
+    "speed": 475.0
+  },
+  "PAL514": {
+    "changes": 0,
+    "altitude": 28000,
+    "speed": 440.0
+  },
+  "WJA841": {
+    "changes": 0,
+    "altitude": 41000,
+    "speed": 480.0
+  },
+  "WJA959": {
+    "changes": 0,
+    "altitude": 28000,
+    "speed": 467.0
+  },
+  "FLE889": {
+    "changes": 0,
+    "altitude": 31000,
+    "speed": 477.0
+  },
+  "FLE901": {
+    "changes": 0,
+    "altitude": 41000,
+    "speed": 478.0
+  },
+  "ACA431": {
+    "changes": 0,
+    "altitude": 31000,
+    "speed": 482.0
+  },
+  "ACA150": {
+    "changes": 0,
+    "altitude": 37000,
+    "speed": 454.0
+  },
+  "FLE310": {
+    "changes": 0,
+    "altitude": 37000,
+    "speed": 468.0
+  },
+  "PAL967": {
+    "changes": 0,
+    "altitude": 28000,
+    "speed": 440.0
+  },
+  "ACA835": {
+    "changes": 0,
+    "altitude": 33000,
+    "speed": 492.0
+  },
+  "ACA982": {
+    "changes": 0,
+    "altitude": 39000,
+    "speed": 469.0
+  },
+  "ACA773": {
+    "changes": 0,
+    "altitude": 36000,
+    "speed": 472.0
+  },
+  "FLE508": {
+    "changes": 0,
+    "altitude": 28000,
+    "speed": 474.0
+  },
+  "ACA230": {
+    "changes": 0,
+    "altitude": 33000,
+    "speed": 460.0
+  },
+  "WJA272": {
+    "changes": 0,
+    "altitude": 40000,
+    "speed": 482.0
+  },
+  "FLE238": {
+    "changes": 0,
+    "altitude": 35000,
+    "speed": 477.0
+  },
+  "ACA938": {
+    "changes": 0,
+    "altitude": 28000,
+    "speed": 468.0
+  },
+  "WJA596": {
+    "changes": 0,
+    "altitude": 40000,
+    "speed": 482.0
+  },
+  "ACA489": {
+    "changes": 0,
+    "altitude": 31000,
+    "speed": 466.0
+  },
+  "ACA367": {
+    "changes": 0,
+    "altitude": 33000,
+    "speed": 478.0
+  },
+  "PAL161": {
+    "changes": 0,
+    "altitude": 22000,
+    "speed": 360.0
+  },
+  "FLE374": {
+    "changes": 0,
+    "altitude": 31000,
+    "speed": 469.0
+  },
+  "FLE973": {
+    "changes": 0,
+    "altitude": 33000,
+    "speed": 482.0
+  },
+  "ACA705": {
+    "changes": 0,
+    "altitude": 40000,
+    "speed": 460.0
+  },
+  "PAL128": {
+    "changes": 0,
+    "altitude": 28000,
+    "speed": 360.0
+  },
+  "FLE968": {
+    "changes": 0,
+    "altitude": 33000,
+    "speed": 484.0
+  },
+  "ACA621": {
+    "changes": 0,
+    "altitude": 41000,
+    "speed": 451.0
+  },
+  "PAL446": {
+    "changes": 0,
+    "altitude": 22000,
+    "speed": 440.0
+  },
+  "WJA503": {
+    "changes": 0,
+    "altitude": 37000,
+    "speed": 492.0
+  },
+  "ACA534": {
+    "changes": 0,
+    "altitude": 28000,
+    "speed": 480.0
+  },
+  "ACA923": {
+    "changes": 0,
+    "altitude": 41000,
+    "speed": 423.0
+  },
+  "ACA166": {
+    "changes": 0,
+    "altitude": 33000,
+    "speed": 478.0
+  },
+  "ACA719": {
+    "changes": 0,
+    "altitude": 35000,
+    "speed": 470.0
+  },
+  "FLE159": {
+    "changes": 0,
+    "altitude": 40000,
+    "speed": 467.0
+  },
+  "PAL697": {
+    "changes": 0,
+    "altitude": 28000,
+    "speed": 360.0
+  },
+  "ACA154": {
+    "changes": 0,
+    "altitude": 33000,
+    "speed": 462.0
+  },
+  "ACA426": {
+    "changes": 0,
+    "altitude": 38000,
+    "speed": 460.0
+  },
+  "PAL362": {
+    "changes": 0,
+    "altitude": 28000,
+    "speed": 360.0
+  },
+  "PAL714": {
+    "changes": 0,
+    "altitude": 22000,
+    "speed": 360.0
+  },
+  "WJA470": {
+    "changes": 0,
+    "altitude": 31000,
+    "speed": 477.0
+  },
+  "FLE842": {
+    "changes": 0,
+    "altitude": 38000,
+    "speed": 478.0
+  },
+  "ACA794": {
+    "changes": 0,
+    "altitude": 28000,
+    "speed": 495.0
+  },
+  "PAL197": {
+    "changes": 0,
+    "altitude": 28000,
+    "speed": 360.0
+  },
+  "PAL151": {
+    "changes": 0,
+    "altitude": 25000,
+    "speed": 440.0
+  },
+  "FDX445": {
+    "changes": 0,
+    "altitude": 39000,
+    "speed": 472.0
+  },
+  "PAL376": {
+    "changes": 0,
+    "altitude": 22000,
+    "speed": 360.0
+  },
+  "FLE668": {
+    "changes": 0,
+    "altitude": 37000,
+    "speed": 481.0
+  },
+  "ACA343": {
+    "changes": 0,
+    "altitude": 37000,
+    "speed": 497.0
+  },
+  "WJA538": {
+    "changes": 0,
+    "altitude": 40000,
+    "speed": 477.0
+  },
+  "WJA278": {
+    "changes": 0,
+    "altitude": 28000,
+    "speed": 487.0
+  },
+  "UPS399": {
+    "changes": 0,
+    "altitude": 40000,
+    "speed": 464.0
+  },
+  "ACA619": {
+    "changes": 0,
+    "altitude": 33000,
+    "speed": 459.0
+  },
+  "WJA975": {
+    "changes": 0,
+    "altitude": 31000,
+    "speed": 485.0
+  }
+}
