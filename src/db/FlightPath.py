@@ -200,14 +200,18 @@ def simulate_all_flights(filename: str, ping_int: int = 60):
 if __name__ == "__main__":
     path = 'flights.json'
 
-    snapshots = simulate_all_flights(path, 240)
+    snapshots = simulate_all_flights(path, 5)
 
-    print((snapshots[-1])["planes"])
-    print((snapshots[-1])["timestamp"])
 
-    conflicts = detect_conflicts_by_waypoints((snapshots[-1])["planes"], (snapshots[-1])["timestamp"])
+    conflicts = []
+    print('')
+
+    for snapshot in snapshots:
+        # print(snapshot)
+        sp_conflicts = detect_conflicts_by_waypoints(snapshot["planes"], snapshot["timestamp"])
+
+        conflicts.extend(sp_conflicts)
+    
     print(conflicts)
 
-
-    # simulate_all_flights(path, 15)
 
