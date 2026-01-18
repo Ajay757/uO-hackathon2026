@@ -61,7 +61,7 @@ def conflict_resolver(conflicts):
     planes_info = load_planes_info()
     aircraft_types = load_aircraft_types()
 
-    for i in range(len(conflicts)-1):
+    for i in range(len(conflicts)):
         conflict=conflicts[i]
         # Sort planes by minimal previous changes
         sorted_planes = sorted(conflict, key=lambda x: state[x]["changes"])
