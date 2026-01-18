@@ -81,6 +81,9 @@ cd uO-hackathon2026
 
 ```bash
 npm install
+npm install react-router-dom
+npm install leaflet react-leaflet
+
 ```
 
 ### 3️⃣ Install Python (Required for Conflict Detection)
