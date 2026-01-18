@@ -1,4 +1,5 @@
 from datetime import datetime, timedelta, timezone
+from ConflictFinder.py import detect_conflicts_by_waypoints
 import json
 import math
 
@@ -68,7 +69,6 @@ def get_flight_path(flight: dict):
     
     return path, leg_distances, total_distance_nm
 
-# # NOW simplified - use shared path computation: maybe not needed
 def estimate_arrival(flight: dict):
     dep_est = unix_to_est_24h(flight["departure time"])
     path, leg_distances, total_distance_nm = get_flight_path(flight)
@@ -87,7 +87,6 @@ def estimate_arrival(flight: dict):
         "enroute_hm": (hours_enroute, minutes_enroute),
         "arrival_est": arr_est
     }
-
 
 def get_position_at_time(flight: dict, minutes_since_dep: float):
     """Position minutes after departure (assumes already airborne)."""
@@ -120,6 +119,8 @@ def load_flights(filename: str):
 def simulate_all_flights(filename: str, ping_int: int = 60):
     """Simulate ONLY airborne flights until last arrival."""
     flights = load_flights(filename)
+
+    snapshots = []
     
     if not flights:
         print("No flights found in JSON.")
@@ -152,6 +153,7 @@ def simulate_all_flights(filename: str, ping_int: int = 60):
         minutes_since_start = int((current_time - sim_start).total_seconds() / 60)
         print(f"\n{current_time.strftime('%H:%M')} ({minutes_since_start}m):")
         
+        planes = []
         airborne_count = 0
         for flight in flights:
             dep_time = unix_to_est_24h(flight["departure time"])
@@ -167,10 +169,23 @@ def simulate_all_flights(filename: str, ping_int: int = 60):
             if minutes_since_dep < total_flight_min:
                 pos = get_position_at_time(flight, minutes_since_dep)
                 if pos:
-                    alt = flight.get("altitude", "N/A")  # NEW: Get altitude from JSON
+                    alt = flight.get("altitude", 35000)
+                    planes.append({
+                        "ACID": flight['ACID'],
+                        "lat": pos[0],
+                        "lon": pos[1],
+                        "alt": alt
+                    })
                     print(f"  {flight['ACID']:>6} {pos[0]:6.2f}N/{abs(pos[1]):7.3f}W "
                         f"{alt:>6}ft (dep+{minutes_since_dep}m)")
                     airborne_count += 1
+
+        # NEW: Save snapshot and call your function
+        timestamp = minutes_since_start
+        snapshots.append({
+            "timestamp": timestamp,
+            "planes": planes
+        })
         
         if airborne_count == 0:
             print("  No airborne flights")
@@ -179,8 +194,18 @@ def simulate_all_flights(filename: str, ping_int: int = 60):
         
         current_time += timedelta(minutes=ping_int)
 
+    return snapshots  # NEW: Return for external use
+
 
 if __name__ == "__main__":
     path = 'flights.json'
-    simulate_all_flights(path, 15)
+
+    snapshots = simulate_all_flights(path, 240)
+
+    print(snapshots[-1])
+
+    conflicts = detect_conflicts_by_waypoints(planes, timestamp)
+
+
+    # simulate_all_flights(path, 15)
 
