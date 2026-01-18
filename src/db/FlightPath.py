@@ -200,17 +200,28 @@ def simulate_all_flights(filename: str, ping_int: int = 60):
 if __name__ == "__main__":
     path = 'flights.json'
 
-    snapshots = simulate_all_flights(path, 5)
-
+    snapshots = simulate_all_flights(path, 1)
 
     conflicts = []
-    print('')
 
     for snapshot in snapshots:
         # print(snapshot)
         sp_conflicts = detect_conflicts_by_waypoints(snapshot["planes"], snapshot["timestamp"])
 
         conflicts.extend(sp_conflicts)
+
+    unique_conflicts = []
+    seen_clusters = set()
+    print('')
+
+    for conflict in conflicts:
+        # Extract plane names (ignore timestamp)
+        planes_tuple = tuple(sorted(conflict[:-1]))  # Sort for consistency
+        if planes_tuple not in seen_clusters:
+            seen_clusters.add(planes_tuple)
+            unique_conflicts.append(conflict)
+
+    conflicts = unique_conflicts  # Replace with deduplicated list
     
     print(conflicts)
 
