@@ -1,6 +1,8 @@
-import { useMemo, useState } from "react";
+import { useMemo, useState, useEffect, useRef } from "react";
 import flightsData from "../uOttawaHack2026/canadian_flights_250.json";
+import flights250 from "../uOttawaHack2026/canadian_flights_250.json";
 import { analyzeFlights } from "../utils/simpleAnalysis";
+import { buildWaypointToAcidsMap } from "../utils/routeUtils";
 import ConflictsTable from "../components/ConflictsTable";
 import HotspotsList from "../components/HotSpotsList";
 import "./Dashboard.css";
@@ -145,6 +147,68 @@ export default function Dashboard() {
   const stats = useMemo(() => computeDashboardStats(flightsData), []);
   const [analysisResults, setAnalysisResults] = useState(null);
   const [analyzing, setAnalyzing] = useState(false);
+
+  // Build waypoint→ACIDs map
+  const waypointToAcids = buildWaypointToAcidsMap(flights250);
+
+  // Waypoints to check explicitly
+  const mustCheck = [
+    "49.97N/110.935W",
+    "49.64N/92.114W",
+    "45.88N/78.031W",
+    "50.18N/71.405W",
+    "49.82N/86.449W",
+    "52.45N/105.22W",
+    "48.22N/118.55W",
+    "46.15N/84.33W",
+    "47.50N/69.88W",
+    "51.33N/100.44W",
+    "50.77N/115.66W",
+    "44.55N/75.22W",
+  ];
+
+  // Helper to find similar keys (for debugging missing tokens)
+  function findSimilarKeys(map, wp) {
+    // Use the lat part as a quick "similarity" prefix, e.g. "49.97N"
+    const prefix = wp.split("/")[0];
+    return Object.keys(map)
+      .filter((k) => k.startsWith(prefix))
+      .slice(0, 10);
+  }
+
+  // Terminal-only logging (once per page load)
+  const loggedRef = useRef(false);
+  useEffect(() => {
+    if (loggedRef.current) return;
+    loggedRef.current = true;
+
+    const entries = Object.entries(waypointToAcids);
+
+    console.log("[WaypointMap] Flights loaded:", flights250.length);
+    console.log("[WaypointMap] Unique waypoints:", entries.length);
+
+    const top10 = entries
+      .map(([wp, acids]) => ({ wp, n: acids.length }))
+      .sort((a, b) => b.n - a.n)
+      .slice(0, 10);
+
+    console.log("[WaypointMap] Top 10 busiest:", top10);
+    console.log("[WaypointMap] Sample entries:", entries.slice(0, 5));
+
+    // Manual waypoint checks
+    console.log("[WaypointMap] Manual waypoint checks:");
+    mustCheck.forEach((wp) => {
+      const acids = waypointToAcids[wp];
+
+      if (!acids) {
+        console.log(`- ${wp}: NOT FOUND (possible token mismatch)`);
+        console.log("  Similar keys:", findSimilarKeys(waypointToAcids, wp));
+      } else {
+        console.log(`- ${wp}: ${acids.length} flights`);
+        console.log(`  ACIDs: ${acids.join(", ")}`);
+      }
+    });
+  }, [waypointToAcids]);
 
   function handleRunAnalysis() {
     setAnalyzing(true);
