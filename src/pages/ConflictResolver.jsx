@@ -1,6 +1,6 @@
 import { useParams, useNavigate } from "react-router-dom";
 import { useMemo, useState, useEffect } from "react";
-import flightsData from "../data/flights.json";
+import flightsData from "../uOttawaHack2026/canadian_flights_250.json";
 import { analyzeFlights } from "../utils/simpleAnalysis";
 import ConflictRouteMap from "../components/ConflictRouteMap";
 import "./ConflictResolver.css";
