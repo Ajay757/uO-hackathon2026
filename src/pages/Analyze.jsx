@@ -49,9 +49,6 @@ export default function Analyze() {
 
   return (
     <div style={{ display: "grid", gap: 16 }}>
-      <div style={{ padding: "10px", backgroundColor: "blue", color: "white", fontWeight: "bold", fontSize: "20px" }}>
-        DEBUG: Analyze.jsx is rendering
-      </div>
       <div style={{ display: "flex", gap: 12, alignItems: "center" }}>
         <button onClick={handleRunAnalysis} disabled={loading}>
           {loading ? "Running..." : "Run Analysis"}
