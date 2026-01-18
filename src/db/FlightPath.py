@@ -1,5 +1,7 @@
 from datetime import datetime, timedelta, timezone
 from ConflictFinder import detect_conflicts_by_waypoints
+from main import generate_simulation_state
+from ConflictResolver import conflict_resolver
 import json
 import math
 import os
@@ -233,7 +235,14 @@ if __name__ == "__main__":
     #with open('conflicts.json', 'w') as f:
     with open(CONFLICTS_PATH, 'w') as f:
         json.dump(conflicts, f, indent=2)
-    
+
+    generate_simulation_state(
+        planes_file="flights.json",
+        output_file="simulation_state.json"
+    )
+
+    conflict_resolver(conflicts)
+
     print(conflicts)
     print(f"Conflicts found: {len(conflicts)}")
 
