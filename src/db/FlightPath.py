@@ -214,13 +214,18 @@ if __name__ == "__main__":
 
     unique_conflicts = []
     seen_clusters = set()
+    conflicts.sort(key=lambda c: -len(c[:-1]))
     print('')
 
     for conflict in conflicts:
         # Extract plane names (ignore timestamp)
-        planes_tuple = tuple(sorted(conflict[:-1]))  # Sort for consistency
-        if planes_tuple not in seen_clusters:
-            seen_clusters.add(planes_tuple)
+        planes_set = frozenset(conflict[:-1])
+    
+        # Skip if subset of any existing
+        is_subset = any(planes_set.issubset(existing) for existing in seen_clusters)
+        
+        if not is_subset:
+            seen_clusters.add(planes_set)
             unique_conflicts.append(conflict)
 
     conflicts = unique_conflicts  # Replace with deduplicated list
@@ -233,9 +238,9 @@ if __name__ == "__main__":
         output_file="simulation_state.json"
     )
 
+    print(conflicts)
     conflict_resolver(conflicts)
 
-    print(conflicts)
     print(len(conflicts))
 
 
