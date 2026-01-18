@@ -1,0 +1,170 @@
+{
+  "Boeing 787-9": {
+    "category": "wide-body",
+    "role": "passenger",
+    "altitude": {
+      "min": 31000,
+      "max": 43000
+    },
+    "speed": {
+      "min": 430,
+      "max": 505
+    }
+  },
+
+  "Boeing 777-300ER": {
+    "category": "wide-body",
+    "role": "passenger",
+    "altitude": {
+      "min": 31000,
+      "max": 43000
+    },
+    "speed": {
+      "min": 430,
+      "max": 505
+    }
+  },
+
+  "Airbus A330": {
+    "category": "wide-body",
+    "role": "passenger",
+    "altitude": {
+      "min": 31000,
+      "max": 43000
+    },
+    "speed": {
+      "min": 430,
+      "max": 505
+    }
+  },
+
+  "Boeing 737-800": {
+    "category": "narrow-body",
+    "role": "passenger",
+    "altitude": {
+      "min": 28000,
+      "max": 39000
+    },
+    "speed": {
+      "min": 415,
+      "max": 505
+    }
+  },
+
+  "Boeing 737 MAX 8": {
+    "category": "narrow-body",
+    "role": "passenger",
+    "altitude": {
+      "min": 28000,
+      "max": 39000
+    },
+    "speed": {
+      "min": 415,
+      "max": 505
+    }
+  },
+
+  "Airbus A320": {
+    "category": "narrow-body",
+    "role": "passenger",
+    "altitude": {
+      "min": 28000,
+      "max": 39000
+    },
+    "speed": {
+      "min": 415,
+      "max": 505
+    }
+  },
+
+  "Airbus A321": {
+    "category": "narrow-body",
+    "role": "passenger",
+    "altitude": {
+      "min": 28000,
+      "max": 39000
+    },
+    "speed": {
+      "min": 415,
+      "max": 505
+    }
+  },
+
+  "Airbus A220-300": {
+    "category": "regional-jet",
+    "role": "passenger",
+    "altitude": {
+      "min": 22000,
+      "max": 28000
+    },
+    "speed": {
+      "min": 370,
+      "max": 500
+    }
+  },
+
+  "Dash 8-400": {
+    "category": "turboprop",
+    "role": "passenger",
+    "altitude": {
+      "min": 22000,
+      "max": 28000
+    },
+    "speed": {
+      "min": 310,
+      "max": 410
+    }
+  },
+
+  "Embraer E195-E2": {
+    "category": "regional-jet",
+    "role": "passenger",
+    "altitude": {
+      "min": 22000,
+      "max": 28000
+    },
+    "speed": {
+      "min": 370,
+      "max": 500
+    }
+  },
+
+  "Boeing 767-300F": {
+    "category": "cargo",
+    "role": "cargo",
+    "altitude": {
+      "min": 28000,
+      "max": 41000
+    },
+    "speed": {
+      "min": 410,
+      "max": 505
+    }
+  },
+
+  "Boeing 757-200F": {
+    "category": "cargo",
+    "role": "cargo",
+    "altitude": {
+      "min": 28000,
+      "max": 41000
+    },
+    "speed": {
+      "min": 410,
+      "max": 505
+    }
+  },
+
+  "Airbus A300-600F": {
+    "category": "cargo",
+    "role": "cargo",
+    "altitude": {
+      "min": 28000,
+      "max": 41000
+    },
+    "speed": {
+      "min": 410,
+      "max": 505
+    }
+  }
+}
