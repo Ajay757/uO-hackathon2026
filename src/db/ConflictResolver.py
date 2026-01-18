@@ -67,9 +67,12 @@ def conflict_resolver(conflicts):
         altitudes = {acid: state[acid]["altitude"] for acid in sorted_planes}
         speeds = {acid: state[acid]["speed"] for acid in sorted_planes}
 
-        # -----------------------------
-        # ALTITUDE ADJUSTMENT (direction-aware)
-        # -----------------------------
+        # Find highest and lowest planes in this conflict
+        altitudes_list = [(acid, altitudes[acid]) for acid in sorted_planes]
+        highest = max(altitudes_list, key=lambda x: x[1])[0]
+        lowest  = min(altitudes_list, key=lambda x: x[1])[0]
+
+        # Try to adjust altitude first
         for acid in sorted_planes:
             plane_type = planes_info[acid]
             constraints = aircraft_types[plane_type]
@@ -77,26 +80,43 @@ def conflict_resolver(conflicts):
             max_alt = constraints["altitude"]["max"]
             current_alt = altitudes[acid]
 
-            # Check if moving up or down makes sense
-            move_up_ok = all(current_alt < altitudes[other] - 2000 for other in sorted_planes if other != acid)
-            move_down_ok = all(current_alt > altitudes[other] + 2000 for other in sorted_planes if other != acid)
+            proposed_alt = None
 
-            # Try moving up first
-            if move_up_ok and current_alt + 1000 <= max_alt:
-                proposed_alt = current_alt + 1000
-                update_plane(acid, new_altitude=proposed_alt)
-                conflict_resolved = True
-                break
+            if acid == highest:
+                # Highest plane: move up if possible
+                if current_alt + 1000 <= max_alt:
+                    proposed_alt = current_alt + 1000
 
-            # Try moving down if up not possible
-            elif move_down_ok and current_alt - 1000 >= min_alt:
-                proposed_alt = current_alt - 1000
+            elif acid == lowest:
+                # Lowest plane: move down if possible
+                if current_alt - 1000 >= min_alt:
+                    proposed_alt = current_alt - 1000
+
+            else:
+                # Middle plane: move away from nearest neighbor
+                above = [altitudes[other] for other in sorted_planes if altitudes[other] > current_alt]
+                below = [altitudes[other] for other in sorted_planes if altitudes[other] < current_alt]
+
+                dist_above = min([a - current_alt for a in above], default=99999)
+                dist_below = min([current_alt - b for b in below], default=99999)
+
+                if dist_above < dist_below:
+                    # Closer to plane above → move down if possible
+                    if current_alt - 1000 >= min_alt:
+                        proposed_alt = current_alt - 1000
+                else:
+                    # Closer to plane below → move up if possible
+                    if current_alt + 1000 <= max_alt:
+                        proposed_alt = current_alt + 1000
+
+            if proposed_alt is not None:
+                # Apply altitude change and exit this conflict
                 update_plane(acid, new_altitude=proposed_alt)
                 conflict_resolved = True
                 break
 
         # -----------------------------
-        # SPEED ADJUSTMENT (only if no altitude change possible)
+        # Speed adjustment (only if altitude move not possible)
         # -----------------------------
         if not conflict_resolved:
             for acid in sorted_planes:
@@ -118,5 +138,3 @@ def conflict_resolver(conflicts):
                     update_plane(acid, new_speed=proposed_speed)
                     conflict_resolved = True
                     break
-
-        # If neither altitude nor speed adjustment was possible, do nothing this pass

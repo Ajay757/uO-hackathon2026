@@ -48,5 +48,5 @@ if __name__ == "__main__":
         planes_file="canadian_flights_250.json",
         output_file="simulation_state.json"
     )
-    multi_flight_simulation(simulation_state)
+    #multi_flight_simulation(simulation_state)
 
