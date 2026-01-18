@@ -29,14 +29,14 @@
     "ACID": "PAL779",
     "Plane type": "Embraer E195-E2",
     "route": "46.15N/84.33W 44.55N/75.22W",
-    "altitude": 23000,
+    "altitude": 22000,
     "departure airport": "CYHZ",
     "arrival airport": "CYYZ",
     "departure time": 1767791040,
-    "aircraft speed": 440.0,
+    "aircraft speed": 460.0,
     "passengers": 109,
     "is_cargo": false,
-    "changes": 1
+    "changes": 19
   },
   {
     "ACID": "PAL422",
@@ -120,14 +120,14 @@
     "ACID": "ACA738",
     "Plane type": "Boeing 787-9",
     "route": "49.82N/86.449W 48.22N/118.55W",
-    "altitude": 39000,
+    "altitude": 37000,
     "departure airport": "CYYZ",
     "arrival airport": "CYVR",
     "departure time": 1767791460,
     "aircraft speed": 490.0,
     "passengers": 234,
     "is_cargo": false,
-    "changes": 1
+    "changes": 7
   },
   {
     "ACID": "ACA831",
@@ -172,14 +172,14 @@
     "ACID": "WJA695",
     "Plane type": "Boeing 787-9",
     "route": "46.15N/84.33W 49.64N/92.114W",
-    "altitude": 41000,
+    "altitude": 34000,
     "departure airport": "CYYZ",
     "arrival airport": "CYVR",
     "departure time": 1767791700,
     "aircraft speed": 494.0,
     "passengers": 302,
     "is_cargo": false,
-    "changes": 2
+    "changes": 10
   },
   {
     "ACID": "PAL629",
@@ -198,14 +198,14 @@
     "ACID": "WJA958",
     "Plane type": "Boeing 787-9",
     "route": "46.15N/84.33W",
-    "altitude": 33000,
+    "altitude": 34000,
     "departure airport": "CYUL",
     "arrival airport": "CYOW",
     "departure time": 1767791820,
     "aircraft speed": 497.0,
     "passengers": 266,
     "is_cargo": false,
-    "changes": 0
+    "changes": 1
   },
   {
     "ACID": "PAL120",
@@ -254,62 +254,62 @@
     "departure airport": "CYYZ",
     "arrival airport": "CYYC",
     "departure time": 1767792060,
-    "aircraft speed": 461.0,
+    "aircraft speed": 501.0,
     "passengers": 121,
     "is_cargo": false,
-    "changes": 1
+    "changes": 3
   },
   {
     "ACID": "FLE564",
     "Plane type": "Boeing 737-800",
     "route": "51.33N/100.44W 49.82N/86.449W",
-    "altitude": 33000,
+    "altitude": 31000,
     "departure airport": "CYEG",
     "arrival airport": "CYYZ",
     "departure time": 1767792120,
     "aircraft speed": 472.0,
     "passengers": 148,
     "is_cargo": false,
-    "changes": 0
+    "changes": 2
   },
   {
     "ACID": "ACA909",
     "Plane type": "Boeing 737-800",
     "route": "49.64N/92.114W",
-    "altitude": 34000,
+    "altitude": 30000,
     "departure airport": "CYXE",
     "arrival airport": "CYYC",
     "departure time": 1767792180,
-    "aircraft speed": 472.0,
+    "aircraft speed": 492.0,
     "passengers": 138,
     "is_cargo": false,
-    "changes": 1
+    "changes": 8
   },
   {
     "ACID": "WJA143",
     "Plane type": "Boeing 737 MAX 8",
     "route": "49.64N/92.114W 49.97N/110.935W",
-    "altitude": 35000,
+    "altitude": 32000,
     "departure airport": "CYYZ",
     "arrival airport": "CYYC",
     "departure time": 1767792240,
     "aircraft speed": 479.0,
     "passengers": 153,
     "is_cargo": false,
-    "changes": 0
+    "changes": 3
   },
   {
     "ACID": "PAL670",
     "Plane type": "Dash 8-400",
     "route": "44.55N/75.22W 46.15N/84.33W",
-    "altitude": 22000,
+    "altitude": 28000,
     "departure airport": "CYYZ",
     "arrival airport": "CYHZ",
     "departure time": 1767792300,
     "aircraft speed": 360.0,
     "passengers": 66,
     "is_cargo": false,
-    "changes": 0
+    "changes": 84
   },
   {
     "ACID": "WJA702",
@@ -328,14 +328,14 @@
     "ACID": "ACA158",
     "Plane type": "Boeing 787-9",
     "route": "51.33N/100.44W 46.15N/84.33W",
-    "altitude": 35000,
+    "altitude": 33000,
     "departure airport": "CYYC",
     "arrival airport": "CYYZ",
     "departure time": 1767792420,
-    "aircraft speed": 493.0,
+    "aircraft speed": 473.0,
     "passengers": 226,
     "is_cargo": false,
-    "changes": 1
+    "changes": 4
   },
   {
     "ACID": "FLE127",
@@ -393,40 +393,40 @@
     "ACID": "UPS154",
     "Plane type": "Airbus A300-600F",
     "route": "48.22N/118.55W 44.55N/75.22W",
-    "altitude": 36000,
+    "altitude": 33000,
     "departure airport": "CYHZ",
     "arrival airport": "CYYZ",
     "departure time": 1767792720,
     "aircraft speed": 464.0,
     "passengers": 0,
     "is_cargo": true,
-    "changes": 0
+    "changes": 5
   },
   {
     "ACID": "WJA308",
     "Plane type": "Boeing 737 MAX 8",
     "route": "49.64N/92.114W 46.15N/84.33W 45.88N/78.031W",
-    "altitude": 37000,
+    "altitude": 32000,
     "departure airport": "CYVR",
     "arrival airport": "CYHZ",
     "departure time": 1767792780,
-    "aircraft speed": 466.0,
+    "aircraft speed": 486.0,
     "passengers": 163,
     "is_cargo": false,
-    "changes": 0
+    "changes": 8
   },
   {
     "ACID": "WJA408",
     "Plane type": "Boeing 787-9",
     "route": "50.18N/71.405W 49.64N/92.114W 49.97N/110.935W",
-    "altitude": 39000,
+    "altitude": 38000,
     "departure airport": "CYQB",
     "arrival airport": "CYVR",
     "departure time": 1767792840,
     "aircraft speed": 494.0,
     "passengers": 265,
     "is_cargo": false,
-    "changes": 1
+    "changes": 2
   },
   {
     "ACID": "FLE190",
@@ -445,14 +445,14 @@
     "ACID": "WJA396",
     "Plane type": "Boeing 737 MAX 8",
     "route": "46.15N/84.33W",
-    "altitude": 29000,
+    "altitude": 32000,
     "departure airport": "CYUL",
     "arrival airport": "CYOW",
     "departure time": 1767792960,
     "aircraft speed": 467.0,
     "passengers": 156,
     "is_cargo": false,
-    "changes": 2
+    "changes": 72
   },
   {
     "ACID": "ACA140",
@@ -484,14 +484,14 @@
     "ACID": "PAL937",
     "Plane type": "Embraer E195-E2",
     "route": "46.15N/84.33W",
-    "altitude": 23000,
+    "altitude": 22000,
     "departure airport": "CYOW",
     "arrival airport": "CYUL",
     "departure time": 1767793200,
-    "aircraft speed": 440.0,
+    "aircraft speed": 460.0,
     "passengers": 106,
     "is_cargo": false,
-    "changes": 1
+    "changes": 5
   },
   {
     "ACID": "WJA327",
@@ -510,14 +510,14 @@
     "ACID": "WJA389",
     "Plane type": "Boeing 737-800",
     "route": "52.45N/105.22W 49.82N/86.449W",
-    "altitude": 36000,
+    "altitude": 32000,
     "departure airport": "CYEG",
     "arrival airport": "CYYZ",
     "departure time": 1767793320,
     "aircraft speed": 482.0,
     "passengers": 137,
     "is_cargo": false,
-    "changes": 1
+    "changes": 13
   },
   {
     "ACID": "PAL653",
@@ -549,14 +549,14 @@
     "ACID": "FLE146",
     "Plane type": "Boeing 737 MAX 8",
     "route": "48.22N/118.55W 49.82N/86.449W",
-    "altitude": 39000,
+    "altitude": 37000,
     "departure airport": "CYVR",
     "arrival airport": "CYUL",
     "departure time": 1767793500,
     "aircraft speed": 469.0,
     "passengers": 146,
     "is_cargo": false,
-    "changes": 2
+    "changes": 13
   },
   {
     "ACID": "ACA606",
@@ -566,10 +566,10 @@
     "departure airport": "CYVR",
     "arrival airport": "CYHZ",
     "departure time": 1767793560,
-    "aircraft speed": 435.0,
+    "aircraft speed": 495.0,
     "passengers": 112,
     "is_cargo": false,
-    "changes": 0
+    "changes": 3
   },
   {
     "ACID": "FLE556",
@@ -582,7 +582,7 @@
     "aircraft speed": 472.0,
     "passengers": 153,
     "is_cargo": false,
-    "changes": 0
+    "changes": 2
   },
   {
     "ACID": "PAL462",
@@ -631,10 +631,10 @@
     "departure airport": "CYEG",
     "arrival airport": "CYYC",
     "departure time": 1767793920,
-    "aircraft speed": 475.0,
+    "aircraft speed": 495.0,
     "passengers": 133,
     "is_cargo": false,
-    "changes": 1
+    "changes": 2
   },
   {
     "ACID": "FLE483",
@@ -647,46 +647,46 @@
     "aircraft speed": 471.0,
     "passengers": 172,
     "is_cargo": false,
-    "changes": 3
+    "changes": 13
   },
   {
     "ACID": "WJA608",
     "Plane type": "Boeing 737-800",
     "route": "46.15N/84.33W",
-    "altitude": 32000,
+    "altitude": 29000,
     "departure airport": "CYOW",
     "arrival airport": "CYUL",
     "departure time": 1767794040,
     "aircraft speed": 479.0,
     "passengers": 138,
     "is_cargo": false,
-    "changes": 1
+    "changes": 22
   },
   {
     "ACID": "PAL659",
     "Plane type": "Dash 8-400",
     "route": "46.15N/84.33W",
-    "altitude": 28000,
+    "altitude": 25000,
     "departure airport": "CYUL",
     "arrival airport": "CYOW",
     "departure time": 1767794100,
-    "aircraft speed": 360.0,
+    "aircraft speed": 400.0,
     "passengers": 73,
     "is_cargo": false,
-    "changes": 0
+    "changes": 43
   },
   {
     "ACID": "FDX104",
     "Plane type": "Boeing 767-300F",
     "route": "45.88N/78.031W 52.45N/105.22W",
-    "altitude": 39000,
+    "altitude": 40000,
     "departure airport": "CYHZ",
     "arrival airport": "CYEG",
     "departure time": 1767794160,
     "aircraft speed": 478.0,
     "passengers": 0,
     "is_cargo": true,
-    "changes": 1
+    "changes": 4
   },
   {
     "ACID": "UPS263",
@@ -705,14 +705,14 @@
     "ACID": "ACA893",
     "Plane type": "Airbus A320",
     "route": "46.15N/84.33W",
-    "altitude": 32000,
+    "altitude": 28000,
     "departure airport": "CYOW",
     "arrival airport": "CYUL",
     "departure time": 1767794280,
-    "aircraft speed": 465.0,
+    "aircraft speed": 505.0,
     "passengers": 140,
     "is_cargo": false,
-    "changes": 1
+    "changes": 73
   },
   {
     "ACID": "ACA219",
@@ -731,27 +731,27 @@
     "ACID": "CCA665",
     "Plane type": "Boeing 767-300F",
     "route": "49.97N/110.935W 47.50N/69.88W",
-    "altitude": 34000,
+    "altitude": 29000,
     "departure airport": "CYYT",
     "arrival airport": "CYQB",
     "departure time": 1767794400,
-    "aircraft speed": 472.0,
+    "aircraft speed": 492.0,
     "passengers": 0,
     "is_cargo": true,
-    "changes": 1
+    "changes": 5
   },
   {
     "ACID": "FLE739",
     "Plane type": "Boeing 737-800",
     "route": "47.50N/69.88W 49.97N/110.935W",
-    "altitude": 33000,
+    "altitude": 32000,
     "departure airport": "CYYJ",
     "arrival airport": "CYWG",
     "departure time": 1767794460,
     "aircraft speed": 465.0,
     "passengers": 162,
     "is_cargo": false,
-    "changes": 0
+    "changes": 1
   },
   {
     "ACID": "WJA522",
@@ -764,46 +764,46 @@
     "aircraft speed": 470.0,
     "passengers": 138,
     "is_cargo": false,
-    "changes": 0
+    "changes": 52
   },
   {
     "ACID": "PAL789",
     "Plane type": "Dash 8-400",
     "route": "50.77N/115.66W",
-    "altitude": 28000,
+    "altitude": 27000,
     "departure airport": "CYEG",
     "arrival airport": "CYVR",
     "departure time": 1767794580,
     "aircraft speed": 380.0,
     "passengers": 67,
     "is_cargo": false,
-    "changes": 1
+    "changes": 6
   },
   {
     "ACID": "PAL169",
     "Plane type": "Dash 8-400",
     "route": "50.77N/115.66W",
-    "altitude": 28000,
+    "altitude": 24000,
     "departure airport": "CYYC",
     "arrival airport": "CYEG",
     "departure time": 1767794640,
     "aircraft speed": 360.0,
     "passengers": 62,
     "is_cargo": false,
-    "changes": 0
+    "changes": 4
   },
   {
     "ACID": "WJA130",
     "Plane type": "Boeing 737 MAX 8",
     "route": "46.15N/84.33W 49.82N/86.449W 51.33N/100.44W",
-    "altitude": 39000,
+    "altitude": 37000,
     "departure airport": "CYYT",
     "arrival airport": "CYEG",
     "departure time": 1767794700,
     "aircraft speed": 477.0,
     "passengers": 173,
     "is_cargo": false,
-    "changes": 0
+    "changes": 6
   },
   {
     "ACID": "ACA102",
@@ -822,27 +822,27 @@
     "ACID": "ACA356",
     "Plane type": "Boeing 787-9",
     "route": "44.55N/75.22W",
-    "altitude": 33000,
+    "altitude": 35000,
     "departure airport": "CYOW",
     "arrival airport": "CYYZ",
     "departure time": 1767794820,
-    "aircraft speed": 494.0,
+    "aircraft speed": 474.0,
     "passengers": 224,
     "is_cargo": false,
-    "changes": 0
+    "changes": 3
   },
   {
     "ACID": "ACA574",
     "Plane type": "Airbus A321",
     "route": "46.15N/84.33W",
-    "altitude": 31000,
+    "altitude": 32000,
     "departure airport": "CYUL",
     "arrival airport": "CYYZ",
     "departure time": 1767794880,
-    "aircraft speed": 451.0,
+    "aircraft speed": 491.0,
     "passengers": 189,
     "is_cargo": false,
-    "changes": 0
+    "changes": 35
   },
   {
     "ACID": "PAL532",
@@ -861,27 +861,27 @@
     "ACID": "WJA920",
     "Plane type": "Boeing 737 MAX 8",
     "route": "49.82N/86.449W 48.22N/118.55W",
-    "altitude": 38000,
+    "altitude": 33000,
     "departure airport": "CYYZ",
     "arrival airport": "CYVR",
     "departure time": 1767795000,
-    "aircraft speed": 478.0,
+    "aircraft speed": 498.0,
     "passengers": 144,
     "is_cargo": false,
-    "changes": 1
+    "changes": 9
   },
   {
     "ACID": "PAL449",
     "Plane type": "Embraer E195-E2",
     "route": "46.15N/84.33W",
-    "altitude": 23000,
+    "altitude": 25000,
     "departure airport": "CYUL",
     "arrival airport": "CYOW",
     "departure time": 1767795060,
     "aircraft speed": 440.0,
     "passengers": 112,
     "is_cargo": false,
-    "changes": 1
+    "changes": 91
   },
   {
     "ACID": "PAL950",
@@ -900,79 +900,79 @@
     "ACID": "ACA625",
     "Plane type": "Boeing 767-300F",
     "route": "45.88N/78.031W",
-    "altitude": 29000,
+    "altitude": 30000,
     "departure airport": "CYYZ",
     "arrival airport": "CYUL",
     "departure time": 1767795180,
-    "aircraft speed": 460.0,
+    "aircraft speed": 500.0,
     "passengers": 0,
     "is_cargo": true,
-    "changes": 1
+    "changes": 4
   },
   {
     "ACID": "WJA163",
     "Plane type": "Boeing 737-800",
     "route": "44.55N/75.22W",
-    "altitude": 31000,
+    "altitude": 30000,
     "departure airport": "CYYZ",
     "arrival airport": "CYUL",
     "departure time": 1767795240,
     "aircraft speed": 484.0,
     "passengers": 150,
     "is_cargo": false,
-    "changes": 0
+    "changes": 1
   },
   {
     "ACID": "ACA105",
     "Plane type": "Boeing 737-800",
     "route": "44.55N/75.22W",
-    "altitude": 34000,
+    "altitude": 32000,
     "departure airport": "CYYZ",
     "arrival airport": "CYOW",
     "departure time": 1767795300,
-    "aircraft speed": 473.0,
+    "aircraft speed": 493.0,
     "passengers": 143,
     "is_cargo": false,
-    "changes": 1
+    "changes": 4
   },
   {
     "ACID": "ACA693",
     "Plane type": "Boeing 777-300ER",
     "route": "44.55N/75.22W",
-    "altitude": 33000,
+    "altitude": 32000,
     "departure airport": "CYHZ",
     "arrival airport": "CYYZ",
     "departure time": 1767795420,
     "aircraft speed": 499.0,
     "passengers": 402,
     "is_cargo": false,
-    "changes": 0
+    "changes": 1
   },
   {
     "ACID": "ACA348",
     "Plane type": "Airbus A321",
     "route": "50.77N/115.66W",
-    "altitude": 32000,
+    "altitude": 29000,
     "departure airport": "CYVR",
     "arrival airport": "CYYC",
     "departure time": 1767795480,
-    "aircraft speed": 451.0,
+    "aircraft speed": 471.0,
     "passengers": 164,
     "is_cargo": false,
-    "changes": 1
+    "changes": 15
   },
   {
     "ACID": "ACA269",
     "Plane type": "Boeing 767-300F",
     "route": "49.64N/92.114W",
-    "altitude": 34000,
+    "altitude": 31000,
     "departure airport": "CYYC",
     "arrival airport": "CYXE",
     "departure time": 1767795540,
-    "aircraft speed": 463.0,
+    "aircraft speed": 503.0,
     "passengers": 0,
     "is_cargo": true,
-    "changes": 1
+    "changes": 4
   },
   {
     "ACID": "PAL363",
@@ -982,10 +982,10 @@
     "departure airport": "CYHZ",
     "arrival airport": "CYXE",
     "departure time": 1767795600,
-    "aircraft speed": 360.0,
+    "aircraft speed": 380.0,
     "passengers": 62,
     "is_cargo": false,
-    "changes": 0
+    "changes": 3
   },
   {
     "ACID": "CCA736",
@@ -998,7 +998,7 @@
     "aircraft speed": 477.0,
     "passengers": 0,
     "is_cargo": true,
-    "changes": 0
+    "changes": 2
   },
   {
     "ACID": "PAL544",
@@ -1017,53 +1017,53 @@
     "ACID": "WJA611",
     "Plane type": "Boeing 737 MAX 8",
     "route": "51.33N/100.44W 46.15N/84.33W",
-    "altitude": 33000,
+    "altitude": 31000,
     "departure airport": "CYYC",
     "arrival airport": "CYYZ",
     "departure time": 1767795780,
     "aircraft speed": 478.0,
     "passengers": 153,
     "is_cargo": false,
-    "changes": 0
+    "changes": 2
   },
   {
     "ACID": "ACA774",
     "Plane type": "Boeing 787-9",
     "route": "47.50N/69.88W 49.64N/92.114W",
-    "altitude": 35000,
+    "altitude": 31000,
     "departure airport": "CYHZ",
     "arrival airport": "CYWG",
     "departure time": 1767795840,
     "aircraft speed": 499.0,
     "passengers": 267,
     "is_cargo": false,
-    "changes": 1
+    "changes": 7
   },
   {
     "ACID": "PAL311",
     "Plane type": "Embraer E195-E2",
     "route": "46.15N/84.33W",
-    "altitude": 28000,
+    "altitude": 24000,
     "departure airport": "CYUL",
     "arrival airport": "CYWG",
     "departure time": 1767795900,
-    "aircraft speed": 460.0,
+    "aircraft speed": 440.0,
     "passengers": 119,
     "is_cargo": false,
-    "changes": 2
+    "changes": 26
   },
   {
     "ACID": "ACA457",
     "Plane type": "Airbus A321",
     "route": "49.97N/110.935W 47.50N/69.88W",
-    "altitude": 38000,
+    "altitude": 35000,
     "departure airport": "CYWG",
     "arrival airport": "CYYJ",
     "departure time": 1767796020,
-    "aircraft speed": 470.0,
+    "aircraft speed": 490.0,
     "passengers": 173,
     "is_cargo": false,
-    "changes": 2
+    "changes": 11
   },
   {
     "ACID": "WJA602",
@@ -1082,27 +1082,27 @@
     "ACID": "WJA239",
     "Plane type": "Boeing 787-9",
     "route": "50.77N/115.66W",
-    "altitude": 36000,
+    "altitude": 37000,
     "departure airport": "CYXE",
     "arrival airport": "CYVR",
     "departure time": 1767796140,
     "aircraft speed": 486.0,
     "passengers": 273,
     "is_cargo": false,
-    "changes": 0
+    "changes": 1
   },
   {
     "ACID": "ACA300",
     "Plane type": "Boeing 777-300ER",
     "route": "50.18N/71.405W 49.64N/92.114W 49.97N/110.935W",
-    "altitude": 42000,
+    "altitude": 39000,
     "departure airport": "CYQB",
     "arrival airport": "CYVR",
     "departure time": 1767796200,
     "aircraft speed": 480.0,
     "passengers": 405,
     "is_cargo": false,
-    "changes": 1
+    "changes": 70
   },
   {
     "ACID": "WJA388",
@@ -1128,20 +1128,20 @@
     "aircraft speed": 466.0,
     "passengers": 138,
     "is_cargo": false,
-    "changes": 0
+    "changes": 2
   },
   {
     "ACID": "CCA338",
     "Plane type": "Boeing 767-300F",
     "route": "49.97N/110.935W 49.82N/86.449W",
-    "altitude": 35000,
+    "altitude": 31000,
     "departure airport": "CYYC",
     "arrival airport": "CYYZ",
     "departure time": 1767796380,
-    "aircraft speed": 477.0,
+    "aircraft speed": 497.0,
     "passengers": 0,
     "is_cargo": true,
-    "changes": 0
+    "changes": 5
   },
   {
     "ACID": "FLE467",
@@ -1154,7 +1154,7 @@
     "aircraft speed": 465.0,
     "passengers": 144,
     "is_cargo": false,
-    "changes": 1
+    "changes": 15
   },
   {
     "ACID": "FLE358",
@@ -1167,7 +1167,7 @@
     "aircraft speed": 472.0,
     "passengers": 168,
     "is_cargo": false,
-    "changes": 0
+    "changes": 6
   },
   {
     "ACID": "PAL880",
@@ -1186,14 +1186,14 @@
     "ACID": "WJA730",
     "Plane type": "Boeing 737 MAX 8",
     "route": "49.97N/110.935W 49.82N/86.449W 45.88N/78.031W",
-    "altitude": 38000,
+    "altitude": 37000,
     "departure airport": "CYYC",
     "arrival airport": "CYHZ",
     "departure time": 1767796620,
-    "aircraft speed": 484.0,
+    "aircraft speed": 504.0,
     "passengers": 143,
     "is_cargo": false,
-    "changes": 0
+    "changes": 34
   },
   {
     "ACID": "ACA526",
@@ -1216,23 +1216,23 @@
     "departure airport": "CYYJ",
     "arrival airport": "CYYC",
     "departure time": 1767796740,
-    "aircraft speed": 493.0,
+    "aircraft speed": 473.0,
     "passengers": 292,
     "is_cargo": false,
-    "changes": 0
+    "changes": 1
   },
   {
     "ACID": "FLE369",
     "Plane type": "Boeing 737 MAX 8",
     "route": "47.50N/69.88W 49.97N/110.935W",
-    "altitude": 37000,
+    "altitude": 38000,
     "departure airport": "CYQB",
     "arrival airport": "CYYT",
     "departure time": 1767796800,
     "aircraft speed": 470.0,
     "passengers": 161,
     "is_cargo": false,
-    "changes": 0
+    "changes": 3
   },
   {
     "ACID": "PAL800",
@@ -1251,14 +1251,14 @@
     "ACID": "ACA198",
     "Plane type": "Boeing 787-9",
     "route": "50.77N/115.66W",
-    "altitude": 31000,
+    "altitude": 36000,
     "departure airport": "CYVR",
     "arrival airport": "CYYC",
     "departure time": 1767796920,
-    "aircraft speed": 485.0,
+    "aircraft speed": 505.0,
     "passengers": 260,
     "is_cargo": false,
-    "changes": 0
+    "changes": 46
   },
   {
     "ACID": "PAL911",
@@ -1290,14 +1290,14 @@
     "ACID": "PAL715",
     "Plane type": "Dash 8-400",
     "route": "48.22N/118.55W 49.64N/92.114W",
-    "altitude": 25000,
+    "altitude": 23000,
     "departure airport": "CYVR",
     "arrival airport": "CYYZ",
     "departure time": 1767797100,
     "aircraft speed": 360.0,
     "passengers": 73,
     "is_cargo": false,
-    "changes": 0
+    "changes": 2
   },
   {
     "ACID": "WJA416",
@@ -1316,40 +1316,40 @@
     "ACID": "WJA661",
     "Plane type": "Boeing 737 MAX 8",
     "route": "46.15N/84.33W 49.82N/86.449W",
-    "altitude": 38000,
+    "altitude": 37000,
     "departure airport": "CYYZ",
     "arrival airport": "CYVR",
     "departure time": 1767797220,
     "aircraft speed": 485.0,
     "passengers": 157,
     "is_cargo": false,
-    "changes": 1
+    "changes": 2
   },
   {
     "ACID": "FLE170",
     "Plane type": "Boeing 737-800",
     "route": "46.15N/84.33W",
-    "altitude": 29000,
+    "altitude": 36000,
     "departure airport": "CYOW",
     "arrival airport": "CYUL",
     "departure time": 1767797280,
-    "aircraft speed": 479.0,
+    "aircraft speed": 499.0,
     "passengers": 166,
     "is_cargo": false,
-    "changes": 1
+    "changes": 99
   },
   {
     "ACID": "ACA212",
     "Plane type": "Airbus A220-300",
     "route": "50.77N/115.66W",
-    "altitude": 33000,
+    "altitude": 30000,
     "departure airport": "CYYC",
     "arrival airport": "CYVR",
     "departure time": 1767797340,
-    "aircraft speed": 423.0,
+    "aircraft speed": 443.0,
     "passengers": 106,
     "is_cargo": false,
-    "changes": 0
+    "changes": 4
   },
   {
     "ACID": "PAL130",
@@ -1407,14 +1407,14 @@
     "ACID": "PAL898",
     "Plane type": "Dash 8-400",
     "route": "46.15N/84.33W 49.64N/92.114W",
-    "altitude": 28000,
+    "altitude": 25000,
     "departure airport": "CYQB",
     "arrival airport": "CYWG",
     "departure time": 1767797640,
-    "aircraft speed": 380.0,
+    "aircraft speed": 360.0,
     "passengers": 60,
     "is_cargo": false,
-    "changes": 1
+    "changes": 5
   },
   {
     "ACID": "PAL209",
@@ -1437,10 +1437,10 @@
     "departure airport": "CYOW",
     "arrival airport": "CYUL",
     "departure time": 1767797760,
-    "aircraft speed": 483.0,
+    "aircraft speed": 503.0,
     "passengers": 169,
     "is_cargo": false,
-    "changes": 2
+    "changes": 20
   },
   {
     "ACID": "ACA601",
@@ -1498,11 +1498,11 @@
     "ACID": "ACA260",
     "Plane type": "Boeing 787-9",
     "route": "50.77N/115.66W",
-    "altitude": 29000,
+    "altitude": 28000,
     "departure airport": "CYEG",
     "arrival airport": "CYYC",
     "departure time": 1767798120,
-    "aircraft speed": 504.0,
+    "aircraft speed": 484.0,
     "passengers": 241,
     "is_cargo": false,
     "changes": 1
@@ -1537,14 +1537,14 @@
     "ACID": "FLE637",
     "Plane type": "Boeing 737 MAX 8",
     "route": "46.15N/84.33W 52.45N/105.22W",
-    "altitude": 40000,
+    "altitude": 36000,
     "departure airport": "CYOW",
     "arrival airport": "CYEG",
     "departure time": 1767798300,
-    "aircraft speed": 471.0,
+    "aircraft speed": 491.0,
     "passengers": 161,
     "is_cargo": false,
-    "changes": 0
+    "changes": 59
   },
   {
     "ACID": "WJA417",
@@ -1563,40 +1563,40 @@
     "ACID": "WJA359",
     "Plane type": "Boeing 737-800",
     "route": "46.15N/84.33W",
-    "altitude": 28000,
+    "altitude": 36000,
     "departure airport": "CYYZ",
     "arrival airport": "CYUL",
     "departure time": 1767798420,
     "aircraft speed": 465.0,
     "passengers": 139,
     "is_cargo": false,
-    "changes": 0
+    "changes": 18
   },
   {
     "ACID": "ACA229",
     "Plane type": "Boeing 787-9",
     "route": "46.15N/84.33W 48.22N/118.55W",
-    "altitude": 38000,
+    "altitude": 37000,
     "departure airport": "CYHZ",
     "arrival airport": "CYYZ",
     "departure time": 1767798480,
-    "aircraft speed": 499.0,
+    "aircraft speed": 479.0,
     "passengers": 246,
     "is_cargo": false,
-    "changes": 2
+    "changes": 29
   },
   {
     "ACID": "WJA192",
     "Plane type": "Boeing 737 MAX 8",
     "route": "45.88N/78.031W 52.45N/105.22W",
-    "altitude": 37000,
+    "altitude": 35000,
     "departure airport": "CYHZ",
     "arrival airport": "CYEG",
     "departure time": 1767798540,
     "aircraft speed": 477.0,
     "passengers": 144,
     "is_cargo": false,
-    "changes": 0
+    "changes": 6
   },
   {
     "ACID": "UPS881",
@@ -1615,40 +1615,40 @@
     "ACID": "WJA792",
     "Plane type": "Boeing 787-9",
     "route": "49.64N/92.114W 45.88N/78.031W",
-    "altitude": 40000,
+    "altitude": 41000,
     "departure airport": "CYVR",
     "arrival airport": "CYYZ",
     "departure time": 1767798660,
     "aircraft speed": 493.0,
     "passengers": 248,
     "is_cargo": false,
-    "changes": 0
+    "changes": 3
   },
   {
     "ACID": "CCA993",
     "Plane type": "Boeing 767-300F",
     "route": "45.88N/78.031W 51.33N/100.44W",
-    "altitude": 39000,
+    "altitude": 40000,
     "departure airport": "CYHZ",
     "arrival airport": "CYYC",
     "departure time": 1767798720,
-    "aircraft speed": 464.0,
+    "aircraft speed": 504.0,
     "passengers": 0,
     "is_cargo": true,
-    "changes": 0
+    "changes": 3
   },
   {
     "ACID": "PAL519",
     "Plane type": "Dash 8-400",
     "route": "49.97N/110.935W",
-    "altitude": 25000,
+    "altitude": 27000,
     "departure airport": "CYYC",
     "arrival airport": "CYVR",
     "departure time": 1767798780,
     "aircraft speed": 360.0,
     "passengers": 69,
     "is_cargo": false,
-    "changes": 0
+    "changes": 6
   },
   {
     "ACID": "FLE781",
@@ -1667,27 +1667,27 @@
     "ACID": "ACA368",
     "Plane type": "Boeing 767-300F",
     "route": "49.97N/110.935W 46.15N/84.33W",
-    "altitude": 37000,
+    "altitude": 34000,
     "departure airport": "CYYJ",
     "arrival airport": "CYXE",
     "departure time": 1767798900,
     "aircraft speed": 480.0,
     "passengers": 0,
     "is_cargo": true,
-    "changes": 0
+    "changes": 3
   },
   {
     "ACID": "FLE213",
     "Plane type": "Boeing 737 MAX 8",
     "route": "50.77N/115.66W",
-    "altitude": 29000,
+    "altitude": 31000,
     "departure airport": "CYYC",
     "arrival airport": "CYEG",
     "departure time": 1767798960,
     "aircraft speed": 479.0,
     "passengers": 162,
     "is_cargo": false,
-    "changes": 1
+    "changes": 49
   },
   {
     "ACID": "FLE178",
@@ -1700,20 +1700,20 @@
     "aircraft speed": 476.0,
     "passengers": 174,
     "is_cargo": false,
-    "changes": 1
+    "changes": 7
   },
   {
     "ACID": "ACA805",
     "Plane type": "Boeing 777-300ER",
     "route": "46.15N/84.33W 47.50N/69.88W",
-    "altitude": 35000,
+    "altitude": 34000,
     "departure airport": "CYYZ",
     "arrival airport": "CYHZ",
     "departure time": 1767799080,
     "aircraft speed": 498.0,
     "passengers": 424,
     "is_cargo": false,
-    "changes": 0
+    "changes": 3
   },
   {
     "ACID": "PAL964",
@@ -1732,27 +1732,27 @@
     "ACID": "ACA545",
     "Plane type": "Boeing 737-800",
     "route": "49.97N/110.935W",
-    "altitude": 31000,
+    "altitude": 33000,
     "departure airport": "CYVR",
     "arrival airport": "CYYC",
     "departure time": 1767799260,
     "aircraft speed": 470.0,
     "passengers": 154,
     "is_cargo": false,
-    "changes": 0
+    "changes": 2
   },
   {
     "ACID": "ACA771",
     "Plane type": "Airbus A220-300",
     "route": "46.15N/84.33W",
-    "altitude": 37000,
+    "altitude": 35000,
     "departure airport": "CYXE",
     "arrival airport": "CYYJ",
     "departure time": 1767799320,
-    "aircraft speed": 425.0,
+    "aircraft speed": 445.0,
     "passengers": 125,
     "is_cargo": false,
-    "changes": 0
+    "changes": 3
   },
   {
     "ACID": "WJA270",
@@ -1778,33 +1778,33 @@
     "aircraft speed": 455.0,
     "passengers": 130,
     "is_cargo": false,
-    "changes": 0
+    "changes": 20
   },
   {
     "ACID": "FLE803",
     "Plane type": "Boeing 737-800",
     "route": "49.82N/86.449W 48.22N/118.55W",
-    "altitude": 37000,
+    "altitude": 34000,
     "departure airport": "CYYZ",
     "arrival airport": "CYVR",
     "departure time": 1767799500,
     "aircraft speed": 477.0,
     "passengers": 177,
     "is_cargo": false,
-    "changes": 1
+    "changes": 10
   },
   {
     "ACID": "FDX500",
     "Plane type": "Boeing 767-300F",
     "route": "46.15N/84.33W 45.88N/78.031W",
-    "altitude": 34000,
+    "altitude": 32000,
     "departure airport": "CYWG",
     "arrival airport": "CYOW",
     "departure time": 1767799560,
     "aircraft speed": 469.0,
     "passengers": 0,
     "is_cargo": true,
-    "changes": 1
+    "changes": 19
   },
   {
     "ACID": "PAL744",
@@ -1823,27 +1823,27 @@
     "ACID": "WJA177",
     "Plane type": "Boeing 737 MAX 8",
     "route": "49.97N/110.935W 49.82N/86.449W",
-    "altitude": 33000,
+    "altitude": 31000,
     "departure airport": "CYYC",
     "arrival airport": "CYYZ",
     "departure time": 1767799680,
     "aircraft speed": 471.0,
     "passengers": 170,
     "is_cargo": false,
-    "changes": 0
+    "changes": 2
   },
   {
     "ACID": "FLE674",
     "Plane type": "Boeing 737 MAX 8",
     "route": "46.15N/84.33W",
-    "altitude": 35000,
+    "altitude": 33000,
     "departure airport": "CYYZ",
     "arrival airport": "CYHZ",
     "departure time": 1767799740,
-    "aircraft speed": 478.0,
+    "aircraft speed": 498.0,
     "passengers": 172,
     "is_cargo": false,
-    "changes": 0
+    "changes": 33
   },
   {
     "ACID": "ACA202",
@@ -1882,46 +1882,46 @@
     "aircraft speed": 476.0,
     "passengers": 175,
     "is_cargo": false,
-    "changes": 1
+    "changes": 5
   },
   {
     "ACID": "FLE839",
     "Plane type": "Boeing 737-800",
     "route": "49.64N/92.114W 50.18N/71.405W",
-    "altitude": 34000,
+    "altitude": 33000,
     "departure airport": "CYYC",
     "arrival airport": "CYYZ",
     "departure time": 1767799980,
-    "aircraft speed": 467.0,
+    "aircraft speed": 487.0,
     "passengers": 177,
     "is_cargo": false,
-    "changes": 1
+    "changes": 5
   },
   {
     "ACID": "WJA852",
     "Plane type": "Boeing 787-9",
     "route": "49.64N/92.114W 48.22N/118.55W",
-    "altitude": 40000,
+    "altitude": 42000,
     "departure airport": "CYYZ",
     "arrival airport": "CYVR",
     "departure time": 1767800040,
-    "aircraft speed": 493.0,
+    "aircraft speed": 473.0,
     "passengers": 242,
     "is_cargo": false,
-    "changes": 0
+    "changes": 3
   },
   {
     "ACID": "FDX910",
     "Plane type": "Boeing 757-200F",
     "route": "49.82N/86.449W 48.22N/118.55W",
-    "altitude": 39000,
+    "altitude": 40000,
     "departure airport": "CYUL",
     "arrival airport": "CYYC",
     "departure time": 1767800100,
-    "aircraft speed": 463.0,
+    "aircraft speed": 503.0,
     "passengers": 0,
     "is_cargo": true,
-    "changes": 1
+    "changes": 12
   },
   {
     "ACID": "ACA479",
@@ -1973,20 +1973,20 @@
     "aircraft speed": 481.0,
     "passengers": 158,
     "is_cargo": false,
-    "changes": 0
+    "changes": 2
   },
   {
     "ACID": "ACA235",
     "Plane type": "Boeing 777-300ER",
     "route": "46.15N/84.33W",
-    "altitude": 29000,
+    "altitude": 32000,
     "departure airport": "CYUL",
     "arrival airport": "CYOW",
     "departure time": 1767800400,
     "aircraft speed": 480.0,
     "passengers": 427,
     "is_cargo": false,
-    "changes": 4
+    "changes": 86
   },
   {
     "ACID": "PAL772",
@@ -1996,10 +1996,10 @@
     "departure airport": "CYWG",
     "arrival airport": "CYYZ",
     "departure time": 1767800460,
-    "aircraft speed": 440.0,
+    "aircraft speed": 500.0,
     "passengers": 120,
     "is_cargo": false,
-    "changes": 0
+    "changes": 11
   },
   {
     "ACID": "FDX998",
@@ -2009,49 +2009,49 @@
     "departure airport": "CYYC",
     "arrival airport": "CYQB",
     "departure time": 1767800520,
-    "aircraft speed": 466.0,
+    "aircraft speed": 486.0,
     "passengers": 0,
     "is_cargo": true,
-    "changes": 1
+    "changes": 4
   },
   {
     "ACID": "WJA295",
     "Plane type": "Boeing 737 MAX 8",
     "route": "46.15N/84.33W 48.22N/118.55W",
-    "altitude": 33000,
+    "altitude": 31000,
     "departure airport": "CYHZ",
     "arrival airport": "CYYZ",
     "departure time": 1767800580,
     "aircraft speed": 481.0,
     "passengers": 169,
     "is_cargo": false,
-    "changes": 0
+    "changes": 2
   },
   {
     "ACID": "FLE810",
     "Plane type": "Boeing 737 MAX 8",
     "route": "46.15N/84.33W",
-    "altitude": 31000,
+    "altitude": 30000,
     "departure airport": "CYUL",
     "arrival airport": "CYOW",
     "departure time": 1767800640,
-    "aircraft speed": 481.0,
+    "aircraft speed": 501.0,
     "passengers": 159,
     "is_cargo": false,
-    "changes": 0
+    "changes": 150
   },
   {
     "ACID": "ACA703",
     "Plane type": "Boeing 787-9",
     "route": "49.97N/110.935W",
-    "altitude": 29000,
+    "altitude": 35000,
     "departure airport": "CYVR",
     "arrival airport": "CYYC",
     "departure time": 1767800700,
-    "aircraft speed": 491.0,
+    "aircraft speed": 471.0,
     "passengers": 263,
     "is_cargo": false,
-    "changes": 1
+    "changes": 18
   },
   {
     "ACID": "FLE764",
@@ -2083,66 +2083,66 @@
     "ACID": "FLE106",
     "Plane type": "Boeing 737 MAX 8",
     "route": "46.15N/84.33W 48.22N/118.55W",
-    "altitude": 33000,
+    "altitude": 31000,
     "departure airport": "CYHZ",
     "arrival airport": "CYYZ",
     "departure time": 1767800880,
     "aircraft speed": 473.0,
     "passengers": 151,
     "is_cargo": false,
-    "changes": 0
+    "changes": 2
   },
   {
     "ACID": "PAL196",
     "Plane type": "Embraer E195-E2",
     "route": "51.33N/100.44W 49.97N/110.935W",
-    "altitude": 23000,
+    "altitude": 22000,
     "departure airport": "CYYC",
     "arrival airport": "CYWG",
     "departure time": 1767800940,
-    "aircraft speed": 440.0,
+    "aircraft speed": 460.0,
     "passengers": 106,
     "is_cargo": false,
-    "changes": 1
+    "changes": 3
   },
   {
     "ACID": "WJA634",
     "Plane type": "Boeing 737-800",
     "route": "45.88N/78.031W",
-    "altitude": 28000,
+    "altitude": 29000,
     "departure airport": "CYOW",
     "arrival airport": "CYYZ",
     "departure time": 1767801060,
     "aircraft speed": 470.0,
     "passengers": 140,
     "is_cargo": false,
-    "changes": 0
+    "changes": 5
   },
   {
     "ACID": "FLE680",
     "Plane type": "Boeing 737-800",
     "route": "49.64N/92.114W 46.15N/84.33W",
-    "altitude": 33000,
+    "altitude": 38000,
     "departure airport": "CYXE",
     "arrival airport": "CYUL",
     "departure time": 1767801120,
-    "aircraft speed": 477.0,
+    "aircraft speed": 497.0,
     "passengers": 142,
     "is_cargo": false,
-    "changes": 0
+    "changes": 20
   },
   {
     "ACID": "ACA947",
     "Plane type": "Airbus A321",
     "route": "46.15N/84.33W",
-    "altitude": 29000,
+    "altitude": 35000,
     "departure airport": "CYOW",
     "arrival airport": "CYUL",
     "departure time": 1767801180,
-    "aircraft speed": 460.0,
+    "aircraft speed": 500.0,
     "passengers": 172,
     "is_cargo": false,
-    "changes": 2
+    "changes": 33
   },
   {
     "ACID": "FDX986",
@@ -2155,124 +2155,124 @@
     "aircraft speed": 477.0,
     "passengers": 0,
     "is_cargo": true,
-    "changes": 0
+    "changes": 2
   },
   {
     "ACID": "FLE686",
     "Plane type": "Boeing 737-800",
     "route": "51.33N/100.44W 46.15N/84.33W",
-    "altitude": 37000,
+    "altitude": 39000,
     "departure airport": "CYXE",
     "arrival airport": "CYHZ",
     "departure time": 1767801360,
     "aircraft speed": 478.0,
     "passengers": 147,
     "is_cargo": false,
-    "changes": 0
+    "changes": 8
   },
   {
     "ACID": "PAL210",
     "Plane type": "Embraer E195-E2",
     "route": "46.15N/84.33W",
-    "altitude": 28000,
+    "altitude": 23000,
     "departure airport": "CYOW",
     "arrival airport": "CYYZ",
     "departure time": 1767801420,
-    "aircraft speed": 460.0,
+    "aircraft speed": 500.0,
     "passengers": 125,
     "is_cargo": false,
-    "changes": 1
+    "changes": 20
   },
   {
     "ACID": "WJA955",
     "Plane type": "Boeing 737-800",
     "route": "47.50N/69.88W 49.97N/110.935W",
-    "altitude": 35000,
+    "altitude": 30000,
     "departure airport": "CYYJ",
     "arrival airport": "CYWG",
     "departure time": 1767801480,
-    "aircraft speed": 479.0,
+    "aircraft speed": 499.0,
     "passengers": 153,
     "is_cargo": false,
-    "changes": 2
+    "changes": 7
   },
   {
     "ACID": "PAL897",
     "Plane type": "Embraer E195-E2",
     "route": "46.15N/84.33W 51.33N/100.44W",
-    "altitude": 23000,
+    "altitude": 22000,
     "departure airport": "CYHZ",
     "arrival airport": "CYEG",
     "departure time": 1767801540,
-    "aircraft speed": 440.0,
+    "aircraft speed": 480.0,
     "passengers": 116,
     "is_cargo": false,
-    "changes": 2
+    "changes": 36
   },
   {
     "ACID": "FLE725",
     "Plane type": "Boeing 737-800",
     "route": "46.15N/84.33W",
-    "altitude": 33000,
+    "altitude": 29000,
     "departure airport": "CYOW",
     "arrival airport": "CYUL",
     "departure time": 1767801600,
-    "aircraft speed": 483.0,
+    "aircraft speed": 503.0,
     "passengers": 156,
     "is_cargo": false,
-    "changes": 0
+    "changes": 23
   },
   {
     "ACID": "WJA551",
     "Plane type": "Boeing 787-9",
     "route": "48.22N/118.55W 47.50N/69.88W 46.15N/84.33W",
-    "altitude": 39000,
+    "altitude": 36000,
     "departure airport": "CYYJ",
     "arrival airport": "CYQB",
     "departure time": 1767801660,
     "aircraft speed": 487.0,
     "passengers": 246,
     "is_cargo": false,
-    "changes": 1
+    "changes": 16
   },
   {
     "ACID": "CCA592",
     "Plane type": "Boeing 757-200F",
     "route": "49.64N/92.114W 48.22N/118.55W",
-    "altitude": 38000,
+    "altitude": 39000,
     "departure airport": "CYQB",
     "arrival airport": "CYYC",
     "departure time": 1767801720,
     "aircraft speed": 467.0,
     "passengers": 0,
     "is_cargo": true,
-    "changes": 0
+    "changes": 5
   },
   {
     "ACID": "FLE225",
     "Plane type": "Boeing 737-800",
     "route": "49.64N/92.114W",
-    "altitude": 33000,
+    "altitude": 32000,
     "departure airport": "CYYC",
     "arrival airport": "CYXE",
     "departure time": 1767801780,
     "aircraft speed": 481.0,
     "passengers": 174,
     "is_cargo": false,
-    "changes": 0
+    "changes": 5
   },
   {
     "ACID": "WJA615",
     "Plane type": "Boeing 787-9",
     "route": "49.64N/92.114W 48.22N/118.55W",
-    "altitude": 40000,
+    "altitude": 41000,
     "departure airport": "CYYZ",
     "arrival airport": "CYVR",
     "departure time": 1767801840,
     "aircraft speed": 504.0,
     "passengers": 268,
     "is_cargo": false,
-    "changes": 0
+    "changes": 1
   },
   {
     "ACID": "FLE172",
@@ -2291,27 +2291,27 @@
     "ACID": "WJA266",
     "Plane type": "Boeing 737-800",
     "route": "46.15N/84.33W",
-    "altitude": 31000,
+    "altitude": 28000,
     "departure airport": "CYOW",
     "arrival airport": "CYUL",
     "departure time": 1767801960,
     "aircraft speed": 483.0,
     "passengers": 153,
     "is_cargo": false,
-    "changes": 0
+    "changes": 63
   },
   {
     "ACID": "PAL194",
     "Plane type": "Dash 8-400",
     "route": "50.77N/115.66W",
-    "altitude": 28000,
+    "altitude": 25000,
     "departure airport": "CYVR",
     "arrival airport": "CYYC",
     "departure time": 1767802020,
-    "aircraft speed": 360.0,
+    "aircraft speed": 380.0,
     "passengers": 68,
     "is_cargo": false,
-    "changes": 0
+    "changes": 4
   },
   {
     "ACID": "FLE164",
@@ -2343,66 +2343,66 @@
     "ACID": "FDX430",
     "Plane type": "Boeing 757-200F",
     "route": "49.82N/86.449W 51.33N/100.44W",
-    "altitude": 39000,
+    "altitude": 35000,
     "departure airport": "CYOW",
     "arrival airport": "CYYC",
     "departure time": 1767802200,
     "aircraft speed": 474.0,
     "passengers": 0,
     "is_cargo": true,
-    "changes": 3
+    "changes": 13
   },
   {
     "ACID": "FLE157",
     "Plane type": "Boeing 737 MAX 8",
     "route": "49.82N/86.449W 51.33N/100.44W",
-    "altitude": 41000,
+    "altitude": 39000,
     "departure airport": "CYOW",
     "arrival airport": "CYEG",
     "departure time": 1767802260,
-    "aircraft speed": 484.0,
+    "aircraft speed": 504.0,
     "passengers": 160,
     "is_cargo": false,
-    "changes": 0
+    "changes": 3
   },
   {
     "ACID": "FLE879",
     "Plane type": "Boeing 737 MAX 8",
     "route": "49.97N/110.935W",
-    "altitude": 29000,
+    "altitude": 30000,
     "departure airport": "CYVR",
     "arrival airport": "CYEG",
     "departure time": 1767802320,
     "aircraft speed": 471.0,
     "passengers": 168,
     "is_cargo": false,
-    "changes": 1
+    "changes": 8
   },
   {
     "ACID": "PAL149",
     "Plane type": "Dash 8-400",
     "route": "49.97N/110.935W",
-    "altitude": 26000,
+    "altitude": 24000,
     "departure airport": "CYVR",
     "arrival airport": "CYEG",
     "departure time": 1767802380,
-    "aircraft speed": 360.0,
+    "aircraft speed": 380.0,
     "passengers": 64,
     "is_cargo": false,
-    "changes": 1
+    "changes": 6
   },
   {
     "ACID": "ACA742",
     "Plane type": "Boeing 767-300F",
     "route": "49.82N/86.449W 45.88N/78.031W",
-    "altitude": 37000,
+    "altitude": 33000,
     "departure airport": "CYYJ",
     "arrival airport": "CYYZ",
     "departure time": 1767802440,
     "aircraft speed": 469.0,
     "passengers": 0,
     "is_cargo": true,
-    "changes": 0
+    "changes": 4
   },
   {
     "ACID": "ACA936",
@@ -2421,14 +2421,14 @@
     "ACID": "ACA971",
     "Plane type": "Boeing 787-9",
     "route": "49.97N/110.935W",
-    "altitude": 29000,
+    "altitude": 33000,
     "departure airport": "CYVR",
     "arrival airport": "CYEG",
     "departure time": 1767802560,
     "aircraft speed": 499.0,
     "passengers": 255,
     "is_cargo": false,
-    "changes": 1
+    "changes": 11
   },
   {
     "ACID": "CCA990",
@@ -2441,7 +2441,7 @@
     "aircraft speed": 478.0,
     "passengers": 0,
     "is_cargo": true,
-    "changes": 2
+    "changes": 7
   },
   {
     "ACID": "PAL902",
@@ -2473,14 +2473,14 @@
     "ACID": "FLE485",
     "Plane type": "Boeing 737-800",
     "route": "49.97N/110.935W 46.15N/84.33W",
-    "altitude": 37000,
+    "altitude": 36000,
     "departure airport": "CYYC",
     "arrival airport": "CYYZ",
     "departure time": 1767802800,
-    "aircraft speed": 480.0,
+    "aircraft speed": 500.0,
     "passengers": 147,
     "is_cargo": false,
-    "changes": 0
+    "changes": 2
   },
   {
     "ACID": "ACA169",
@@ -2490,23 +2490,23 @@
     "departure airport": "CYVR",
     "arrival airport": "CYYZ",
     "departure time": 1767802860,
-    "aircraft speed": 431.0,
+    "aircraft speed": 451.0,
     "passengers": 106,
     "is_cargo": false,
-    "changes": 0
+    "changes": 1
   },
   {
     "ACID": "ACA949",
     "Plane type": "Boeing 777-300ER",
     "route": "46.15N/84.33W 49.97N/110.935W",
-    "altitude": 37000,
+    "altitude": 36000,
     "departure airport": "CYYZ",
     "arrival airport": "CYYC",
     "departure time": 1767802920,
-    "aircraft speed": 486.0,
+    "aircraft speed": 466.0,
     "passengers": 421,
     "is_cargo": false,
-    "changes": 0
+    "changes": 6
   },
   {
     "ACID": "ACA565",
@@ -2519,33 +2519,33 @@
     "aircraft speed": 478.0,
     "passengers": 153,
     "is_cargo": false,
-    "changes": 0
+    "changes": 10
   },
   {
     "ACID": "ACA429",
     "Plane type": "Boeing 777-300ER",
     "route": "48.22N/118.55W 46.15N/84.33W 45.88N/78.031W",
-    "altitude": 37000,
+    "altitude": 34000,
     "departure airport": "CYYJ",
     "arrival airport": "CYUL",
     "departure time": 1767803040,
-    "aircraft speed": 481.0,
+    "aircraft speed": 501.0,
     "passengers": 406,
     "is_cargo": false,
-    "changes": 0
+    "changes": 6
   },
   {
     "ACID": "FLE262",
     "Plane type": "Boeing 737 MAX 8",
     "route": "44.55N/75.22W 47.50N/69.88W",
-    "altitude": 33000,
+    "altitude": 32000,
     "departure airport": "CYHZ",
     "arrival airport": "CYOW",
     "departure time": 1767803100,
     "aircraft speed": 470.0,
     "passengers": 169,
     "is_cargo": false,
-    "changes": 0
+    "changes": 1
   },
   {
     "ACID": "ACA999",
@@ -2581,10 +2581,10 @@
     "departure airport": "CYEG",
     "arrival airport": "CYUL",
     "departure time": 1767803340,
-    "aircraft speed": 480.0,
+    "aircraft speed": 500.0,
     "passengers": 149,
     "is_cargo": false,
-    "changes": 0
+    "changes": 3
   },
   {
     "ACID": "WJA959",
@@ -2594,10 +2594,10 @@
     "departure airport": "CYYC",
     "arrival airport": "CYVR",
     "departure time": 1767803400,
-    "aircraft speed": 467.0,
+    "aircraft speed": 487.0,
     "passengers": 156,
     "is_cargo": false,
-    "changes": 1
+    "changes": 2
   },
   {
     "ACID": "FLE889",
@@ -2616,14 +2616,14 @@
     "ACID": "FLE901",
     "Plane type": "Boeing 737 MAX 8",
     "route": "48.22N/118.55W 50.18N/71.405W",
-    "altitude": 41000,
+    "altitude": 39000,
     "departure airport": "CYVR",
     "arrival airport": "CYOW",
     "departure time": 1767803520,
     "aircraft speed": 478.0,
     "passengers": 150,
     "is_cargo": false,
-    "changes": 0
+    "changes": 6
   },
   {
     "ACID": "ACA431",
@@ -2642,144 +2642,144 @@
     "ACID": "ACA150",
     "Plane type": "Airbus A320",
     "route": "49.82N/86.449W 49.97N/110.935W",
-    "altitude": 37000,
+    "altitude": 35000,
     "departure airport": "CYQB",
     "arrival airport": "CYXE",
     "departure time": 1767803640,
     "aircraft speed": 454.0,
     "passengers": 139,
     "is_cargo": false,
-    "changes": 0
+    "changes": 2
   },
   {
     "ACID": "FLE310",
     "Plane type": "Boeing 737-800",
     "route": "49.82N/86.449W 49.97N/110.935W",
-    "altitude": 37000,
+    "altitude": 34000,
     "departure airport": "CYYZ",
     "arrival airport": "CYYC",
     "departure time": 1767803700,
     "aircraft speed": 468.0,
     "passengers": 144,
     "is_cargo": false,
-    "changes": 0
+    "changes": 11
   },
   {
     "ACID": "PAL967",
     "Plane type": "Embraer E195-E2",
     "route": "45.88N/78.031W",
-    "altitude": 28000,
+    "altitude": 26000,
     "departure airport": "CYOW",
     "arrival airport": "CYYZ",
     "departure time": 1767803760,
-    "aircraft speed": 440.0,
+    "aircraft speed": 460.0,
     "passengers": 111,
     "is_cargo": false,
-    "changes": 0
+    "changes": 3
   },
   {
     "ACID": "ACA835",
     "Plane type": "Boeing 787-9",
     "route": "49.97N/110.935W",
-    "altitude": 34000,
+    "altitude": 32000,
     "departure airport": "CYEG",
     "arrival airport": "CYVR",
     "departure time": 1767803820,
-    "aircraft speed": 492.0,
+    "aircraft speed": 472.0,
     "passengers": 238,
     "is_cargo": false,
-    "changes": 1
+    "changes": 4
   },
   {
     "ACID": "ACA982",
     "Plane type": "Boeing 767-300F",
     "route": "49.82N/86.449W 44.55N/75.22W",
-    "altitude": 40000,
+    "altitude": 37000,
     "departure airport": "CYXE",
     "arrival airport": "CYHZ",
     "departure time": 1767803880,
     "aircraft speed": 469.0,
     "passengers": 0,
     "is_cargo": true,
-    "changes": 1
+    "changes": 4
   },
   {
     "ACID": "ACA773",
     "Plane type": "Boeing 767-300F",
     "route": "51.33N/100.44W 49.64N/92.114W",
-    "altitude": 36000,
+    "altitude": 35000,
     "departure airport": "CYXE",
     "arrival airport": "CYYZ",
     "departure time": 1767803940,
     "aircraft speed": 472.0,
     "passengers": 0,
     "is_cargo": true,
-    "changes": 0
+    "changes": 7
   },
   {
     "ACID": "FLE508",
     "Plane type": "Boeing 737-800",
     "route": "46.15N/84.33W",
-    "altitude": 29000,
+    "altitude": 31000,
     "departure airport": "CYYZ",
     "arrival airport": "CYOW",
     "departure time": 1767804000,
     "aircraft speed": 474.0,
     "passengers": 155,
     "is_cargo": false,
-    "changes": 1
+    "changes": 5
   },
   {
     "ACID": "ACA230",
     "Plane type": "Airbus A320",
     "route": "51.33N/100.44W 49.97N/110.935W",
-    "altitude": 33000,
+    "altitude": 36000,
     "departure airport": "CYWG",
     "arrival airport": "CYYC",
     "departure time": 1767804060,
     "aircraft speed": 460.0,
     "passengers": 150,
     "is_cargo": false,
-    "changes": 0
+    "changes": 3
   },
   {
     "ACID": "WJA272",
     "Plane type": "Boeing 737 MAX 8",
     "route": "45.88N/78.031W 51.33N/100.44W",
-    "altitude": 40000,
+    "altitude": 39000,
     "departure airport": "CYHZ",
     "arrival airport": "CYXE",
     "departure time": 1767804120,
     "aircraft speed": 482.0,
     "passengers": 148,
     "is_cargo": false,
-    "changes": 0
+    "changes": 1
   },
   {
     "ACID": "FLE238",
     "Plane type": "Boeing 737 MAX 8",
     "route": "46.15N/84.33W 44.55N/75.22W",
-    "altitude": 36000,
+    "altitude": 32000,
     "departure airport": "CYHZ",
     "arrival airport": "CYYZ",
     "departure time": 1767804180,
     "aircraft speed": 477.0,
     "passengers": 157,
     "is_cargo": false,
-    "changes": 1
+    "changes": 5
   },
   {
     "ACID": "ACA938",
     "Plane type": "Airbus A320",
     "route": "45.88N/78.031W",
-    "altitude": 29000,
+    "altitude": 30000,
     "departure airport": "CYYZ",
     "arrival airport": "CYOW",
     "departure time": 1767804240,
     "aircraft speed": 468.0,
     "passengers": 126,
     "is_cargo": false,
-    "changes": 1
+    "changes": 2
   },
   {
     "ACID": "WJA596",
@@ -2789,36 +2789,36 @@
     "departure airport": "CYOW",
     "arrival airport": "CYVR",
     "departure time": 1767804300,
-    "aircraft speed": 502.0,
+    "aircraft speed": 482.0,
     "passengers": 161,
     "is_cargo": false,
-    "changes": 2
+    "changes": 39
   },
   {
     "ACID": "ACA489",
     "Plane type": "Boeing 737-800",
     "route": "49.97N/110.935W",
-    "altitude": 31000,
+    "altitude": 36000,
     "departure airport": "CYEG",
     "arrival airport": "CYVR",
     "departure time": 1767804360,
     "aircraft speed": 466.0,
     "passengers": 136,
     "is_cargo": false,
-    "changes": 0
+    "changes": 5
   },
   {
     "ACID": "ACA367",
     "Plane type": "Boeing 767-300F",
     "route": "49.64N/92.114W 47.50N/69.88W",
-    "altitude": 33000,
+    "altitude": 29000,
     "departure airport": "CYWG",
     "arrival airport": "CYHZ",
     "departure time": 1767804420,
     "aircraft speed": 478.0,
     "passengers": 0,
     "is_cargo": true,
-    "changes": 0
+    "changes": 4
   },
   {
     "ACID": "PAL161",
@@ -2854,23 +2854,23 @@
     "departure airport": "CYYJ",
     "arrival airport": "CYWG",
     "departure time": 1767804600,
-    "aircraft speed": 482.0,
+    "aircraft speed": 502.0,
     "passengers": 151,
     "is_cargo": false,
-    "changes": 0
+    "changes": 7
   },
   {
     "ACID": "ACA705",
     "Plane type": "Boeing 767-300F",
     "route": "49.97N/110.935W 49.64N/92.114W 47.50N/69.88W",
-    "altitude": 39000,
+    "altitude": 32000,
     "departure airport": "CYYC",
     "arrival airport": "CYYT",
     "departure time": 1767804660,
-    "aircraft speed": 460.0,
+    "aircraft speed": 500.0,
     "passengers": 0,
     "is_cargo": true,
-    "changes": 1
+    "changes": 20
   },
   {
     "ACID": "PAL128",
@@ -2889,14 +2889,14 @@
     "ACID": "FLE968",
     "Plane type": "Boeing 737-800",
     "route": "45.88N/78.031W",
-    "altitude": 33000,
+    "altitude": 32000,
     "departure airport": "CYUL",
     "arrival airport": "CYYZ",
     "departure time": 1767804780,
     "aircraft speed": 484.0,
     "passengers": 179,
     "is_cargo": false,
-    "changes": 0
+    "changes": 1
   },
   {
     "ACID": "ACA621",
@@ -2915,53 +2915,53 @@
     "ACID": "PAL446",
     "Plane type": "Embraer E195-E2",
     "route": "51.33N/100.44W 46.15N/84.33W",
-    "altitude": 22000,
+    "altitude": 25000,
     "departure airport": "CYYC",
     "arrival airport": "CYOW",
     "departure time": 1767804900,
-    "aircraft speed": 440.0,
+    "aircraft speed": 460.0,
     "passengers": 109,
     "is_cargo": false,
-    "changes": 0
+    "changes": 4
   },
   {
     "ACID": "WJA503",
     "Plane type": "Boeing 787-9",
     "route": "49.64N/92.114W 45.88N/78.031W",
-    "altitude": 37000,
+    "altitude": 33000,
     "departure airport": "CYYC",
     "arrival airport": "CYYZ",
     "departure time": 1767804960,
     "aircraft speed": 492.0,
     "passengers": 262,
     "is_cargo": false,
-    "changes": 0
+    "changes": 4
   },
   {
     "ACID": "ACA534",
     "Plane type": "Boeing 777-300ER",
     "route": "49.97N/110.935W",
-    "altitude": 28000,
+    "altitude": 31000,
     "departure airport": "CYYC",
     "arrival airport": "CYVR",
     "departure time": 1767805020,
     "aircraft speed": 480.0,
     "passengers": 347,
     "is_cargo": false,
-    "changes": 0
+    "changes": 13
   },
   {
     "ACID": "ACA923",
     "Plane type": "Airbus A220-300",
     "route": "49.64N/92.114W 47.50N/69.88W",
-    "altitude": 41000,
+    "altitude": 32000,
     "departure airport": "CYVR",
     "arrival airport": "CYOW",
     "departure time": 1767805140,
-    "aircraft speed": 423.0,
+    "aircraft speed": 483.0,
     "passengers": 119,
     "is_cargo": false,
-    "changes": 0
+    "changes": 12
   },
   {
     "ACID": "ACA166",
@@ -2993,14 +2993,14 @@
     "ACID": "FLE159",
     "Plane type": "Boeing 737-800",
     "route": "45.88N/78.031W 49.82N/86.449W 49.97N/110.935W",
-    "altitude": 39000,
+    "altitude": 36000,
     "departure airport": "CYHZ",
     "arrival airport": "CYYC",
     "departure time": 1767805320,
     "aircraft speed": 467.0,
     "passengers": 164,
     "is_cargo": false,
-    "changes": 1
+    "changes": 34
   },
   {
     "ACID": "PAL697",
@@ -3010,23 +3010,23 @@
     "departure airport": "CYWG",
     "arrival airport": "CYHZ",
     "departure time": 1767805380,
-    "aircraft speed": 360.0,
+    "aircraft speed": 380.0,
     "passengers": 68,
     "is_cargo": false,
-    "changes": 0
+    "changes": 1
   },
   {
     "ACID": "ACA154",
     "Plane type": "Airbus A321",
     "route": "49.97N/110.935W",
-    "altitude": 33000,
+    "altitude": 35000,
     "departure airport": "CYVR",
     "arrival airport": "CYEG",
     "departure time": 1767805440,
     "aircraft speed": 462.0,
     "passengers": 154,
     "is_cargo": false,
-    "changes": 0
+    "changes": 2
   },
   {
     "ACID": "ACA426",
@@ -3036,10 +3036,10 @@
     "departure airport": "CYYC",
     "arrival airport": "CYOW",
     "departure time": 1767805500,
-    "aircraft speed": 460.0,
+    "aircraft speed": 480.0,
     "passengers": 140,
     "is_cargo": false,
-    "changes": 1
+    "changes": 2
   },
   {
     "ACID": "PAL362",
@@ -3084,14 +3084,14 @@
     "ACID": "FLE842",
     "Plane type": "Boeing 737 MAX 8",
     "route": "49.64N/92.114W 46.15N/84.33W",
-    "altitude": 38000,
+    "altitude": 33000,
     "departure airport": "CYVR",
     "arrival airport": "CYYZ",
     "departure time": 1767805740,
     "aircraft speed": 478.0,
     "passengers": 149,
     "is_cargo": false,
-    "changes": 0
+    "changes": 5
   },
   {
     "ACID": "ACA794",
@@ -3130,33 +3130,33 @@
     "aircraft speed": 440.0,
     "passengers": 119,
     "is_cargo": false,
-    "changes": 0
+    "changes": 2
   },
   {
     "ACID": "FDX445",
     "Plane type": "Boeing 757-200F",
     "route": "49.64N/92.114W 50.18N/71.405W",
-    "altitude": 38000,
+    "altitude": 40000,
     "departure airport": "CYEG",
     "arrival airport": "CYHZ",
     "departure time": 1767805980,
     "aircraft speed": 472.0,
     "passengers": 0,
     "is_cargo": true,
-    "changes": 1
+    "changes": 5
   },
   {
     "ACID": "PAL376",
     "Plane type": "Dash 8-400",
     "route": "49.97N/110.935W",
-    "altitude": 22000,
+    "altitude": 26000,
     "departure airport": "CYEG",
     "arrival airport": "CYXE",
     "departure time": 1767806040,
     "aircraft speed": 360.0,
     "passengers": 67,
     "is_cargo": false,
-    "changes": 0
+    "changes": 6
   },
   {
     "ACID": "FLE668",
@@ -3175,27 +3175,27 @@
     "ACID": "ACA343",
     "Plane type": "Boeing 787-9",
     "route": "49.82N/86.449W 49.64N/92.114W",
-    "altitude": 37000,
+    "altitude": 35000,
     "departure airport": "CYYT",
     "arrival airport": "CYOW",
     "departure time": 1767806160,
     "aircraft speed": 497.0,
     "passengers": 266,
     "is_cargo": false,
-    "changes": 0
+    "changes": 2
   },
   {
     "ACID": "WJA538",
     "Plane type": "Boeing 737 MAX 8",
     "route": "49.64N/92.114W 46.15N/84.33W 45.88N/78.031W",
-    "altitude": 39000,
+    "altitude": 36000,
     "departure airport": "CYVR",
     "arrival airport": "CYHZ",
     "departure time": 1767806220,
     "aircraft speed": 477.0,
     "passengers": 152,
     "is_cargo": false,
-    "changes": 2
+    "changes": 16
   },
   {
     "ACID": "WJA278",
@@ -3214,14 +3214,14 @@
     "ACID": "UPS399",
     "Plane type": "Boeing 767-300F",
     "route": "46.15N/84.33W 50.18N/71.405W 49.64N/92.114W",
-    "altitude": 40000,
+    "altitude": 39000,
     "departure airport": "CYHZ",
     "arrival airport": "CYVR",
     "departure time": 1767806400,
     "aircraft speed": 464.0,
     "passengers": 0,
     "is_cargo": true,
-    "changes": 0
+    "changes": 1
   },
   {
     "ACID": "ACA619",
@@ -3240,13 +3240,13 @@
     "ACID": "WJA975",
     "Plane type": "Boeing 737-800",
     "route": "46.15N/84.33W",
-    "altitude": 31000,
+    "altitude": 38000,
     "departure airport": "CYUL",
     "arrival airport": "CYOW",
     "departure time": 1767806520,
     "aircraft speed": 485.0,
     "passengers": 160,
     "is_cargo": false,
-    "changes": 0
+    "changes": 23
   }
 ]
