@@ -67,6 +67,7 @@ def conflict_resolver(conflicts):
     state_by_acid = {plane["ACID"]: plane for plane in state}
 
     for conflict in conflicts:
+        conflict.pop()
         if not conflict:
             continue
 
