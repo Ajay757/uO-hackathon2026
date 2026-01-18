@@ -1,5 +1,5 @@
 import { useMemo, useState } from "react";
-import flightsData from "../data/flights.json";
+import flightsData from "../db/flights.json";
 import { analyzeFlights } from "../utils/simpleAnalysis";
 import ConflictsTable from "../components/ConflictsTable";
 import HotspotsList from "../components/HotSpotsList";
