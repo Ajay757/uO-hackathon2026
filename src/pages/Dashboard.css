@@ -373,8 +373,15 @@
 }
 
 /* Analysis Panel */
-.analysis-button {
-  width: 100%;
+.analysis-buttons {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.analysis-button,
+.resolve-button {
+  flex: 1;
   padding: 0.75rem 1.5rem;
   background: #646cff;
   color: white;
@@ -384,17 +391,46 @@
   font-weight: 600;
   cursor: pointer;
   transition: background 0.2s;
-  margin-bottom: 1.5rem;
 }
 
-.analysis-button:hover:not(:disabled) {
+.analysis-button:hover:not(:disabled),
+.resolve-button:hover:not(:disabled) {
   background: #535bf2;
 }
 
-.analysis-button:disabled {
+.analysis-button:disabled,
+.resolve-button:disabled {
   background: #444;
   cursor: not-allowed;
   opacity: 0.6;
+}
+
+.resolve-button {
+  background: #4ecdc4;
+}
+
+.resolve-button:hover:not(:disabled) {
+  background: #45b8b0;
+}
+
+.resolve-progress {
+  margin-top: 1rem;
+  padding: 1rem;
+  background: rgba(100, 108, 255, 0.1);
+  border: 1px solid rgba(100, 108, 255, 0.3);
+  border-radius: 6px;
+}
+
+.resolve-status {
+  margin: 0;
+  font-weight: 600;
+  color: #4ecdc4;
+}
+
+.resolve-details {
+  margin: 0.5rem 0 0 0;
+  font-size: 0.9rem;
+  color: #cccccc;
 }
 
 .analysis-results {

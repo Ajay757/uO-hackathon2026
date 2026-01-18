@@ -84,14 +84,59 @@
 .resolved-badge {
   display: inline-block;
   padding: 0.25rem 0.5rem;
-  background: #646cff;
+  background: #4ecdc4;
   color: white;
   border-radius: 4px;
   font-size: 0.75rem;
   font-weight: 500;
 }
 
+.resolved-count-badge {
+  font-size: 0.85rem;
+  color: #4ecdc4;
+  font-weight: 400;
+  margin-left: 0.5rem;
+}
+
+.resolved-row {
+  opacity: 0.6;
+  background: rgba(78, 205, 196, 0.05) !important;
+}
+
+.resolved-row:hover {
+  opacity: 0.8;
+  background: rgba(78, 205, 196, 0.1) !important;
+}
+
 .conflicts-table tbody tr:last-child td {
   border-bottom: none;
+}
+
+.resolved-separator td {
+  padding: 0.75rem 0.5rem;
+  background: rgba(78, 205, 196, 0.1);
+  border-top: 2px solid rgba(78, 205, 196, 0.3);
+  border-bottom: 1px solid rgba(78, 205, 196, 0.2);
+}
+
+.separator-line {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #4ecdc4;
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+.separator-line::before,
+.separator-line::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: rgba(78, 205, 196, 0.3);
+}
+
+.separator-line span {
+  padding: 0 0.5rem;
 }
 

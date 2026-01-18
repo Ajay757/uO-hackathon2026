@@ -158,42 +158,39 @@ export default function ConflictResolver() {
               <span className="detail-label">Severity:</span>
               <span className={`detail-value severity-${severity.toLowerCase()}`}>{severity}</span>
             </div>
-            <div>
-              <span className="detail-label">Time since first departure:</span>
-              <span className="detail-value">
-                {conflict.tAfterDeparture != null 
-                  ? `${(conflict.tAfterDeparture / 60).toFixed(1)} minutes`
-                  : conflict.time != null 
-                    ? new Date(conflict.time * 1000).toLocaleString()
-                    : "N/A"}
-              </span>
-            </div>
-            <div>
-              <span className="detail-label">Horizontal Distance:</span>
-              <span className="detail-value">
-                {conflict.horizontalDistance != null 
-                  ? `${conflict.horizontalDistance.toFixed(2)} NM`
-                  : "N/A"}
-              </span>
-            </div>
-            <div>
-              <span className="detail-label">Vertical Distance:</span>
-              <span className="detail-value">
-                {conflict.verticalDistance != null 
-                  ? `${conflict.verticalDistance.toFixed(0)} ft`
-                  : "N/A"}
-              </span>
-            </div>
-            <div>
-              <span className="detail-label">Location:</span>
-              <span className="detail-value">
-                {conflict.lat != null && conflict.lon != null
-                  ? `${conflict.lat.toFixed(4)}, ${conflict.lon.toFixed(4)}`
-                  : "N/A"}
-              </span>
-            </div>
           </div>
         </div>
+
+        {/* Resolution Details Section - Only show if conflict is resolved */}
+        {conflict.resolved && conflict.resolutionDetails && (
+          <div className="resolution-details-card">
+            <h2>Resolution Details</h2>
+            <div className="resolution-details-content">
+              <p className="resolution-method">
+                <strong>Method:</strong> {conflict.resolutionDetails.method}
+              </p>
+              {conflict.resolutionDetails.planesModified && conflict.resolutionDetails.planesModified.length > 0 && (
+                <div className="planes-modified">
+                  <strong>Planes Modified:</strong>
+                  <ul>
+                    {conflict.resolutionDetails.planesModified.map((plane, idx) => (
+                      <li key={idx}>
+                        <strong>{plane.flight}:</strong> {plane.adjustments}
+                        {plane.finalAltitude && ` - Final altitude: ${plane.finalAltitude}`}
+                        {plane.finalSpeed && ` - Final speed: ${plane.finalSpeed}`}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+              {conflict.resolutionDetails.timestamp && (
+                <p className="resolution-timestamp">
+                  <strong>Resolved at:</strong> {new Date(conflict.resolutionDetails.timestamp).toLocaleString()}
+                </p>
+              )}
+            </div>
+          </div>
+        )}
 
         <div className="flight-cards">
           {flightsInConflict.map((flight, index) => {
@@ -244,41 +241,6 @@ export default function ConflictResolver() {
           })}
         </div>
 
-        <div className="resolution-card">
-          <div className="resolution-status">
-            <h2>Resolution Status</h2>
-            <div className={`status-badge ${resolution ? "resolved" : "unresolved"}`}>
-              {resolution ? "Resolved" : "Unresolved"}
-            </div>
-          </div>
-
-          {resolution && (
-            <div className="current-resolution">
-              <p><strong>Applied:</strong> {new Date(resolution.appliedAt).toLocaleString()}</p>
-              <p><strong>Action:</strong> {resolution.label}</p>
-              <button onClick={handleClearResolution} className="clear-button">
-                Clear Resolution
-              </button>
-            </div>
-          )}
-
-          {!resolution && (
-            <div className="resolution-actions">
-              <h3>Resolution Actions</h3>
-              <div className="actions-grid">
-                {RESOLUTION_ACTIONS.map((action) => (
-                  <button
-                    key={action.id}
-                    onClick={() => handleApplyResolution(action)}
-                    className="action-button"
-                  >
-                    {action.label}
-                  </button>
-                ))}
-              </div>
-            </div>
-          )}
-        </div>
         </div>
         
         <ConflictRouteMap

@@ -1986,7 +1986,11 @@
     "aircraft speed": 440.0,
     "passengers": 109,
     "is_cargo": false,
+<<<<<<< Updated upstream
     "changes": 0
+=======
+    "changes": 21
+>>>>>>> Stashed changes
   },
   {
     "ACID": "PAL422",
@@ -2252,14 +2256,22 @@
     "ACID": "PAL670",
     "Plane type": "Dash 8-400",
     "route": "44.55N/75.22W 46.15N/84.33W",
+<<<<<<< Updated upstream
     "altitude": 23000,
+=======
+    "altitude": 27000,
+>>>>>>> Stashed changes
     "departure airport": "CYYZ",
     "arrival airport": "CYHZ",
     "departure time": 1767792300,
     "aircraft speed": 360.0,
     "passengers": 66,
     "is_cargo": false,
+<<<<<<< Updated upstream
     "changes": 1
+=======
+    "changes": 87
+>>>>>>> Stashed changes
   },
   {
     "ACID": "WJA702",
@@ -2356,14 +2368,22 @@
     "ACID": "WJA308",
     "Plane type": "Boeing 737 MAX 8",
     "route": "49.64N/92.114W 46.15N/84.33W 45.88N/78.031W",
+<<<<<<< Updated upstream
     "altitude": 35000,
+=======
+    "altitude": 31000,
+>>>>>>> Stashed changes
     "departure airport": "CYVR",
     "arrival airport": "CYHZ",
     "departure time": 1767792780,
     "aircraft speed": 466.0,
     "passengers": 163,
     "is_cargo": false,
+<<<<<<< Updated upstream
     "changes": 2
+=======
+    "changes": 9
+>>>>>>> Stashed changes
   },
   {
     "ACID": "WJA408",
@@ -2395,14 +2415,22 @@
     "ACID": "WJA396",
     "Plane type": "Boeing 737 MAX 8",
     "route": "46.15N/84.33W",
+<<<<<<< Updated upstream
     "altitude": 28000,
+=======
+    "altitude": 33000,
+>>>>>>> Stashed changes
     "departure airport": "CYUL",
     "arrival airport": "CYOW",
     "departure time": 1767792960,
     "aircraft speed": 467.0,
     "passengers": 156,
     "is_cargo": false,
+<<<<<<< Updated upstream
     "changes": 0
+=======
+    "changes": 73
+>>>>>>> Stashed changes
   },
   {
     "ACID": "ACA140",
@@ -2441,7 +2469,11 @@
     "aircraft speed": 440.0,
     "passengers": 106,
     "is_cargo": false,
+<<<<<<< Updated upstream
     "changes": 0
+=======
+    "changes": 27
+>>>>>>> Stashed changes
   },
   {
     "ACID": "WJA327",
@@ -2499,14 +2531,22 @@
     "ACID": "FLE146",
     "Plane type": "Boeing 737 MAX 8",
     "route": "48.22N/118.55W 49.82N/86.449W",
+<<<<<<< Updated upstream
     "altitude": 39000,
+=======
+    "altitude": 36000,
+>>>>>>> Stashed changes
     "departure airport": "CYVR",
     "arrival airport": "CYUL",
     "departure time": 1767793500,
     "aircraft speed": 469.0,
     "passengers": 146,
     "is_cargo": false,
+<<<<<<< Updated upstream
     "changes": 1
+=======
+    "changes": 14
+>>>>>>> Stashed changes
   },
   {
     "ACID": "ACA606",
@@ -2532,7 +2572,11 @@
     "aircraft speed": 472.0,
     "passengers": 153,
     "is_cargo": false,
+<<<<<<< Updated upstream
     "changes": 0
+=======
+    "changes": 6
+>>>>>>> Stashed changes
   },
   {
     "ACID": "PAL462",
@@ -2590,14 +2634,22 @@
     "ACID": "FLE483",
     "Plane type": "Boeing 737-800",
     "route": "46.15N/84.33W",
+<<<<<<< Updated upstream
     "altitude": 28000,
+=======
+    "altitude": 31000,
+>>>>>>> Stashed changes
     "departure airport": "CYYZ",
     "arrival airport": "CYUL",
     "departure time": 1767793980,
     "aircraft speed": 471.0,
     "passengers": 172,
     "is_cargo": false,
+<<<<<<< Updated upstream
     "changes": 0
+=======
+    "changes": 19
+>>>>>>> Stashed changes
   },
   {
     "ACID": "WJA608",
@@ -2610,7 +2662,11 @@
     "aircraft speed": 479.0,
     "passengers": 138,
     "is_cargo": false,
+<<<<<<< Updated upstream
     "changes": 1
+=======
+    "changes": 49
+>>>>>>> Stashed changes
   },
   {
     "ACID": "PAL659",
@@ -2623,7 +2679,11 @@
     "aircraft speed": 360.0,
     "passengers": 73,
     "is_cargo": false,
+<<<<<<< Updated upstream
     "changes": 0
+=======
+    "changes": 88
+>>>>>>> Stashed changes
   },
   {
     "ACID": "FDX104",
@@ -2785,14 +2845,22 @@
     "ACID": "ACA574",
     "Plane type": "Airbus A321",
     "route": "46.15N/84.33W",
+<<<<<<< Updated upstream
     "altitude": 31000,
+=======
+    "altitude": 33000,
+>>>>>>> Stashed changes
     "departure airport": "CYUL",
     "arrival airport": "CYYZ",
     "departure time": 1767794880,
     "aircraft speed": 451.0,
     "passengers": 189,
     "is_cargo": false,
+<<<<<<< Updated upstream
     "changes": 0
+=======
+    "changes": 62
+>>>>>>> Stashed changes
   },
   {
     "ACID": "PAL532",
@@ -2824,14 +2892,22 @@
     "ACID": "PAL449",
     "Plane type": "Embraer E195-E2",
     "route": "46.15N/84.33W",
+<<<<<<< Updated upstream
     "altitude": 23000,
+=======
+    "altitude": 24000,
+>>>>>>> Stashed changes
     "departure airport": "CYUL",
     "arrival airport": "CYOW",
     "departure time": 1767795060,
     "aircraft speed": 440.0,
     "passengers": 112,
     "is_cargo": false,
+<<<<<<< Updated upstream
     "changes": 1
+=======
+    "changes": 120
+>>>>>>> Stashed changes
   },
   {
     "ACID": "PAL950",
@@ -2909,7 +2985,11 @@
     "aircraft speed": 451.0,
     "passengers": 164,
     "is_cargo": false,
+<<<<<<< Updated upstream
     "changes": 1
+=======
+    "changes": 22
+>>>>>>> Stashed changes
   },
   {
     "ACID": "ACA269",
@@ -3000,7 +3080,11 @@
     "aircraft speed": 440.0,
     "passengers": 119,
     "is_cargo": false,
+<<<<<<< Updated upstream
     "changes": 1
+=======
+    "changes": 46
+>>>>>>> Stashed changes
   },
   {
     "ACID": "ACA457",
@@ -3032,27 +3116,43 @@
     "ACID": "WJA239",
     "Plane type": "Boeing 787-9",
     "route": "50.77N/115.66W",
+<<<<<<< Updated upstream
     "altitude": 36000,
+=======
+    "altitude": 39000,
+>>>>>>> Stashed changes
     "departure airport": "CYXE",
     "arrival airport": "CYVR",
     "departure time": 1767796140,
     "aircraft speed": 486.0,
     "passengers": 273,
     "is_cargo": false,
+<<<<<<< Updated upstream
     "changes": 0
+=======
+    "changes": 3
+>>>>>>> Stashed changes
   },
   {
     "ACID": "ACA300",
     "Plane type": "Boeing 777-300ER",
     "route": "50.18N/71.405W 49.64N/92.114W 49.97N/110.935W",
+<<<<<<< Updated upstream
     "altitude": 40000,
+=======
+    "altitude": 38000,
+>>>>>>> Stashed changes
     "departure airport": "CYQB",
     "arrival airport": "CYVR",
     "departure time": 1767796200,
     "aircraft speed": 480.0,
     "passengers": 405,
     "is_cargo": false,
+<<<<<<< Updated upstream
     "changes": 1
+=======
+    "changes": 75
+>>>>>>> Stashed changes
   },
   {
     "ACID": "WJA388",
@@ -3097,14 +3197,22 @@
     "ACID": "FLE467",
     "Plane type": "Boeing 737-800",
     "route": "50.77N/115.66W",
+<<<<<<< Updated upstream
     "altitude": 30000,
+=======
+    "altitude": 33000,
+>>>>>>> Stashed changes
     "departure airport": "CYEG",
     "arrival airport": "CYVR",
     "departure time": 1767796440,
     "aircraft speed": 465.0,
     "passengers": 144,
     "is_cargo": false,
+<<<<<<< Updated upstream
     "changes": 1
+=======
+    "changes": 20
+>>>>>>> Stashed changes
   },
   {
     "ACID": "FLE358",
@@ -3143,7 +3251,11 @@
     "aircraft speed": 484.0,
     "passengers": 143,
     "is_cargo": false,
+<<<<<<< Updated upstream
     "changes": 3
+=======
+    "changes": 58
+>>>>>>> Stashed changes
   },
   {
     "ACID": "ACA526",
@@ -3208,7 +3320,11 @@
     "aircraft speed": 485.0,
     "passengers": 260,
     "is_cargo": false,
+<<<<<<< Updated upstream
     "changes": 0
+=======
+    "changes": 50
+>>>>>>> Stashed changes
   },
   {
     "ACID": "PAL911",
@@ -3383,14 +3499,18 @@
     "ACID": "WJA214",
     "Plane type": "Boeing 737 MAX 8",
     "route": "46.15N/84.33W",
-    "altitude": 29000,
+    "altitude": 30000,
     "departure airport": "CYOW",
     "arrival airport": "CYUL",
     "departure time": 1767797760,
     "aircraft speed": 483.0,
     "passengers": 169,
     "is_cargo": false,
+<<<<<<< Updated upstream
     "changes": 1
+=======
+    "changes": 21
+>>>>>>> Stashed changes
   },
   {
     "ACID": "ACA601",
@@ -3533,7 +3653,11 @@
     "aircraft speed": 499.0,
     "passengers": 246,
     "is_cargo": false,
+<<<<<<< Updated upstream
     "changes": 2
+=======
+    "changes": 35
+>>>>>>> Stashed changes
   },
   {
     "ACID": "WJA192",
@@ -3793,7 +3917,11 @@
     "aircraft speed": 478.0,
     "passengers": 172,
     "is_cargo": false,
+<<<<<<< Updated upstream
     "changes": 0
+=======
+    "changes": 67
+>>>>>>> Stashed changes
   },
   {
     "ACID": "ACA202",
@@ -3871,7 +3999,11 @@
     "aircraft speed": 463.0,
     "passengers": 0,
     "is_cargo": true,
+<<<<<<< Updated upstream
     "changes": 1
+=======
+    "changes": 15
+>>>>>>> Stashed changes
   },
   {
     "ACID": "ACA479",
@@ -3968,14 +4100,22 @@
     "ACID": "WJA295",
     "Plane type": "Boeing 737 MAX 8",
     "route": "46.15N/84.33W 48.22N/118.55W",
+<<<<<<< Updated upstream
     "altitude": 33000,
+=======
+    "altitude": 30000,
+>>>>>>> Stashed changes
     "departure airport": "CYHZ",
     "arrival airport": "CYYZ",
     "departure time": 1767800580,
     "aircraft speed": 481.0,
     "passengers": 169,
     "is_cargo": false,
+<<<<<<< Updated upstream
     "changes": 0
+=======
+    "changes": 3
+>>>>>>> Stashed changes
   },
   {
     "ACID": "FLE810",
@@ -4033,14 +4173,22 @@
     "ACID": "FLE106",
     "Plane type": "Boeing 737 MAX 8",
     "route": "46.15N/84.33W 48.22N/118.55W",
+<<<<<<< Updated upstream
     "altitude": 33000,
+=======
+    "altitude": 30000,
+>>>>>>> Stashed changes
     "departure airport": "CYHZ",
     "arrival airport": "CYYZ",
     "departure time": 1767800880,
     "aircraft speed": 473.0,
     "passengers": 151,
     "is_cargo": false,
+<<<<<<< Updated upstream
     "changes": 0
+=======
+    "changes": 3
+>>>>>>> Stashed changes
   },
   {
     "ACID": "PAL196",
@@ -4124,14 +4272,22 @@
     "ACID": "PAL210",
     "Plane type": "Embraer E195-E2",
     "route": "46.15N/84.33W",
+<<<<<<< Updated upstream
     "altitude": 27000,
+=======
+    "altitude": 22000,
+>>>>>>> Stashed changes
     "departure airport": "CYOW",
     "arrival airport": "CYYZ",
     "departure time": 1767801420,
     "aircraft speed": 440.0,
     "passengers": 125,
     "is_cargo": false,
+<<<<<<< Updated upstream
     "changes": 1
+=======
+    "changes": 21
+>>>>>>> Stashed changes
   },
   {
     "ACID": "WJA955",
@@ -4176,14 +4332,22 @@
     "ACID": "WJA551",
     "Plane type": "Boeing 787-9",
     "route": "48.22N/118.55W 47.50N/69.88W 46.15N/84.33W",
+<<<<<<< Updated upstream
     "altitude": 39000,
+=======
+    "altitude": 35000,
+>>>>>>> Stashed changes
     "departure airport": "CYYJ",
     "arrival airport": "CYQB",
     "departure time": 1767801660,
     "aircraft speed": 487.0,
     "passengers": 246,
     "is_cargo": false,
+<<<<<<< Updated upstream
     "changes": 1
+=======
+    "changes": 19
+>>>>>>> Stashed changes
   },
   {
     "ACID": "CCA592",
@@ -4319,14 +4483,22 @@
     "ACID": "FLE879",
     "Plane type": "Boeing 737 MAX 8",
     "route": "49.97N/110.935W",
+<<<<<<< Updated upstream
     "altitude": 28000,
+=======
+    "altitude": 29000,
+>>>>>>> Stashed changes
     "departure airport": "CYVR",
     "arrival airport": "CYEG",
     "departure time": 1767802320,
     "aircraft speed": 471.0,
     "passengers": 168,
     "is_cargo": false,
+<<<<<<< Updated upstream
     "changes": 0
+=======
+    "changes": 9
+>>>>>>> Stashed changes
   },
   {
     "ACID": "PAL149",
@@ -4345,14 +4517,22 @@
     "ACID": "ACA742",
     "Plane type": "Boeing 767-300F",
     "route": "49.82N/86.449W 45.88N/78.031W",
+<<<<<<< Updated upstream
     "altitude": 37000,
+=======
+    "altitude": 31000,
+>>>>>>> Stashed changes
     "departure airport": "CYYJ",
     "arrival airport": "CYYZ",
     "departure time": 1767802440,
     "aircraft speed": 469.0,
     "passengers": 0,
     "is_cargo": true,
+<<<<<<< Updated upstream
     "changes": 0
+=======
+    "changes": 8
+>>>>>>> Stashed changes
   },
   {
     "ACID": "ACA936",
@@ -4605,14 +4785,22 @@
     "ACID": "FLE310",
     "Plane type": "Boeing 737-800",
     "route": "49.82N/86.449W 49.97N/110.935W",
+<<<<<<< Updated upstream
     "altitude": 37000,
+=======
+    "altitude": 33000,
+>>>>>>> Stashed changes
     "departure airport": "CYYZ",
     "arrival airport": "CYYC",
     "departure time": 1767803700,
     "aircraft speed": 468.0,
     "passengers": 144,
     "is_cargo": false,
+<<<<<<< Updated upstream
     "changes": 0
+=======
+    "changes": 12
+>>>>>>> Stashed changes
   },
   {
     "ACID": "PAL967",
@@ -4943,14 +5131,22 @@
     "ACID": "FLE159",
     "Plane type": "Boeing 737-800",
     "route": "45.88N/78.031W 49.82N/86.449W 49.97N/110.935W",
+<<<<<<< Updated upstream
     "altitude": 39000,
+=======
+    "altitude": 33000,
+>>>>>>> Stashed changes
     "departure airport": "CYHZ",
     "arrival airport": "CYYC",
     "departure time": 1767805320,
     "aircraft speed": 467.0,
     "passengers": 164,
     "is_cargo": false,
+<<<<<<< Updated upstream
     "changes": 1
+=======
+    "changes": 67
+>>>>>>> Stashed changes
   },
   {
     "ACID": "PAL697",
