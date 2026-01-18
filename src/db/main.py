@@ -1,27 +1,20 @@
 import json
 
-
 def generate_simulation_state(planes_file, output_file):
     """
-    Generates a simulation state JSON from the original planes JSON.
-    Keeps all original fields, adds a 'changes' counter set to 0.
+    Generates simulation_state.json from flights.json.
+    Keeps the EXACT same list-of-objects structure.
+    Adds a 'changes' field initialized to 0 for each plane.
     """
     with open(planes_file, "r") as f:
         planes = json.load(f)
 
-    sim_state = {}
+    simulation_planes = []
 
     for plane in planes:
-        acid = plane["ACID"]
-
-        # Copy all original fields
-        plane_state = plane.copy()
-
-        # Add the simulation field
-        plane_state["changes"] = 0
-
-        # Use ACID as the key
-        sim_state[acid] = plane_state
+        plane_state = plane.copy()   # do not mutate original
+        plane_state["changes"] = 0   # add simulation-only field
+        simulation_planes.append(plane_state)
 
     with open(output_file, "w") as f:
-        json.dump(sim_state, f, indent=2)
+        json.dump(simulation_planes, f, indent=2)

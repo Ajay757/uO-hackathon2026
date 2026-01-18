@@ -40,12 +40,17 @@ def horizontal_separation_ok(pos1, pos2):
 # -----------------------------
 def update_plane(acid, new_altitude=None, new_speed=None):
     state = load_state()
+    state_by_acid = {plane["ACID"]: plane for plane in state}
+
     if new_altitude is not None:
-        state[acid]["altitude"] = new_altitude
+        state_by_acid[acid]["altitude"] = new_altitude
+
     if new_speed is not None:
-        state[acid]["speed"] = new_speed
-    state[acid]["changes"] += 1
+        state_by_acid[acid]["aircraft speed"] = new_speed
+
+    state_by_acid[acid]["changes"] += 1
     save_state(state)
+
 
 # -----------------------------
 # CONFLICT RESOLVER
@@ -55,20 +60,21 @@ def conflict_resolver(conflicts):
     conflicts: list of lists of ACIDs involved in each conflict
     """
     state = load_state()
+    state_by_acid = {plane["ACID"]: plane for plane in state}
     planes_info = load_planes_info()
     aircraft_types = load_aircraft_types()
 
     for i in range(len(conflicts)):
         conflict=conflicts[i]
-        conflict=conflict.pop()
+        conflict.pop()
 
         # Sort planes by minimal previous changes
-        sorted_planes = sorted(conflict, key=lambda x: state[x]["changes"])
+        sorted_planes = sorted(conflict, key=lambda x: state_by_acid[x]["changes"])
         conflict_resolved = False
 
         # Gather current altitudes and speeds
-        altitudes = {acid: state[acid]["altitude"] for acid in sorted_planes}
-        speeds = {acid: state[acid]["speed"] for acid in sorted_planes}
+        altitudes = {acid: state_by_acid[acid]["altitude"] for acid in sorted_planes}
+        speeds = {acid: state_by_acid[acid]["aircraft speed"] for acid in sorted_planes}
 
         # Find highest and lowest planes in this conflict
         altitudes_list = [(acid, altitudes[acid]) for acid in sorted_planes]
