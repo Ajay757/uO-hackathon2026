@@ -29,6 +29,7 @@ export default function ConflictsTable({ conflicts }) {
         <table className="conflicts-table">
           <thead>
             <tr>
+              <th>Conflict ID</th>
               <th>Time (UTC)</th>
               <th>Flight A</th>
               <th>Flight B</th>
@@ -48,6 +49,7 @@ export default function ConflictsTable({ conflicts }) {
                   onClick={() => conflict.id && navigate(`/conflicts/${encodeURIComponent(conflict.id)}`)}
                   className={conflict.id ? "conflict-row-clickable" : ""}
                 >
+                  <td>{index + 1}</td>
                   <td>{new Date(conflict.time * 1000).toLocaleTimeString()}</td>
                   <td>{conflict.flight1}</td>
                   <td>{conflict.flight2}</td>

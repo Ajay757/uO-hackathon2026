@@ -1,22 +1,6 @@
 import "./HotSpotsList.css";
 
-function calculateTimeWindow(conflicts) {
-  if (!conflicts || conflicts.length === 0) return "N/A";
-  
-  const times = conflicts.map(c => c.time).filter(Boolean);
-  if (times.length === 0) return "N/A";
-  
-  const minTime = Math.min(...times);
-  const maxTime = Math.max(...times);
-  
-  if (minTime === maxTime) {
-    return new Date(minTime * 1000).toLocaleTimeString();
-  }
-  
-  return `${new Date(minTime * 1000).toLocaleTimeString()} - ${new Date(maxTime * 1000).toLocaleTimeString()}`;
-}
-
-export default function HotspotsList({ hotspots }) {
+export default function HotspotsList({ hotspots, threshold, avg }) {
   if (!hotspots || hotspots.length === 0) {
     return (
       <div className="hotspots-list-container">
@@ -26,33 +10,45 @@ export default function HotspotsList({ hotspots }) {
     );
   }
 
-  // Sort by conflict count descending (should already be sorted, but ensure it)
-  const sortedHotspots = [...hotspots].sort((a, b) => b.count - a.count);
+  // Hotspots are already sorted by airplane count descending
+  const sortedHotspots = [...hotspots].sort((a, b) => (b.airplanes || 0) - (a.airplanes || 0));
 
   return (
     <div className="hotspots-list-container">
       <h2>Hotspots ({hotspots.length})</h2>
+      {threshold != null && avg != null && (
+        <p className="hotspot-threshold">
+          Hotspot threshold: {threshold} flights (avg {avg.toFixed(2)})
+        </p>
+      )}
       <div className="table-wrapper">
         <table className="hotspots-table">
           <thead>
             <tr>
               <th>Hotspot ID</th>
-              <th className="numeric">Center Lat</th>
-              <th className="numeric">Center Lon</th>
-              <th className="numeric">Conflict Count</th>
-              <th>Time Window</th>
+              <th className="numeric">Latitude</th>
+              <th className="numeric">Longitude</th>
+              <th className="numeric">Number of airplanes</th>
             </tr>
           </thead>
           <tbody>
-            {sortedHotspots.map((hotspot, index) => (
-              <tr key={`hotspot-${index}`}>
-                <td>HS-{index + 1}</td>
-                <td className="numeric">{hotspot.lat.toFixed(4)}</td>
-                <td className="numeric">{hotspot.lon.toFixed(4)}</td>
-                <td className="numeric">{hotspot.count}</td>
-                <td>{calculateTimeWindow(hotspot.conflicts)}</td>
-              </tr>
-            ))}
+            {sortedHotspots.map((hotspot) => {
+              // Handle both old format (with count) and new format (with airplanes)
+              const airplaneCount = hotspot.airplanes ?? hotspot.count ?? 0;
+              const hotspotId = hotspot.hotspotId ?? hotspot.id ?? null;
+              
+              // Only render if we have valid coordinates
+              if (hotspot.lat == null || hotspot.lon == null) return null;
+              
+              return (
+                <tr key={`hotspot-${hotspotId || hotspot.waypoint || hotspot.lat}-${hotspot.lon}`}>
+                  <td>{hotspotId != null ? hotspotId : "N/A"}</td>
+                  <td className="numeric">{hotspot.lat.toFixed(4)}</td>
+                  <td className="numeric">{hotspot.lon.toFixed(4)}</td>
+                  <td className="numeric">{airplaneCount.toLocaleString()}</td>
+                </tr>
+              );
+            })}
           </tbody>
         </table>
       </div>
