@@ -1,7 +1,6 @@
-import { useMemo, useState } from "react";
-import flights250 from "../db/flights.json";
+import { useMemo, useState, useEffect, useRef } from "react";
 import { analyzeFlights } from "../utils/simpleAnalysis";
-import { buildWaypointToAcidsMap } from "../utils/routeUtils";
+import { useFlightsData } from "../context/FlightsDataContext";
 import ConflictsTable from "../components/ConflictsTable";
 import HotspotsList from "../components/HotSpotsList";
 import "./Dashboard.css";
@@ -193,17 +192,15 @@ function formatTimestamp(timestamp) {
 }
 
 export default function Dashboard() {
-  const stats = useMemo(() => computeDashboardStats(flightsData), []);
+  const { flights, waypointToAcids } = useFlightsData();
+  const stats = useMemo(() => computeDashboardStats(flights), [flights]);
   const [analysisResults, setAnalysisResults] = useState(null);
   const [analyzing, setAnalyzing] = useState(false);
 
-  // Build waypoint→ACIDs map
-  const waypointToAcids = buildWaypointToAcidsMap(flights250);
-
   // Compute waypoint-based hotspots
   const { hotspots: waypointHotspots, threshold, avg } = useMemo(
-    () => buildHotspotRows(waypointToAcids, flights250),
-    [waypointToAcids]
+    () => buildHotspotRows(waypointToAcids, flights),
+    [waypointToAcids, flights]
   );
 
   // Waypoints to check explicitly
@@ -239,7 +236,7 @@ export default function Dashboard() {
 
     const entries = Object.entries(waypointToAcids);
 
-    console.log("[WaypointMap] Flights loaded:", flights250.length);
+    console.log("[WaypointMap] Flights loaded:", flights.length);
     console.log("[WaypointMap] Unique waypoints:", entries.length);
 
     const top10 = entries
@@ -270,7 +267,7 @@ export default function Dashboard() {
     // Run analysis in a timeout to avoid blocking UI
     setTimeout(() => {
       try {
-        const results = analyzeFlights(flightsData);
+        const results = analyzeFlights(flights);
         setAnalysisResults(results);
       } catch (error) {
         console.error("Analysis error:", error);

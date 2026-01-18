@@ -6,6 +6,7 @@ import 'leaflet/dist/leaflet.css'
 import App from './App.jsx'
 import Dashboard from './pages/Dashboard.jsx'
 import ConflictResolver from './pages/ConflictResolver.jsx'
+import { FlightsDataProvider } from './context/FlightsDataContext'
 import "./firebase";
 
 const router = createBrowserRouter([
@@ -27,6 +28,8 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <RouterProvider router={router} />
+    <FlightsDataProvider>
+      <RouterProvider router={router} />
+    </FlightsDataProvider>
   </StrictMode>,
 )
