@@ -201,8 +201,11 @@ def simulate_all_flights(filename: str, ping_int: int):
 
 if __name__ == "__main__":
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     path = 'simulation_state.json'
 =======
+=======
+>>>>>>> Stashed changes
     import sys
     
     # Check if user wants to skip reset (for iterative resolution)
@@ -223,6 +226,9 @@ if __name__ == "__main__":
     # simulate_all_flights needs flights.json to simulate flight paths
     # It uses simulation_state.json internally for current plane states
     flights_path = 'flights.json'
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 
     snapshots = simulate_all_flights(flights_path, 1)
