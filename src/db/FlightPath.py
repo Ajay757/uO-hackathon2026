@@ -118,7 +118,7 @@ def load_flights(filename: str):
     with open(filename, 'r') as f:
         return json.load(f)
 
-def simulate_all_flights(filename: str, ping_int: int = 60):
+def simulate_all_flights(filename: str, ping_int: int):
     """Simulate ONLY airborne flights until last arrival."""
     flights = load_flights(filename)
 
@@ -153,7 +153,7 @@ def simulate_all_flights(filename: str, ping_int: int = 60):
     current_time = sim_start
     while current_time <= sim_end:
         minutes_since_start = int((current_time - sim_start).total_seconds() / 60)
-        print(f"\n{current_time.strftime('%H:%M')} ({minutes_since_start}m):")
+        # print(f"\n{current_time.strftime('%H:%M')} ({minutes_since_start}m):")
         
         planes = []
         airborne_count = 0
@@ -178,8 +178,8 @@ def simulate_all_flights(filename: str, ping_int: int = 60):
                         "lon": pos[1],
                         "alt": alt
                     })
-                    print(f"  {flight['ACID']:>6} {pos[0]:6.2f}N/{abs(pos[1]):7.3f}W "
-                        f"{alt:>6}ft (dep+{minutes_since_dep}m)")
+                    # print(f"  {flight['ACID']:>6} {pos[0]:6.2f}N/{abs(pos[1]):7.3f}W "
+                    #     f"{alt:>6}ft (dep+{minutes_since_dep}m)")
                     airborne_count += 1
 
         # NEW: Save snapshot and call your function
@@ -189,10 +189,10 @@ def simulate_all_flights(filename: str, ping_int: int = 60):
             "planes": planes
         })
         
-        if airborne_count == 0:
-            print("  No airborne flights")
-        else:
-            print(f"  ({airborne_count} airborne)")
+        # if airborne_count == 0:
+        #     print("  No airborne flights") 
+        # else:
+        #     print(f"  ({airborne_count} airborne)")
         
         current_time += timedelta(minutes=ping_int)
 
@@ -200,7 +200,7 @@ def simulate_all_flights(filename: str, ping_int: int = 60):
 
 
 if __name__ == "__main__":
-    path = 'flights.json'
+    path = 'simulation_state.json'
 
     snapshots = simulate_all_flights(path, 1)
 
