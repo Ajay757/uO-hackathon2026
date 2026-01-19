@@ -26,7 +26,7 @@ export default defineConfig({
           try {
             // Run iterative resolver (must run from src/db directory)
             execFile(
-              'python3',
+              'python',
               [scriptPath],
               { cwd: scriptDir, maxBuffer: 50 * 1024 * 1024 },
               (err, stdout, stderr) => {
